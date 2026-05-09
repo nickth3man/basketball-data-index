@@ -1,0 +1,1726 @@
+File,Column,Data Type,Description
+csv/nba/game_odds.csv,game_id,string,Unique identifier for each game
+csv/nba/game_odds.csv,game_date,date,Date the game was played
+csv/nba/game_odds.csv,odds_date,date,odds date value
+csv/nba/game_odds.csv,last_fetched,string,last fetched value
+csv/nba/game_odds.csv,decimal_home,float,decimal home value
+csv/nba/game_odds.csv,decimal_away,float,decimal away value
+csv/nba/game_odds.csv,moneyline_home,integer,Moneyline odds value for the home team
+csv/nba/game_odds.csv,moneyline_away,integer,Moneyline odds value for the away team
+csv/nba/game_odds.csv,source_url,string,source url value
+csv/nba/Games.csv,gameId,string,Unique identifier for each game
+csv/nba/Games.csv,gameDateTimeEst,string,gameDateTimeEst value
+csv/nba/Games.csv,hometeamCity,string,hometeamCity value
+csv/nba/Games.csv,hometeamName,string,hometeamName value
+csv/nba/Games.csv,hometeamId,string,hometeamId value
+csv/nba/Games.csv,awayteamCity,string,awayteamCity value
+csv/nba/Games.csv,awayteamName,string,awayteamName value
+csv/nba/Games.csv,awayteamId,string,awayteamId value
+csv/nba/Games.csv,homeScore,integer,homeScore value
+csv/nba/Games.csv,awayScore,integer,awayScore value
+csv/nba/Games.csv,winner,integer,winner value
+csv/nba/Games.csv,gameType,string,gameType value
+csv/nba/Games.csv,gameSubtype,string,gameSubtype value
+csv/nba/Games.csv,gameLabel,string,gameLabel value
+csv/nba/Games.csv,gameSubLabel,string,gameSubLabel value
+csv/nba/Games.csv,seriesGameNumber,string,seriesGameNumber value
+csv/nba/Games.csv,attendance,integer,attendance value
+csv/nba/Games.csv,arenaId,string,arenaId value
+csv/nba/Games.csv,arenaName,string,arenaName value
+csv/nba/Games.csv,arenaCity,string,arenaCity value
+csv/nba/Games.csv,arenaState,string,arenaState value
+csv/nba/Games.csv,officials,string,officials value
+csv/nba/Games.csv,gameDate,date,Date the game was played
+csv/nba/Games1.csv,gameId,string,Unique identifier for each game
+csv/nba/Games1.csv,gameDateTimeEst,string,gameDateTimeEst value
+csv/nba/Games1.csv,hometeamCity,string,hometeamCity value
+csv/nba/Games1.csv,hometeamName,string,hometeamName value
+csv/nba/Games1.csv,hometeamId,string,hometeamId value
+csv/nba/Games1.csv,awayteamCity,string,awayteamCity value
+csv/nba/Games1.csv,awayteamName,string,awayteamName value
+csv/nba/Games1.csv,awayteamId,string,awayteamId value
+csv/nba/Games1.csv,homeScore,integer,homeScore value
+csv/nba/Games1.csv,awayScore,integer,awayScore value
+csv/nba/Games1.csv,winner,integer,winner value
+csv/nba/Games1.csv,gameType,string,gameType value
+csv/nba/Games1.csv,gameSubtype,string,gameSubtype value
+csv/nba/Games1.csv,gameLabel,string,gameLabel value
+csv/nba/Games1.csv,gameSubLabel,string,gameSubLabel value
+csv/nba/Games1.csv,seriesGameNumber,string,seriesGameNumber value
+csv/nba/Games1.csv,attendance,integer,attendance value
+csv/nba/Games1.csv,arenaId,string,arenaId value
+csv/nba/Games1.csv,arenaName,string,arenaName value
+csv/nba/Games1.csv,arenaCity,string,arenaCity value
+csv/nba/Games1.csv,arenaState,string,arenaState value
+csv/nba/Games1.csv,officials,string,officials value
+csv/nba/Games1.csv,gameDate,date,Date the game was played
+csv/nba/games_advanced.csv,Team,string,Team name or abbreviation
+csv/nba/games_advanced.csv,Match Up,string,Game matchup notation
+csv/nba/games_advanced.csv,Game Date,date,Date the game was played
+csv/nba/games_advanced.csv,W/L,string,Win/loss indicator
+csv/nba/games_advanced.csv,MIN,integer,Minutes played
+csv/nba/games_advanced.csv,OffRtg,float,OffRtg value
+csv/nba/games_advanced.csv,DefRtg,float,DefRtg value
+csv/nba/games_advanced.csv,NetRtg,float,NetRtg value
+csv/nba/games_advanced.csv,AST%,float,AST% value
+csv/nba/games_advanced.csv,AST/TO,float,AST/TO value
+csv/nba/games_advanced.csv,AST Ratio,float,AST Ratio value
+csv/nba/games_advanced.csv,OREB%,float,OREB% value
+csv/nba/games_advanced.csv,DREB%,float,DREB% value
+csv/nba/games_advanced.csv,REB%,float,REB% value
+csv/nba/games_advanced.csv,TOV%,float,TOV% value
+csv/nba/games_advanced.csv,eFG%,float,eFG% value
+csv/nba/games_advanced.csv,TS%,float,TS% value
+csv/nba/games_advanced.csv,PACE,float,PACE value
+csv/nba/games_advanced.csv,PIE,float,PIE value
+csv/nba/games_advanced.csv,TEAM_ID,string,Unique identifier for each team
+csv/nba/games_advanced.csv,GAME_ID,string,Unique identifier for each game
+csv/nba/games_boxscores.csv,game_id,string,Unique identifier for each game
+csv/nba/games_boxscores.csv,season,integer,Season identifier
+csv/nba/games_boxscores.csv,game_date,date,Date the game was played
+csv/nba/games_boxscores.csv,sub_season_id,string,sub season id value
+csv/nba/games_boxscores.csv,is_playoff,boolean,is playoff value
+csv/nba/games_boxscores.csv,is_overtime,boolean,is overtime value
+csv/nba/games_boxscores.csv,min,integer,Minutes played
+csv/nba/games_boxscores.csv,team_id_home,integer,Unique identifier for each team for the home team
+csv/nba/games_boxscores.csv,is_home_team_home,boolean,Whether the team played at home for the home team
+csv/nba/games_boxscores.csv,team_home,string,Team name or abbreviation for the home team
+csv/nba/games_boxscores.csv,match_up_home,string,Game matchup notation for the home team
+csv/nba/games_boxscores.csv,pts_home,integer,Points scored for the home team
+csv/nba/games_boxscores.csv,fgm_home,integer,Field goals made for the home team
+csv/nba/games_boxscores.csv,fga_home,integer,Field goal attempts for the home team
+csv/nba/games_boxscores.csv,fg_pct_home,float,Field goal percentage for the home team
+csv/nba/games_boxscores.csv,3pm_home,integer,Three-point field goals made for the home team
+csv/nba/games_boxscores.csv,3pa_home,integer,Three-point field goal attempts for the home team
+csv/nba/games_boxscores.csv,3p_pct_home,float,Three-point field goal percentage for the home team
+csv/nba/games_boxscores.csv,ftm_home,integer,Free throws made for the home team
+csv/nba/games_boxscores.csv,fta_home,integer,Free throw attempts for the home team
+csv/nba/games_boxscores.csv,ft_pct_home,float,Free throw percentage for the home team
+csv/nba/games_boxscores.csv,oreb_home,integer,oreb home value
+csv/nba/games_boxscores.csv,dreb_home,integer,dreb home value
+csv/nba/games_boxscores.csv,reb_home,integer,Total rebounds for the home team
+csv/nba/games_boxscores.csv,ast_home,integer,Assists for the home team
+csv/nba/games_boxscores.csv,tov_home,integer,Turnovers for the home team
+csv/nba/games_boxscores.csv,stl_home,integer,Steals for the home team
+csv/nba/games_boxscores.csv,blk_home,integer,Blocks for the home team
+csv/nba/games_boxscores.csv,pf_home,integer,Personal fouls for the home team
+csv/nba/games_boxscores.csv,plus_minus_home,integer,Plus/minus differential for the home team
+csv/nba/games_boxscores.csv,off_rtg_home,float,off rtg home value
+csv/nba/games_boxscores.csv,def_rtg_home,float,def rtg home value
+csv/nba/games_boxscores.csv,net_rtg_home,float,net rtg home value
+csv/nba/games_boxscores.csv,ast_pct_home,float,ast pct home value
+csv/nba/games_boxscores.csv,ast_turnover_ratio_home,float,ast turnover ratio home value
+csv/nba/games_boxscores.csv,ast_ratio_home,float,ast ratio home value
+csv/nba/games_boxscores.csv,oreb_pct_home,float,oreb pct home value
+csv/nba/games_boxscores.csv,dreb_pct_home,float,dreb pct home value
+csv/nba/games_boxscores.csv,reb_pct_home,float,reb pct home value
+csv/nba/games_boxscores.csv,tov_pct_home,float,tov pct home value
+csv/nba/games_boxscores.csv,efg_pct_home,float,efg pct home value
+csv/nba/games_boxscores.csv,ts_pct_home,float,ts pct home value
+csv/nba/games_boxscores.csv,pace_home,float,pace home value
+csv/nba/games_boxscores.csv,pie_home,float,pie home value
+csv/nba/games_boxscores.csv,fta_rate_home,float,fta rate home value
+csv/nba/games_boxscores.csv,opp_efg_pct_home,float,opp efg pct home value
+csv/nba/games_boxscores.csv,opp_fta_rate_home,float,opp fta rate home value
+csv/nba/games_boxscores.csv,opp_tov_pct_home,float,opp tov pct home value
+csv/nba/games_boxscores.csv,opp_oreb_pct_home,float,opp oreb pct home value
+csv/nba/games_boxscores.csv,pts_off_to_home,integer,pts off to home value
+csv/nba/games_boxscores.csv,2nd_pts_home,integer,2nd pts home value
+csv/nba/games_boxscores.csv,fbps_home,integer,fbps home value
+csv/nba/games_boxscores.csv,pitp_home,integer,pitp home value
+csv/nba/games_boxscores.csv,opp_pts_off_to_home,integer,opp pts off to home value
+csv/nba/games_boxscores.csv,opp_2nd_pts_home,integer,opp 2nd pts home value
+csv/nba/games_boxscores.csv,opp_fbps_home,integer,opp fbps home value
+csv/nba/games_boxscores.csv,opp_pitp_home,integer,opp pitp home value
+csv/nba/games_boxscores.csv,pct_fga_2pt_home,float,pct fga 2pt home value
+csv/nba/games_boxscores.csv,pct_fga_3pt_home,float,pct fga 3pt home value
+csv/nba/games_boxscores.csv,pct_pts_2pt_home,float,pct pts 2pt home value
+csv/nba/games_boxscores.csv,pct_pts_2pt_mr_home,float,pct pts 2pt mr home value
+csv/nba/games_boxscores.csv,pct_pts_3pt_home,float,pct pts 3pt home value
+csv/nba/games_boxscores.csv,pct_pts_fbps_home,float,pct pts fbps home value
+csv/nba/games_boxscores.csv,pct_pts_ft_home,float,pct pts ft home value
+csv/nba/games_boxscores.csv,pct_pts_off_to_home,float,pct pts off to home value
+csv/nba/games_boxscores.csv,pct_pts_pitp_home,float,pct pts pitp home value
+csv/nba/games_boxscores.csv,2fgm_pct_ast_home,float,2fgm pct ast home value
+csv/nba/games_boxscores.csv,2fgm_pct_uast_home,float,2fgm pct uast home value
+csv/nba/games_boxscores.csv,3fgm_pct_ast_home,float,3fgm pct ast home value
+csv/nba/games_boxscores.csv,3fgm_pct_uast_home,float,3fgm pct uast home value
+csv/nba/games_boxscores.csv,fgm_pct_ast_home,float,fgm pct ast home value
+csv/nba/games_boxscores.csv,fgm_pct_uast_home,float,fgm pct uast home value
+csv/nba/games_boxscores.csv,is_win_home,boolean,Whether the team won the game for the home team
+csv/nba/games_boxscores.csv,team_id_visitor,integer,Unique identifier for each team for the visitor team
+csv/nba/games_boxscores.csv,is_home_team_visitor,boolean,Whether the team played at home for the visitor team
+csv/nba/games_boxscores.csv,team_visitor,string,Team name or abbreviation for the visitor team
+csv/nba/games_boxscores.csv,match_up_visitor,string,Game matchup notation for the visitor team
+csv/nba/games_boxscores.csv,pts_visitor,integer,Points scored for the visitor team
+csv/nba/games_boxscores.csv,fgm_visitor,integer,Field goals made for the visitor team
+csv/nba/games_boxscores.csv,fga_visitor,integer,Field goal attempts for the visitor team
+csv/nba/games_boxscores.csv,fg_pct_visitor,float,Field goal percentage for the visitor team
+csv/nba/games_boxscores.csv,3pm_visitor,integer,Three-point field goals made for the visitor team
+csv/nba/games_boxscores.csv,3pa_visitor,integer,Three-point field goal attempts for the visitor team
+csv/nba/games_boxscores.csv,3p_pct_visitor,float,Three-point field goal percentage for the visitor team
+csv/nba/games_boxscores.csv,ftm_visitor,integer,Free throws made for the visitor team
+csv/nba/games_boxscores.csv,fta_visitor,integer,Free throw attempts for the visitor team
+csv/nba/games_boxscores.csv,ft_pct_visitor,float,Free throw percentage for the visitor team
+csv/nba/games_boxscores.csv,oreb_visitor,integer,oreb visitor value
+csv/nba/games_boxscores.csv,dreb_visitor,integer,dreb visitor value
+csv/nba/games_boxscores.csv,reb_visitor,integer,Total rebounds for the visitor team
+csv/nba/games_boxscores.csv,ast_visitor,integer,Assists for the visitor team
+csv/nba/games_boxscores.csv,tov_visitor,integer,Turnovers for the visitor team
+csv/nba/games_boxscores.csv,stl_visitor,integer,Steals for the visitor team
+csv/nba/games_boxscores.csv,blk_visitor,integer,Blocks for the visitor team
+csv/nba/games_boxscores.csv,pf_visitor,integer,Personal fouls for the visitor team
+csv/nba/games_boxscores.csv,plus_minus_visitor,integer,Plus/minus differential for the visitor team
+csv/nba/games_boxscores.csv,off_rtg_visitor,float,off rtg visitor value
+csv/nba/games_boxscores.csv,def_rtg_visitor,float,def rtg visitor value
+csv/nba/games_boxscores.csv,net_rtg_visitor,float,net rtg visitor value
+csv/nba/games_boxscores.csv,ast_pct_visitor,float,ast pct visitor value
+csv/nba/games_boxscores.csv,ast_turnover_ratio_visitor,float,ast turnover ratio visitor value
+csv/nba/games_boxscores.csv,ast_ratio_visitor,float,ast ratio visitor value
+csv/nba/games_boxscores.csv,oreb_pct_visitor,float,oreb pct visitor value
+csv/nba/games_boxscores.csv,dreb_pct_visitor,float,dreb pct visitor value
+csv/nba/games_boxscores.csv,reb_pct_visitor,float,reb pct visitor value
+csv/nba/games_boxscores.csv,tov_pct_visitor,float,tov pct visitor value
+csv/nba/games_boxscores.csv,efg_pct_visitor,float,efg pct visitor value
+csv/nba/games_boxscores.csv,ts_pct_visitor,float,ts pct visitor value
+csv/nba/games_boxscores.csv,pace_visitor,float,pace visitor value
+csv/nba/games_boxscores.csv,pie_visitor,float,pie visitor value
+csv/nba/games_boxscores.csv,fta_rate_visitor,float,fta rate visitor value
+csv/nba/games_boxscores.csv,opp_efg_pct_visitor,float,opp efg pct visitor value
+csv/nba/games_boxscores.csv,opp_fta_rate_visitor,float,opp fta rate visitor value
+csv/nba/games_boxscores.csv,opp_tov_pct_visitor,float,opp tov pct visitor value
+csv/nba/games_boxscores.csv,opp_oreb_pct_visitor,float,opp oreb pct visitor value
+csv/nba/games_boxscores.csv,pts_off_to_visitor,integer,pts off to visitor value
+csv/nba/games_boxscores.csv,2nd_pts_visitor,integer,2nd pts visitor value
+csv/nba/games_boxscores.csv,fbps_visitor,integer,fbps visitor value
+csv/nba/games_boxscores.csv,pitp_visitor,integer,pitp visitor value
+csv/nba/games_boxscores.csv,opp_pts_off_to_visitor,integer,opp pts off to visitor value
+csv/nba/games_boxscores.csv,opp_2nd_pts_visitor,integer,opp 2nd pts visitor value
+csv/nba/games_boxscores.csv,opp_fbps_visitor,integer,opp fbps visitor value
+csv/nba/games_boxscores.csv,opp_pitp_visitor,integer,opp pitp visitor value
+csv/nba/games_boxscores.csv,pct_fga_2pt_visitor,float,pct fga 2pt visitor value
+csv/nba/games_boxscores.csv,pct_fga_3pt_visitor,float,pct fga 3pt visitor value
+csv/nba/games_boxscores.csv,pct_pts_2pt_visitor,float,pct pts 2pt visitor value
+csv/nba/games_boxscores.csv,pct_pts_2pt_mr_visitor,float,pct pts 2pt mr visitor value
+csv/nba/games_boxscores.csv,pct_pts_3pt_visitor,float,pct pts 3pt visitor value
+csv/nba/games_boxscores.csv,pct_pts_fbps_visitor,float,pct pts fbps visitor value
+csv/nba/games_boxscores.csv,pct_pts_ft_visitor,float,pct pts ft visitor value
+csv/nba/games_boxscores.csv,pct_pts_off_to_visitor,float,pct pts off to visitor value
+csv/nba/games_boxscores.csv,pct_pts_pitp_visitor,float,pct pts pitp visitor value
+csv/nba/games_boxscores.csv,2fgm_pct_ast_visitor,float,2fgm pct ast visitor value
+csv/nba/games_boxscores.csv,2fgm_pct_uast_visitor,float,2fgm pct uast visitor value
+csv/nba/games_boxscores.csv,3fgm_pct_ast_visitor,float,3fgm pct ast visitor value
+csv/nba/games_boxscores.csv,3fgm_pct_uast_visitor,float,3fgm pct uast visitor value
+csv/nba/games_boxscores.csv,fgm_pct_ast_visitor,float,fgm pct ast visitor value
+csv/nba/games_boxscores.csv,fgm_pct_uast_visitor,float,fgm pct uast visitor value
+csv/nba/games_boxscores.csv,is_win_visitor,boolean,Whether the team won the game for the visitor team
+csv/nba/games_four-factors.csv,TEAM,string,Team name or abbreviation
+csv/nba/games_four-factors.csv,MATCH UP,string,Game matchup notation
+csv/nba/games_four-factors.csv,GAME DATE,date,Date the game was played
+csv/nba/games_four-factors.csv,W/L,string,Win/loss indicator
+csv/nba/games_four-factors.csv,MIN,integer,Minutes played
+csv/nba/games_four-factors.csv,eFG%,float,eFG% value
+csv/nba/games_four-factors.csv,FTA Rate,float,FTA Rate value
+csv/nba/games_four-factors.csv,TOV%,float,TOV% value
+csv/nba/games_four-factors.csv,OREB%,float,OREB% value
+csv/nba/games_four-factors.csv,Opp eFG%,float,Opp eFG% value
+csv/nba/games_four-factors.csv,Opp FTA Rate,float,Opp FTA Rate value
+csv/nba/games_four-factors.csv,Opp TOV%,float,Opp TOV% value
+csv/nba/games_four-factors.csv,Opp OREB%,float,Opp OREB% value
+csv/nba/games_four-factors.csv,TEAM_ID,string,Unique identifier for each team
+csv/nba/games_four-factors.csv,GAME_ID,string,Unique identifier for each game
+csv/nba/games_index.csv,game_id,string,Unique identifier for each game
+csv/nba/games_index.csv,game_date,date,Date the game was played
+csv/nba/games_index.csv,season_year,string,season year value
+csv/nba/games_index.csv,matchup,string,Game matchup notation
+csv/nba/games_index.csv,home,string,home value
+csv/nba/games_index.csv,away,string,away value
+csv/nba/games_index.csv,team_id_home,integer,Unique identifier for each team for the home team
+csv/nba/games_index.csv,team_id_away,integer,Unique identifier for each team for the away team
+csv/nba/games_index.csv,team_name_home,string,Team name for the home team
+csv/nba/games_index.csv,team_name_away,string,Team name for the away team
+csv/nba/games_index.csv,winner,string,winner value
+csv/nba/games_index.csv,pts_home,integer,Points scored for the home team
+csv/nba/games_index.csv,pts_away,integer,Points scored for the away team
+csv/nba/games_index.csv,margin,integer,margin value
+csv/nba/games_index.csv,min,integer,Minutes played
+csv/nba/games_index.csv,odds_home,float,Odds value for the home team
+csv/nba/games_index.csv,odds_away,float,Odds value for the away team
+csv/nba/games_misc.csv,Team,string,Team name or abbreviation
+csv/nba/games_misc.csv,Match Up,string,Game matchup notation
+csv/nba/games_misc.csv,Game Date,date,Date the game was played
+csv/nba/games_misc.csv,W/L,string,Win/loss indicator
+csv/nba/games_misc.csv,MIN,integer,Minutes played
+csv/nba/games_misc.csv,PTS OFF TO,integer,PTS OFF TO value
+csv/nba/games_misc.csv,2nd PTS,integer,2nd PTS value
+csv/nba/games_misc.csv,FBPs,integer,FBPs value
+csv/nba/games_misc.csv,PITP,integer,PITP value
+csv/nba/games_misc.csv,Opp PTS OFF TO,integer,Opp PTS OFF TO value
+csv/nba/games_misc.csv,Opp 2nd PTS,integer,Opp 2nd PTS value
+csv/nba/games_misc.csv,Opp FBPs,integer,Opp FBPs value
+csv/nba/games_misc.csv,Opp PITP,integer,Opp PITP value
+csv/nba/games_misc.csv,TEAM_ID,string,Unique identifier for each team
+csv/nba/games_misc.csv,GAME_ID,string,Unique identifier for each game
+csv/nba/games_schedule.csv,game_id,string,Unique identifier for each game
+csv/nba/games_schedule.csv,game_date,date,Date the game was played
+csv/nba/games_schedule.csv,season_year,string,season year value
+csv/nba/games_schedule.csv,season_type,string,season type value
+csv/nba/games_schedule.csv,completed,integer,completed value
+csv/nba/games_schedule.csv,scheduled,integer,scheduled value
+csv/nba/games_schedule.csv,matchup,string,Game matchup notation
+csv/nba/games_schedule.csv,home,string,home value
+csv/nba/games_schedule.csv,away,string,away value
+csv/nba/games_schedule.csv,team_id_home,integer,Unique identifier for each team for the home team
+csv/nba/games_schedule.csv,team_id_away,integer,Unique identifier for each team for the away team
+csv/nba/games_schedule.csv,team_name_home,string,Team name for the home team
+csv/nba/games_schedule.csv,team_name_away,string,Team name for the away team
+csv/nba/games_schedule.csv,winner,string,winner value
+csv/nba/games_schedule.csv,pts_home,integer,Points scored for the home team
+csv/nba/games_schedule.csv,pts_away,integer,Points scored for the away team
+csv/nba/games_schedule.csv,margin,integer,margin value
+csv/nba/games_schedule.csv,odds_home,integer,Odds value for the home team
+csv/nba/games_schedule.csv,odds_away,integer,Odds value for the away team
+csv/nba/games_schedule.csv,is_neutral,boolean,is neutral value
+csv/nba/games_scoring.csv,Team,string,Team name or abbreviation
+csv/nba/games_scoring.csv,Match Up,string,Game matchup notation
+csv/nba/games_scoring.csv,Game Date,date,Date the game was played
+csv/nba/games_scoring.csv,W/L,string,Win/loss indicator
+csv/nba/games_scoring.csv,MIN,float,Minutes played
+csv/nba/games_scoring.csv,%FGA 2PT,float,%FGA 2PT value
+csv/nba/games_scoring.csv,%FGA 3PT,float,%FGA 3PT value
+csv/nba/games_scoring.csv,%PTS 2PT,float,%PTS 2PT value
+csv/nba/games_scoring.csv,%PTS 2PT MR,float,%PTS 2PT MR value
+csv/nba/games_scoring.csv,%PTS 3PT,float,%PTS 3PT value
+csv/nba/games_scoring.csv,%PTS FBPs,float,%PTS FBPs value
+csv/nba/games_scoring.csv,%PTS FT,float,%PTS FT value
+csv/nba/games_scoring.csv,%PTS Off TO,float,%PTS Off TO value
+csv/nba/games_scoring.csv,%PTS PITP,float,%PTS PITP value
+csv/nba/games_scoring.csv,2FGM %AST,float,2FGM %AST value
+csv/nba/games_scoring.csv,2FGM %UAST,float,2FGM %UAST value
+csv/nba/games_scoring.csv,3FGM %AST,float,3FGM %AST value
+csv/nba/games_scoring.csv,3FGM %UAST,float,3FGM %UAST value
+csv/nba/games_scoring.csv,FGM %AST,float,FGM %AST value
+csv/nba/games_scoring.csv,FGM %UAST,float,FGM %UAST value
+csv/nba/games_scoring.csv,TEAM_ID,string,Unique identifier for each team
+csv/nba/games_scoring.csv,GAME_ID,string,Unique identifier for each game
+csv/nba/games_traditional.csv,TEAM,string,Team name or abbreviation
+csv/nba/games_traditional.csv,MATCH UP,string,Game matchup notation
+csv/nba/games_traditional.csv,GAME DATE,date,Date the game was played
+csv/nba/games_traditional.csv,W/L,string,Win/loss indicator
+csv/nba/games_traditional.csv,MIN,integer,Minutes played
+csv/nba/games_traditional.csv,PTS,integer,Points scored
+csv/nba/games_traditional.csv,FGM,integer,Field goals made
+csv/nba/games_traditional.csv,FGA,integer,Field goal attempts
+csv/nba/games_traditional.csv,FG%,float,Field goal percentage
+csv/nba/games_traditional.csv,3PM,integer,3PM value
+csv/nba/games_traditional.csv,3PA,integer,3PA value
+csv/nba/games_traditional.csv,3P%,float,3P% value
+csv/nba/games_traditional.csv,FTM,integer,Free throws made
+csv/nba/games_traditional.csv,FTA,integer,Free throw attempts
+csv/nba/games_traditional.csv,FT%,float,Free throw percentage
+csv/nba/games_traditional.csv,OREB,integer,OREB value
+csv/nba/games_traditional.csv,DREB,integer,DREB value
+csv/nba/games_traditional.csv,REB,integer,Total rebounds
+csv/nba/games_traditional.csv,AST,integer,Assists
+csv/nba/games_traditional.csv,TOV,integer,Turnovers
+csv/nba/games_traditional.csv,STL,integer,Steals
+csv/nba/games_traditional.csv,BLK,integer,Blocks
+csv/nba/games_traditional.csv,PF,integer,Personal fouls
+csv/nba/games_traditional.csv,+/-,integer,Plus/minus differential
+csv/nba/games_traditional.csv,TEAM_ID,string,Unique identifier for each team
+csv/nba/games_traditional.csv,GAME_ID,string,Unique identifier for each game
+csv/nba/LeagueSchedule24_25.csv,gameId,string,Unique identifier for each game
+csv/nba/LeagueSchedule24_25.csv,gameDateTimeEst,string,gameDateTimeEst value
+csv/nba/LeagueSchedule24_25.csv,gameDay,string,gameDay value
+csv/nba/LeagueSchedule24_25.csv,arenaCity,string,arenaCity value
+csv/nba/LeagueSchedule24_25.csv,arenaState,string,arenaState value
+csv/nba/LeagueSchedule24_25.csv,arenaName,string,arenaName value
+csv/nba/LeagueSchedule24_25.csv,gameLabel,string,gameLabel value
+csv/nba/LeagueSchedule24_25.csv,gameSubLabel,string,gameSubLabel value
+csv/nba/LeagueSchedule24_25.csv,gameSubtype,string,gameSubtype value
+csv/nba/LeagueSchedule24_25.csv,gameSequence,integer,gameSequence value
+csv/nba/LeagueSchedule24_25.csv,seriesGameNumber,string,seriesGameNumber value
+csv/nba/LeagueSchedule24_25.csv,seriesText,string,seriesText value
+csv/nba/LeagueSchedule24_25.csv,weekNumber,integer,weekNumber value
+csv/nba/LeagueSchedule24_25.csv,hometeamId,string,hometeamId value
+csv/nba/LeagueSchedule24_25.csv,awayteamId,string,awayteamId value
+csv/nba/LeagueSchedule25_26.csv,gameId,string,Unique identifier for each game
+csv/nba/LeagueSchedule25_26.csv,gameDateTimeEst,string,gameDateTimeEst value
+csv/nba/LeagueSchedule25_26.csv,gameDay,string,gameDay value
+csv/nba/LeagueSchedule25_26.csv,homeTeamId,string,homeTeamId value
+csv/nba/LeagueSchedule25_26.csv,awayTeamId,string,awayTeamId value
+csv/nba/LeagueSchedule25_26.csv,homeTeamName,string,homeTeamName value
+csv/nba/LeagueSchedule25_26.csv,homeTeamCity,string,homeTeamCity value
+csv/nba/LeagueSchedule25_26.csv,awayTeamName,string,awayTeamName value
+csv/nba/LeagueSchedule25_26.csv,awayTeamCity,string,awayTeamCity value
+csv/nba/LeagueSchedule25_26.csv,arenaName,string,arenaName value
+csv/nba/LeagueSchedule25_26.csv,arenaCity,string,arenaCity value
+csv/nba/LeagueSchedule25_26.csv,arenaState,string,arenaState value
+csv/nba/LeagueSchedule25_26.csv,gameLabel,string,gameLabel value
+csv/nba/LeagueSchedule25_26.csv,gameSubLabel,string,gameSubLabel value
+csv/nba/LeagueSchedule25_26.csv,gameSubtype,string,gameSubtype value
+csv/nba/LeagueSchedule25_26.csv,seriesGameNumber,string,seriesGameNumber value
+csv/nba/LeagueSchedule25_26.csv,weekNumber,integer,weekNumber value
+csv/nba/nba_detailed_odds.csv,Market,string,Market value
+csv/nba/nba_detailed_odds.csv,Selection,string,Selection value
+csv/nba/nba_detailed_odds.csv,Odds,float,Odds value
+csv/nba/nba_detailed_odds.csv,matchup,string,Game matchup notation
+csv/nba/nba_detailed_odds.csv,timestamp,string,timestamp value
+csv/nba/nba_main_lines.csv,team1,string,team1 value
+csv/nba/nba_main_lines.csv,team2,string,team2 value
+csv/nba/nba_main_lines.csv,game_link,string,game link value
+csv/nba/nba_main_lines.csv,team1_moneyline,float,team1 moneyline value
+csv/nba/nba_main_lines.csv,team2_moneyline,float,team2 moneyline value
+csv/nba/nba_main_lines.csv,team1_spread,float,team1 spread value
+csv/nba/nba_main_lines.csv,team1_spread_odds,float,team1 spread odds value
+csv/nba/nba_main_lines.csv,team2_spread,float,team2 spread value
+csv/nba/nba_main_lines.csv,team2_spread_odds,float,team2 spread odds value
+csv/nba/nba_main_lines.csv,over_total,float,over total value
+csv/nba/nba_main_lines.csv,over_total_odds,float,over total odds value
+csv/nba/nba_main_lines.csv,under_total,float,under total value
+csv/nba/nba_main_lines.csv,under_total_odds,float,under total odds value
+csv/nba/nba_main_lines.csv,timestamp,string,timestamp value
+csv/nba/nba_preseason_detailed_odds.csv,Market,string,Market value
+csv/nba/nba_preseason_detailed_odds.csv,Selection,string,Selection value
+csv/nba/nba_preseason_detailed_odds.csv,Odds,float,Odds value
+csv/nba/nba_preseason_detailed_odds.csv,matchup,string,Game matchup notation
+csv/nba/nba_preseason_detailed_odds.csv,timestamp,string,timestamp value
+csv/nba/nba_preseason_main_lines.csv,team1,string,team1 value
+csv/nba/nba_preseason_main_lines.csv,team2,string,team2 value
+csv/nba/nba_preseason_main_lines.csv,game_link,string,game link value
+csv/nba/nba_preseason_main_lines.csv,team1_moneyline,float,team1 moneyline value
+csv/nba/nba_preseason_main_lines.csv,team2_moneyline,float,team2 moneyline value
+csv/nba/nba_preseason_main_lines.csv,team1_spread,float,team1 spread value
+csv/nba/nba_preseason_main_lines.csv,team1_spread_odds,float,team1 spread odds value
+csv/nba/nba_preseason_main_lines.csv,team2_spread,float,team2 spread value
+csv/nba/nba_preseason_main_lines.csv,team2_spread_odds,float,team2 spread odds value
+csv/nba/nba_preseason_main_lines.csv,over_total,float,over total value
+csv/nba/nba_preseason_main_lines.csv,over_total_odds,float,over total odds value
+csv/nba/nba_preseason_main_lines.csv,under_total,float,under total value
+csv/nba/nba_preseason_main_lines.csv,under_total_odds,float,under total odds value
+csv/nba/nba_preseason_main_lines.csv,timestamp,string,timestamp value
+csv/nba/pbp1997.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp1997.csv,period,integer,period value
+csv/nba/pbp1997.csv,clock,string,clock value
+csv/nba/pbp1997.csv,h_pts,float,h pts value
+csv/nba/pbp1997.csv,a_pts,float,a pts value
+csv/nba/pbp1997.csv,team,string,Team name or abbreviation
+csv/nba/pbp1997.csv,playerid,string,playerid value
+csv/nba/pbp1997.csv,player,string,Player name
+csv/nba/pbp1997.csv,type,string,type value
+csv/nba/pbp1997.csv,subtype,string,subtype value
+csv/nba/pbp1997.csv,result,string,result value
+csv/nba/pbp1997.csv,x,integer,x value
+csv/nba/pbp1997.csv,y,integer,y value
+csv/nba/pbp1997.csv,dist,integer,dist value
+csv/nba/pbp1997.csv,desc,string,desc value
+csv/nba/pbp1997.csv,season,integer,Season identifier
+csv/nba/pbp1998.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp1998.csv,period,integer,period value
+csv/nba/pbp1998.csv,clock,string,clock value
+csv/nba/pbp1998.csv,h_pts,float,h pts value
+csv/nba/pbp1998.csv,a_pts,float,a pts value
+csv/nba/pbp1998.csv,team,string,Team name or abbreviation
+csv/nba/pbp1998.csv,playerid,string,playerid value
+csv/nba/pbp1998.csv,player,string,Player name
+csv/nba/pbp1998.csv,type,string,type value
+csv/nba/pbp1998.csv,subtype,string,subtype value
+csv/nba/pbp1998.csv,result,string,result value
+csv/nba/pbp1998.csv,x,integer,x value
+csv/nba/pbp1998.csv,y,integer,y value
+csv/nba/pbp1998.csv,dist,integer,dist value
+csv/nba/pbp1998.csv,desc,string,desc value
+csv/nba/pbp1998.csv,season,integer,Season identifier
+csv/nba/pbp1999.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp1999.csv,period,integer,period value
+csv/nba/pbp1999.csv,clock,string,clock value
+csv/nba/pbp1999.csv,h_pts,float,h pts value
+csv/nba/pbp1999.csv,a_pts,float,a pts value
+csv/nba/pbp1999.csv,team,string,Team name or abbreviation
+csv/nba/pbp1999.csv,playerid,string,playerid value
+csv/nba/pbp1999.csv,player,string,Player name
+csv/nba/pbp1999.csv,type,string,type value
+csv/nba/pbp1999.csv,subtype,string,subtype value
+csv/nba/pbp1999.csv,result,string,result value
+csv/nba/pbp1999.csv,x,integer,x value
+csv/nba/pbp1999.csv,y,integer,y value
+csv/nba/pbp1999.csv,dist,integer,dist value
+csv/nba/pbp1999.csv,desc,string,desc value
+csv/nba/pbp1999.csv,season,integer,Season identifier
+csv/nba/pbp2000.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2000.csv,period,integer,period value
+csv/nba/pbp2000.csv,clock,string,clock value
+csv/nba/pbp2000.csv,h_pts,float,h pts value
+csv/nba/pbp2000.csv,a_pts,float,a pts value
+csv/nba/pbp2000.csv,team,string,Team name or abbreviation
+csv/nba/pbp2000.csv,playerid,string,playerid value
+csv/nba/pbp2000.csv,player,string,Player name
+csv/nba/pbp2000.csv,type,string,type value
+csv/nba/pbp2000.csv,subtype,string,subtype value
+csv/nba/pbp2000.csv,result,string,result value
+csv/nba/pbp2000.csv,x,integer,x value
+csv/nba/pbp2000.csv,y,integer,y value
+csv/nba/pbp2000.csv,dist,integer,dist value
+csv/nba/pbp2000.csv,desc,string,desc value
+csv/nba/pbp2000.csv,season,integer,Season identifier
+csv/nba/pbp2001.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2001.csv,period,integer,period value
+csv/nba/pbp2001.csv,clock,string,clock value
+csv/nba/pbp2001.csv,h_pts,float,h pts value
+csv/nba/pbp2001.csv,a_pts,float,a pts value
+csv/nba/pbp2001.csv,team,string,Team name or abbreviation
+csv/nba/pbp2001.csv,playerid,string,playerid value
+csv/nba/pbp2001.csv,player,string,Player name
+csv/nba/pbp2001.csv,type,string,type value
+csv/nba/pbp2001.csv,subtype,string,subtype value
+csv/nba/pbp2001.csv,result,string,result value
+csv/nba/pbp2001.csv,x,integer,x value
+csv/nba/pbp2001.csv,y,integer,y value
+csv/nba/pbp2001.csv,dist,integer,dist value
+csv/nba/pbp2001.csv,desc,string,desc value
+csv/nba/pbp2001.csv,season,integer,Season identifier
+csv/nba/pbp2002.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2002.csv,period,integer,period value
+csv/nba/pbp2002.csv,clock,string,clock value
+csv/nba/pbp2002.csv,h_pts,float,h pts value
+csv/nba/pbp2002.csv,a_pts,float,a pts value
+csv/nba/pbp2002.csv,team,string,Team name or abbreviation
+csv/nba/pbp2002.csv,playerid,string,playerid value
+csv/nba/pbp2002.csv,player,string,Player name
+csv/nba/pbp2002.csv,type,string,type value
+csv/nba/pbp2002.csv,subtype,string,subtype value
+csv/nba/pbp2002.csv,result,string,result value
+csv/nba/pbp2002.csv,x,integer,x value
+csv/nba/pbp2002.csv,y,integer,y value
+csv/nba/pbp2002.csv,dist,integer,dist value
+csv/nba/pbp2002.csv,desc,string,desc value
+csv/nba/pbp2002.csv,season,integer,Season identifier
+csv/nba/pbp2003.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2003.csv,period,integer,period value
+csv/nba/pbp2003.csv,clock,string,clock value
+csv/nba/pbp2003.csv,h_pts,float,h pts value
+csv/nba/pbp2003.csv,a_pts,float,a pts value
+csv/nba/pbp2003.csv,team,string,Team name or abbreviation
+csv/nba/pbp2003.csv,playerid,string,playerid value
+csv/nba/pbp2003.csv,player,string,Player name
+csv/nba/pbp2003.csv,type,string,type value
+csv/nba/pbp2003.csv,subtype,string,subtype value
+csv/nba/pbp2003.csv,result,string,result value
+csv/nba/pbp2003.csv,x,integer,x value
+csv/nba/pbp2003.csv,y,integer,y value
+csv/nba/pbp2003.csv,dist,integer,dist value
+csv/nba/pbp2003.csv,desc,string,desc value
+csv/nba/pbp2003.csv,season,integer,Season identifier
+csv/nba/pbp2004.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2004.csv,period,integer,period value
+csv/nba/pbp2004.csv,clock,string,clock value
+csv/nba/pbp2004.csv,h_pts,float,h pts value
+csv/nba/pbp2004.csv,a_pts,float,a pts value
+csv/nba/pbp2004.csv,team,string,Team name or abbreviation
+csv/nba/pbp2004.csv,playerid,string,playerid value
+csv/nba/pbp2004.csv,player,string,Player name
+csv/nba/pbp2004.csv,type,string,type value
+csv/nba/pbp2004.csv,subtype,string,subtype value
+csv/nba/pbp2004.csv,result,string,result value
+csv/nba/pbp2004.csv,x,integer,x value
+csv/nba/pbp2004.csv,y,integer,y value
+csv/nba/pbp2004.csv,dist,integer,dist value
+csv/nba/pbp2004.csv,desc,string,desc value
+csv/nba/pbp2004.csv,season,integer,Season identifier
+csv/nba/pbp2005.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2005.csv,period,integer,period value
+csv/nba/pbp2005.csv,clock,string,clock value
+csv/nba/pbp2005.csv,h_pts,float,h pts value
+csv/nba/pbp2005.csv,a_pts,float,a pts value
+csv/nba/pbp2005.csv,team,string,Team name or abbreviation
+csv/nba/pbp2005.csv,playerid,string,playerid value
+csv/nba/pbp2005.csv,player,string,Player name
+csv/nba/pbp2005.csv,type,string,type value
+csv/nba/pbp2005.csv,subtype,string,subtype value
+csv/nba/pbp2005.csv,result,string,result value
+csv/nba/pbp2005.csv,x,integer,x value
+csv/nba/pbp2005.csv,y,integer,y value
+csv/nba/pbp2005.csv,dist,integer,dist value
+csv/nba/pbp2005.csv,desc,string,desc value
+csv/nba/pbp2005.csv,season,integer,Season identifier
+csv/nba/pbp2006.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2006.csv,period,integer,period value
+csv/nba/pbp2006.csv,clock,string,clock value
+csv/nba/pbp2006.csv,h_pts,float,h pts value
+csv/nba/pbp2006.csv,a_pts,float,a pts value
+csv/nba/pbp2006.csv,team,string,Team name or abbreviation
+csv/nba/pbp2006.csv,playerid,string,playerid value
+csv/nba/pbp2006.csv,player,string,Player name
+csv/nba/pbp2006.csv,type,string,type value
+csv/nba/pbp2006.csv,subtype,string,subtype value
+csv/nba/pbp2006.csv,result,string,result value
+csv/nba/pbp2006.csv,x,integer,x value
+csv/nba/pbp2006.csv,y,integer,y value
+csv/nba/pbp2006.csv,dist,integer,dist value
+csv/nba/pbp2006.csv,desc,string,desc value
+csv/nba/pbp2006.csv,season,integer,Season identifier
+csv/nba/pbp2007.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2007.csv,period,integer,period value
+csv/nba/pbp2007.csv,clock,string,clock value
+csv/nba/pbp2007.csv,h_pts,float,h pts value
+csv/nba/pbp2007.csv,a_pts,float,a pts value
+csv/nba/pbp2007.csv,team,string,Team name or abbreviation
+csv/nba/pbp2007.csv,playerid,string,playerid value
+csv/nba/pbp2007.csv,player,string,Player name
+csv/nba/pbp2007.csv,type,string,type value
+csv/nba/pbp2007.csv,subtype,string,subtype value
+csv/nba/pbp2007.csv,result,string,result value
+csv/nba/pbp2007.csv,x,integer,x value
+csv/nba/pbp2007.csv,y,integer,y value
+csv/nba/pbp2007.csv,dist,integer,dist value
+csv/nba/pbp2007.csv,desc,string,desc value
+csv/nba/pbp2007.csv,season,integer,Season identifier
+csv/nba/pbp2008.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2008.csv,period,integer,period value
+csv/nba/pbp2008.csv,clock,string,clock value
+csv/nba/pbp2008.csv,h_pts,float,h pts value
+csv/nba/pbp2008.csv,a_pts,float,a pts value
+csv/nba/pbp2008.csv,team,string,Team name or abbreviation
+csv/nba/pbp2008.csv,playerid,string,playerid value
+csv/nba/pbp2008.csv,player,string,Player name
+csv/nba/pbp2008.csv,type,string,type value
+csv/nba/pbp2008.csv,subtype,string,subtype value
+csv/nba/pbp2008.csv,result,string,result value
+csv/nba/pbp2008.csv,x,integer,x value
+csv/nba/pbp2008.csv,y,integer,y value
+csv/nba/pbp2008.csv,dist,integer,dist value
+csv/nba/pbp2008.csv,desc,string,desc value
+csv/nba/pbp2008.csv,season,integer,Season identifier
+csv/nba/pbp2009.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2009.csv,period,integer,period value
+csv/nba/pbp2009.csv,clock,string,clock value
+csv/nba/pbp2009.csv,h_pts,float,h pts value
+csv/nba/pbp2009.csv,a_pts,float,a pts value
+csv/nba/pbp2009.csv,team,string,Team name or abbreviation
+csv/nba/pbp2009.csv,playerid,string,playerid value
+csv/nba/pbp2009.csv,player,string,Player name
+csv/nba/pbp2009.csv,type,string,type value
+csv/nba/pbp2009.csv,subtype,string,subtype value
+csv/nba/pbp2009.csv,result,string,result value
+csv/nba/pbp2009.csv,x,integer,x value
+csv/nba/pbp2009.csv,y,integer,y value
+csv/nba/pbp2009.csv,dist,integer,dist value
+csv/nba/pbp2009.csv,desc,string,desc value
+csv/nba/pbp2009.csv,season,integer,Season identifier
+csv/nba/pbp2010.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2010.csv,period,integer,period value
+csv/nba/pbp2010.csv,clock,string,clock value
+csv/nba/pbp2010.csv,h_pts,float,h pts value
+csv/nba/pbp2010.csv,a_pts,float,a pts value
+csv/nba/pbp2010.csv,team,string,Team name or abbreviation
+csv/nba/pbp2010.csv,playerid,string,playerid value
+csv/nba/pbp2010.csv,player,string,Player name
+csv/nba/pbp2010.csv,type,string,type value
+csv/nba/pbp2010.csv,subtype,string,subtype value
+csv/nba/pbp2010.csv,result,string,result value
+csv/nba/pbp2010.csv,x,integer,x value
+csv/nba/pbp2010.csv,y,integer,y value
+csv/nba/pbp2010.csv,dist,integer,dist value
+csv/nba/pbp2010.csv,desc,string,desc value
+csv/nba/pbp2010.csv,season,integer,Season identifier
+csv/nba/pbp2011.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2011.csv,period,integer,period value
+csv/nba/pbp2011.csv,clock,string,clock value
+csv/nba/pbp2011.csv,h_pts,float,h pts value
+csv/nba/pbp2011.csv,a_pts,float,a pts value
+csv/nba/pbp2011.csv,team,string,Team name or abbreviation
+csv/nba/pbp2011.csv,playerid,string,playerid value
+csv/nba/pbp2011.csv,player,string,Player name
+csv/nba/pbp2011.csv,type,string,type value
+csv/nba/pbp2011.csv,subtype,string,subtype value
+csv/nba/pbp2011.csv,result,string,result value
+csv/nba/pbp2011.csv,x,integer,x value
+csv/nba/pbp2011.csv,y,integer,y value
+csv/nba/pbp2011.csv,dist,integer,dist value
+csv/nba/pbp2011.csv,desc,string,desc value
+csv/nba/pbp2011.csv,season,integer,Season identifier
+csv/nba/pbp2012.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2012.csv,period,integer,period value
+csv/nba/pbp2012.csv,clock,string,clock value
+csv/nba/pbp2012.csv,h_pts,float,h pts value
+csv/nba/pbp2012.csv,a_pts,float,a pts value
+csv/nba/pbp2012.csv,team,string,Team name or abbreviation
+csv/nba/pbp2012.csv,playerid,string,playerid value
+csv/nba/pbp2012.csv,player,string,Player name
+csv/nba/pbp2012.csv,type,string,type value
+csv/nba/pbp2012.csv,subtype,string,subtype value
+csv/nba/pbp2012.csv,result,string,result value
+csv/nba/pbp2012.csv,x,integer,x value
+csv/nba/pbp2012.csv,y,integer,y value
+csv/nba/pbp2012.csv,dist,integer,dist value
+csv/nba/pbp2012.csv,desc,string,desc value
+csv/nba/pbp2012.csv,season,integer,Season identifier
+csv/nba/pbp2013.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2013.csv,period,integer,period value
+csv/nba/pbp2013.csv,clock,string,clock value
+csv/nba/pbp2013.csv,h_pts,float,h pts value
+csv/nba/pbp2013.csv,a_pts,float,a pts value
+csv/nba/pbp2013.csv,team,string,Team name or abbreviation
+csv/nba/pbp2013.csv,playerid,string,playerid value
+csv/nba/pbp2013.csv,player,string,Player name
+csv/nba/pbp2013.csv,type,string,type value
+csv/nba/pbp2013.csv,subtype,string,subtype value
+csv/nba/pbp2013.csv,result,string,result value
+csv/nba/pbp2013.csv,x,integer,x value
+csv/nba/pbp2013.csv,y,integer,y value
+csv/nba/pbp2013.csv,dist,integer,dist value
+csv/nba/pbp2013.csv,desc,string,desc value
+csv/nba/pbp2013.csv,season,integer,Season identifier
+csv/nba/pbp2014.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2014.csv,period,integer,period value
+csv/nba/pbp2014.csv,clock,string,clock value
+csv/nba/pbp2014.csv,h_pts,float,h pts value
+csv/nba/pbp2014.csv,a_pts,float,a pts value
+csv/nba/pbp2014.csv,team,string,Team name or abbreviation
+csv/nba/pbp2014.csv,playerid,string,playerid value
+csv/nba/pbp2014.csv,player,string,Player name
+csv/nba/pbp2014.csv,type,string,type value
+csv/nba/pbp2014.csv,subtype,string,subtype value
+csv/nba/pbp2014.csv,result,string,result value
+csv/nba/pbp2014.csv,x,integer,x value
+csv/nba/pbp2014.csv,y,integer,y value
+csv/nba/pbp2014.csv,dist,integer,dist value
+csv/nba/pbp2014.csv,desc,string,desc value
+csv/nba/pbp2014.csv,season,integer,Season identifier
+csv/nba/pbp2015.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2015.csv,period,integer,period value
+csv/nba/pbp2015.csv,clock,string,clock value
+csv/nba/pbp2015.csv,h_pts,float,h pts value
+csv/nba/pbp2015.csv,a_pts,float,a pts value
+csv/nba/pbp2015.csv,team,string,Team name or abbreviation
+csv/nba/pbp2015.csv,playerid,string,playerid value
+csv/nba/pbp2015.csv,player,string,Player name
+csv/nba/pbp2015.csv,type,string,type value
+csv/nba/pbp2015.csv,subtype,string,subtype value
+csv/nba/pbp2015.csv,result,string,result value
+csv/nba/pbp2015.csv,x,integer,x value
+csv/nba/pbp2015.csv,y,integer,y value
+csv/nba/pbp2015.csv,dist,integer,dist value
+csv/nba/pbp2015.csv,desc,string,desc value
+csv/nba/pbp2015.csv,season,integer,Season identifier
+csv/nba/pbp2016.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2016.csv,period,integer,period value
+csv/nba/pbp2016.csv,clock,string,clock value
+csv/nba/pbp2016.csv,h_pts,float,h pts value
+csv/nba/pbp2016.csv,a_pts,float,a pts value
+csv/nba/pbp2016.csv,team,string,Team name or abbreviation
+csv/nba/pbp2016.csv,playerid,string,playerid value
+csv/nba/pbp2016.csv,player,string,Player name
+csv/nba/pbp2016.csv,type,string,type value
+csv/nba/pbp2016.csv,subtype,string,subtype value
+csv/nba/pbp2016.csv,result,string,result value
+csv/nba/pbp2016.csv,x,integer,x value
+csv/nba/pbp2016.csv,y,integer,y value
+csv/nba/pbp2016.csv,dist,integer,dist value
+csv/nba/pbp2016.csv,desc,string,desc value
+csv/nba/pbp2016.csv,season,integer,Season identifier
+csv/nba/pbp2017.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2017.csv,period,integer,period value
+csv/nba/pbp2017.csv,clock,string,clock value
+csv/nba/pbp2017.csv,h_pts,float,h pts value
+csv/nba/pbp2017.csv,a_pts,float,a pts value
+csv/nba/pbp2017.csv,team,string,Team name or abbreviation
+csv/nba/pbp2017.csv,playerid,string,playerid value
+csv/nba/pbp2017.csv,player,string,Player name
+csv/nba/pbp2017.csv,type,string,type value
+csv/nba/pbp2017.csv,subtype,string,subtype value
+csv/nba/pbp2017.csv,result,string,result value
+csv/nba/pbp2017.csv,x,integer,x value
+csv/nba/pbp2017.csv,y,integer,y value
+csv/nba/pbp2017.csv,dist,integer,dist value
+csv/nba/pbp2017.csv,desc,string,desc value
+csv/nba/pbp2017.csv,season,integer,Season identifier
+csv/nba/pbp2018.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2018.csv,period,integer,period value
+csv/nba/pbp2018.csv,clock,string,clock value
+csv/nba/pbp2018.csv,h_pts,float,h pts value
+csv/nba/pbp2018.csv,a_pts,float,a pts value
+csv/nba/pbp2018.csv,team,string,Team name or abbreviation
+csv/nba/pbp2018.csv,playerid,string,playerid value
+csv/nba/pbp2018.csv,player,string,Player name
+csv/nba/pbp2018.csv,type,string,type value
+csv/nba/pbp2018.csv,subtype,string,subtype value
+csv/nba/pbp2018.csv,result,string,result value
+csv/nba/pbp2018.csv,x,integer,x value
+csv/nba/pbp2018.csv,y,integer,y value
+csv/nba/pbp2018.csv,dist,integer,dist value
+csv/nba/pbp2018.csv,desc,string,desc value
+csv/nba/pbp2018.csv,season,integer,Season identifier
+csv/nba/pbp2019.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2019.csv,period,integer,period value
+csv/nba/pbp2019.csv,clock,string,clock value
+csv/nba/pbp2019.csv,h_pts,float,h pts value
+csv/nba/pbp2019.csv,a_pts,float,a pts value
+csv/nba/pbp2019.csv,team,string,Team name or abbreviation
+csv/nba/pbp2019.csv,playerid,string,playerid value
+csv/nba/pbp2019.csv,player,string,Player name
+csv/nba/pbp2019.csv,type,string,type value
+csv/nba/pbp2019.csv,subtype,string,subtype value
+csv/nba/pbp2019.csv,result,string,result value
+csv/nba/pbp2019.csv,x,integer,x value
+csv/nba/pbp2019.csv,y,integer,y value
+csv/nba/pbp2019.csv,dist,integer,dist value
+csv/nba/pbp2019.csv,desc,string,desc value
+csv/nba/pbp2019.csv,season,integer,Season identifier
+csv/nba/pbp2020.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2020.csv,period,integer,period value
+csv/nba/pbp2020.csv,clock,string,clock value
+csv/nba/pbp2020.csv,h_pts,float,h pts value
+csv/nba/pbp2020.csv,a_pts,float,a pts value
+csv/nba/pbp2020.csv,team,string,Team name or abbreviation
+csv/nba/pbp2020.csv,playerid,string,playerid value
+csv/nba/pbp2020.csv,player,string,Player name
+csv/nba/pbp2020.csv,type,string,type value
+csv/nba/pbp2020.csv,subtype,string,subtype value
+csv/nba/pbp2020.csv,result,string,result value
+csv/nba/pbp2020.csv,x,integer,x value
+csv/nba/pbp2020.csv,y,integer,y value
+csv/nba/pbp2020.csv,dist,integer,dist value
+csv/nba/pbp2020.csv,desc,string,desc value
+csv/nba/pbp2020.csv,season,integer,Season identifier
+csv/nba/pbp2021.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2021.csv,period,integer,period value
+csv/nba/pbp2021.csv,clock,string,clock value
+csv/nba/pbp2021.csv,h_pts,float,h pts value
+csv/nba/pbp2021.csv,a_pts,float,a pts value
+csv/nba/pbp2021.csv,team,string,Team name or abbreviation
+csv/nba/pbp2021.csv,playerid,string,playerid value
+csv/nba/pbp2021.csv,player,string,Player name
+csv/nba/pbp2021.csv,type,string,type value
+csv/nba/pbp2021.csv,subtype,string,subtype value
+csv/nba/pbp2021.csv,result,string,result value
+csv/nba/pbp2021.csv,x,integer,x value
+csv/nba/pbp2021.csv,y,integer,y value
+csv/nba/pbp2021.csv,dist,integer,dist value
+csv/nba/pbp2021.csv,desc,string,desc value
+csv/nba/pbp2021.csv,season,integer,Season identifier
+csv/nba/pbp2022.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2022.csv,period,integer,period value
+csv/nba/pbp2022.csv,clock,string,clock value
+csv/nba/pbp2022.csv,h_pts,float,h pts value
+csv/nba/pbp2022.csv,a_pts,float,a pts value
+csv/nba/pbp2022.csv,team,string,Team name or abbreviation
+csv/nba/pbp2022.csv,playerid,string,playerid value
+csv/nba/pbp2022.csv,player,string,Player name
+csv/nba/pbp2022.csv,type,string,type value
+csv/nba/pbp2022.csv,subtype,string,subtype value
+csv/nba/pbp2022.csv,result,string,result value
+csv/nba/pbp2022.csv,x,integer,x value
+csv/nba/pbp2022.csv,y,integer,y value
+csv/nba/pbp2022.csv,dist,integer,dist value
+csv/nba/pbp2022.csv,desc,string,desc value
+csv/nba/pbp2022.csv,season,integer,Season identifier
+csv/nba/pbp2023.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2023.csv,period,integer,period value
+csv/nba/pbp2023.csv,clock,string,clock value
+csv/nba/pbp2023.csv,h_pts,float,h pts value
+csv/nba/pbp2023.csv,a_pts,float,a pts value
+csv/nba/pbp2023.csv,team,string,Team name or abbreviation
+csv/nba/pbp2023.csv,playerid,string,playerid value
+csv/nba/pbp2023.csv,player,string,Player name
+csv/nba/pbp2023.csv,type,string,type value
+csv/nba/pbp2023.csv,subtype,string,subtype value
+csv/nba/pbp2023.csv,result,string,result value
+csv/nba/pbp2023.csv,x,integer,x value
+csv/nba/pbp2023.csv,y,integer,y value
+csv/nba/pbp2023.csv,dist,integer,dist value
+csv/nba/pbp2023.csv,desc,string,desc value
+csv/nba/pbp2023.csv,season,integer,Season identifier
+csv/nba/pbp2024.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2024.csv,period,integer,period value
+csv/nba/pbp2024.csv,clock,string,clock value
+csv/nba/pbp2024.csv,h_pts,float,h pts value
+csv/nba/pbp2024.csv,a_pts,float,a pts value
+csv/nba/pbp2024.csv,team,string,Team name or abbreviation
+csv/nba/pbp2024.csv,playerid,string,playerid value
+csv/nba/pbp2024.csv,player,string,Player name
+csv/nba/pbp2024.csv,type,string,type value
+csv/nba/pbp2024.csv,subtype,string,subtype value
+csv/nba/pbp2024.csv,result,string,result value
+csv/nba/pbp2024.csv,x,float,x value
+csv/nba/pbp2024.csv,y,float,y value
+csv/nba/pbp2024.csv,dist,float,dist value
+csv/nba/pbp2024.csv,desc,string,desc value
+csv/nba/pbp2024.csv,season,integer,Season identifier
+csv/nba/pbp2025.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2025.csv,period,integer,period value
+csv/nba/pbp2025.csv,clock,string,clock value
+csv/nba/pbp2025.csv,h_pts,integer,h pts value
+csv/nba/pbp2025.csv,a_pts,integer,a pts value
+csv/nba/pbp2025.csv,team,string,Team name or abbreviation
+csv/nba/pbp2025.csv,playerid,string,playerid value
+csv/nba/pbp2025.csv,player,string,Player name
+csv/nba/pbp2025.csv,type,string,type value
+csv/nba/pbp2025.csv,subtype,string,subtype value
+csv/nba/pbp2025.csv,result,string,result value
+csv/nba/pbp2025.csv,x,integer,x value
+csv/nba/pbp2025.csv,y,integer,y value
+csv/nba/pbp2025.csv,dist,integer,dist value
+csv/nba/pbp2025.csv,desc,string,desc value
+csv/nba/pbp2026.csv,gameid,string,Unique identifier for each game
+csv/nba/pbp2026.csv,period,integer,period value
+csv/nba/pbp2026.csv,clock,string,clock value
+csv/nba/pbp2026.csv,h_pts,float,h pts value
+csv/nba/pbp2026.csv,a_pts,float,a pts value
+csv/nba/pbp2026.csv,team,string,Team name or abbreviation
+csv/nba/pbp2026.csv,playerid,string,playerid value
+csv/nba/pbp2026.csv,player,string,Player name
+csv/nba/pbp2026.csv,type,string,type value
+csv/nba/pbp2026.csv,subtype,string,subtype value
+csv/nba/pbp2026.csv,result,string,result value
+csv/nba/pbp2026.csv,x,float,x value
+csv/nba/pbp2026.csv,y,float,y value
+csv/nba/pbp2026.csv,dist,float,dist value
+csv/nba/pbp2026.csv,desc,string,desc value
+csv/nba/pbp2026.csv,season,integer,Season identifier
+csv/nba/play_by_play.csv,game_id,string,Unique identifier for each game
+csv/nba/play_by_play.csv,game_date,date,Date the game was played
+csv/nba/play_by_play.csv,game_matchup,string,game matchup value
+csv/nba/play_by_play.csv,team_id,string,Unique identifier for each team
+csv/nba/play_by_play.csv,person_id,string,person id value
+csv/nba/play_by_play.csv,action_id,string,action id value
+csv/nba/play_by_play.csv,action_number,integer,action number value
+csv/nba/play_by_play.csv,clock,string,clock value
+csv/nba/play_by_play.csv,period,integer,period value
+csv/nba/play_by_play.csv,team_tri_code,string,team tri code value
+csv/nba/play_by_play.csv,player_name,string,Player name
+csv/nba/play_by_play.csv,player_name_i,string,player name i value
+csv/nba/play_by_play.csv,xlegacy,integer,xlegacy value
+csv/nba/play_by_play.csv,ylegacy,integer,ylegacy value
+csv/nba/play_by_play.csv,shot_distance,integer,shot distance value
+csv/nba/play_by_play.csv,shot_result,string,shot result value
+csv/nba/play_by_play.csv,is_field_goal,boolean,is field goal value
+csv/nba/play_by_play.csv,score_home,integer,score home value
+csv/nba/play_by_play.csv,score_away,integer,score away value
+csv/nba/play_by_play.csv,points_total,integer,points total value
+csv/nba/play_by_play.csv,location,string,location value
+csv/nba/play_by_play.csv,description,string,description value
+csv/nba/play_by_play.csv,action_type,string,action type value
+csv/nba/play_by_play.csv,subtype,string,subtype value
+csv/nba/play_by_play.csv,video_available,boolean,video available value
+csv/nba/play_by_play.csv,shot_value,integer,shot value value
+csv/nba/player_boxscores.csv,season_year,string,season year value
+csv/nba/player_boxscores.csv,player_id,string,Unique identifier for each player
+csv/nba/player_boxscores.csv,player_name,string,Player name
+csv/nba/player_boxscores.csv,nickname,string,nickname value
+csv/nba/player_boxscores.csv,team_id,string,Unique identifier for each team
+csv/nba/player_boxscores.csv,team_abbreviation,string,Team abbreviation
+csv/nba/player_boxscores.csv,team_name,string,Team name
+csv/nba/player_boxscores.csv,game_id,string,Unique identifier for each game
+csv/nba/player_boxscores.csv,game_date,date,Date the game was played
+csv/nba/player_boxscores.csv,matchup,string,Game matchup notation
+csv/nba/player_boxscores.csv,is_home,boolean,is home value
+csv/nba/player_boxscores.csv,wl,integer,Win/loss indicator
+csv/nba/player_boxscores.csv,min,float,Minutes played
+csv/nba/player_boxscores.csv,fgm,integer,Field goals made
+csv/nba/player_boxscores.csv,fga,integer,Field goal attempts
+csv/nba/player_boxscores.csv,fg_pct,float,Field goal percentage
+csv/nba/player_boxscores.csv,fg3m,integer,fg3m value
+csv/nba/player_boxscores.csv,fg3a,integer,fg3a value
+csv/nba/player_boxscores.csv,fg3_pct,float,fg3 pct value
+csv/nba/player_boxscores.csv,ftm,integer,Free throws made
+csv/nba/player_boxscores.csv,fta,integer,Free throw attempts
+csv/nba/player_boxscores.csv,ft_pct,float,Free throw percentage
+csv/nba/player_boxscores.csv,oreb,integer,oreb value
+csv/nba/player_boxscores.csv,dreb,integer,dreb value
+csv/nba/player_boxscores.csv,reb,integer,Total rebounds
+csv/nba/player_boxscores.csv,ast,integer,Assists
+csv/nba/player_boxscores.csv,tov,integer,Turnovers
+csv/nba/player_boxscores.csv,stl,integer,Steals
+csv/nba/player_boxscores.csv,blk,integer,Blocks
+csv/nba/player_boxscores.csv,blka,integer,blka value
+csv/nba/player_boxscores.csv,pf,integer,Personal fouls
+csv/nba/player_boxscores.csv,pfd,integer,pfd value
+csv/nba/player_boxscores.csv,pts,integer,Points scored
+csv/nba/player_boxscores.csv,plus_minus,integer,Plus/minus differential
+csv/nba/player_boxscores.csv,nba_fantasy_pts,float,nba fantasy pts value
+csv/nba/player_boxscores.csv,dd2,integer,dd2 value
+csv/nba/player_boxscores.csv,td3,integer,td3 value
+csv/nba/player_boxscores.csv,wnba_fantasy_pts,integer,wnba fantasy pts value
+csv/nba/player_boxscores.csv,gp_rank,integer,gp rank value
+csv/nba/player_boxscores.csv,w_rank,integer,w rank value
+csv/nba/player_boxscores.csv,l_rank,integer,l rank value
+csv/nba/player_boxscores.csv,w_pct_rank,integer,w pct rank value
+csv/nba/player_boxscores.csv,min_rank,integer,min rank value
+csv/nba/player_boxscores.csv,fgm_rank,integer,fgm rank value
+csv/nba/player_boxscores.csv,fga_rank,integer,fga rank value
+csv/nba/player_boxscores.csv,fg_pct_rank,integer,fg pct rank value
+csv/nba/player_boxscores.csv,fg3m_rank,integer,fg3m rank value
+csv/nba/player_boxscores.csv,fg3a_rank,integer,fg3a rank value
+csv/nba/player_boxscores.csv,fg3_pct_rank,integer,fg3 pct rank value
+csv/nba/player_boxscores.csv,ftm_rank,integer,ftm rank value
+csv/nba/player_boxscores.csv,fta_rank,integer,fta rank value
+csv/nba/player_boxscores.csv,ft_pct_rank,integer,ft pct rank value
+csv/nba/player_boxscores.csv,oreb_rank,integer,oreb rank value
+csv/nba/player_boxscores.csv,dreb_rank,integer,dreb rank value
+csv/nba/player_boxscores.csv,reb_rank,integer,reb rank value
+csv/nba/player_boxscores.csv,ast_rank,integer,ast rank value
+csv/nba/player_boxscores.csv,tov_rank,integer,tov rank value
+csv/nba/player_boxscores.csv,stl_rank,integer,stl rank value
+csv/nba/player_boxscores.csv,blk_rank,integer,blk rank value
+csv/nba/player_boxscores.csv,blka_rank,integer,blka rank value
+csv/nba/player_boxscores.csv,pf_rank,integer,pf rank value
+csv/nba/player_boxscores.csv,pfd_rank,integer,pfd rank value
+csv/nba/player_boxscores.csv,pts_rank,integer,pts rank value
+csv/nba/player_boxscores.csv,plus_minus_rank,integer,plus minus rank value
+csv/nba/player_boxscores.csv,nba_fantasy_pts_rank,integer,nba fantasy pts rank value
+csv/nba/player_boxscores.csv,dd2_rank,integer,dd2 rank value
+csv/nba/player_boxscores.csv,td3_rank,integer,td3 rank value
+csv/nba/player_boxscores.csv,wnba_fantasy_pts_rank,integer,wnba fantasy pts rank value
+csv/nba/player_boxscores.csv,available_flag,integer,available flag value
+csv/nba/player_boxscores.csv,min_sec,float,min sec value
+csv/nba/player_boxscores.csv,team_count,integer,team count value
+csv/nba/player_boxscores.csv,e_off_rating,float,e off rating value
+csv/nba/player_boxscores.csv,off_rating,float,off rating value
+csv/nba/player_boxscores.csv,sp_work_off_rating,float,sp work off rating value
+csv/nba/player_boxscores.csv,e_def_rating,float,e def rating value
+csv/nba/player_boxscores.csv,def_rating,float,def rating value
+csv/nba/player_boxscores.csv,sp_work_def_rating,float,sp work def rating value
+csv/nba/player_boxscores.csv,e_net_rating,float,e net rating value
+csv/nba/player_boxscores.csv,net_rating,float,net rating value
+csv/nba/player_boxscores.csv,sp_work_net_rating,float,sp work net rating value
+csv/nba/player_boxscores.csv,ast_pct,float,ast pct value
+csv/nba/player_boxscores.csv,ast_to,float,ast to value
+csv/nba/player_boxscores.csv,ast_ratio,float,ast ratio value
+csv/nba/player_boxscores.csv,oreb_pct,float,oreb pct value
+csv/nba/player_boxscores.csv,dreb_pct,float,dreb pct value
+csv/nba/player_boxscores.csv,reb_pct,float,reb pct value
+csv/nba/player_boxscores.csv,tm_tov_pct,float,tm tov pct value
+csv/nba/player_boxscores.csv,e_tov_pct,float,e tov pct value
+csv/nba/player_boxscores.csv,efg_pct,float,efg pct value
+csv/nba/player_boxscores.csv,ts_pct,float,ts pct value
+csv/nba/player_boxscores.csv,usg_pct,float,usg pct value
+csv/nba/player_boxscores.csv,e_usg_pct,float,e usg pct value
+csv/nba/player_boxscores.csv,e_pace,float,e pace value
+csv/nba/player_boxscores.csv,pace,float,pace value
+csv/nba/player_boxscores.csv,pace_per40,float,pace per40 value
+csv/nba/player_boxscores.csv,sp_work_pace,float,sp work pace value
+csv/nba/player_boxscores.csv,pie,float,pie value
+csv/nba/player_boxscores.csv,poss,integer,poss value
+csv/nba/player_boxscores.csv,fgm_pg,integer,fgm pg value
+csv/nba/player_boxscores.csv,fga_pg,integer,fga pg value
+csv/nba/player_boxscores.csv,e_off_rating_rank,integer,e off rating rank value
+csv/nba/player_boxscores.csv,off_rating_rank,integer,off rating rank value
+csv/nba/player_boxscores.csv,sp_work_off_rating_rank,integer,sp work off rating rank value
+csv/nba/player_boxscores.csv,e_def_rating_rank,integer,e def rating rank value
+csv/nba/player_boxscores.csv,def_rating_rank,integer,def rating rank value
+csv/nba/player_boxscores.csv,sp_work_def_rating_rank,integer,sp work def rating rank value
+csv/nba/player_boxscores.csv,e_net_rating_rank,integer,e net rating rank value
+csv/nba/player_boxscores.csv,net_rating_rank,integer,net rating rank value
+csv/nba/player_boxscores.csv,sp_work_net_rating_rank,integer,sp work net rating rank value
+csv/nba/player_boxscores.csv,ast_pct_rank,integer,ast pct rank value
+csv/nba/player_boxscores.csv,ast_to_rank,integer,ast to rank value
+csv/nba/player_boxscores.csv,ast_ratio_rank,integer,ast ratio rank value
+csv/nba/player_boxscores.csv,oreb_pct_rank,integer,oreb pct rank value
+csv/nba/player_boxscores.csv,dreb_pct_rank,integer,dreb pct rank value
+csv/nba/player_boxscores.csv,reb_pct_rank,integer,reb pct rank value
+csv/nba/player_boxscores.csv,tm_tov_pct_rank,integer,tm tov pct rank value
+csv/nba/player_boxscores.csv,e_tov_pct_rank,integer,e tov pct rank value
+csv/nba/player_boxscores.csv,efg_pct_rank,integer,efg pct rank value
+csv/nba/player_boxscores.csv,ts_pct_rank,integer,ts pct rank value
+csv/nba/player_boxscores.csv,usg_pct_rank,integer,usg pct rank value
+csv/nba/player_boxscores.csv,e_usg_pct_rank,integer,e usg pct rank value
+csv/nba/player_boxscores.csv,e_pace_rank,integer,e pace rank value
+csv/nba/player_boxscores.csv,pace_rank,integer,pace rank value
+csv/nba/player_boxscores.csv,sp_work_pace_rank,integer,sp work pace rank value
+csv/nba/player_boxscores.csv,pie_rank,integer,pie rank value
+csv/nba/player_boxscores.csv,fgm_pg_rank,integer,fgm pg rank value
+csv/nba/player_boxscores.csv,fga_pg_rank,integer,fga pg rank value
+csv/nba/player_boxscores.csv,pct_fga_2pt,float,pct fga 2pt value
+csv/nba/player_boxscores.csv,pct_fga_3pt,float,pct fga 3pt value
+csv/nba/player_boxscores.csv,pct_pts_2pt,float,pct pts 2pt value
+csv/nba/player_boxscores.csv,pct_pts_2pt_mr,float,pct pts 2pt mr value
+csv/nba/player_boxscores.csv,pct_pts_3pt,float,pct pts 3pt value
+csv/nba/player_boxscores.csv,pct_pts_fb,float,pct pts fb value
+csv/nba/player_boxscores.csv,pct_pts_ft,float,pct pts ft value
+csv/nba/player_boxscores.csv,pct_pts_off_tov,float,pct pts off tov value
+csv/nba/player_boxscores.csv,pct_pts_paint,float,pct pts paint value
+csv/nba/player_boxscores.csv,pct_ast_2pm,float,pct ast 2pm value
+csv/nba/player_boxscores.csv,pct_uast_2pm,float,pct uast 2pm value
+csv/nba/player_boxscores.csv,pct_ast_3pm,float,pct ast 3pm value
+csv/nba/player_boxscores.csv,pct_uast_3pm,float,pct uast 3pm value
+csv/nba/player_boxscores.csv,pct_ast_fgm,float,pct ast fgm value
+csv/nba/player_boxscores.csv,pct_uast_fgm,float,pct uast fgm value
+csv/nba/player_boxscores.csv,pct_fga_2pt_rank,integer,pct fga 2pt rank value
+csv/nba/player_boxscores.csv,pct_fga_3pt_rank,integer,pct fga 3pt rank value
+csv/nba/player_boxscores.csv,pct_pts_2pt_rank,integer,pct pts 2pt rank value
+csv/nba/player_boxscores.csv,pct_pts_2pt_mr_rank,integer,pct pts 2pt mr rank value
+csv/nba/player_boxscores.csv,pct_pts_3pt_rank,integer,pct pts 3pt rank value
+csv/nba/player_boxscores.csv,pct_pts_fb_rank,integer,pct pts fb rank value
+csv/nba/player_boxscores.csv,pct_pts_ft_rank,integer,pct pts ft rank value
+csv/nba/player_boxscores.csv,pct_pts_off_tov_rank,integer,pct pts off tov rank value
+csv/nba/player_boxscores.csv,pct_pts_paint_rank,integer,pct pts paint rank value
+csv/nba/player_boxscores.csv,pct_ast_2pm_rank,integer,pct ast 2pm rank value
+csv/nba/player_boxscores.csv,pct_uast_2pm_rank,integer,pct uast 2pm rank value
+csv/nba/player_boxscores.csv,pct_ast_3pm_rank,integer,pct ast 3pm rank value
+csv/nba/player_boxscores.csv,pct_uast_3pm_rank,integer,pct uast 3pm rank value
+csv/nba/player_boxscores.csv,pct_ast_fgm_rank,integer,pct ast fgm rank value
+csv/nba/player_boxscores.csv,pct_uast_fgm_rank,integer,pct uast fgm rank value
+csv/nba/player_boxscores.csv,pct_fgm,float,pct fgm value
+csv/nba/player_boxscores.csv,pct_fga,float,pct fga value
+csv/nba/player_boxscores.csv,pct_fg3m,float,pct fg3m value
+csv/nba/player_boxscores.csv,pct_fg3a,float,pct fg3a value
+csv/nba/player_boxscores.csv,pct_ftm,float,pct ftm value
+csv/nba/player_boxscores.csv,pct_fta,float,pct fta value
+csv/nba/player_boxscores.csv,pct_oreb,float,pct oreb value
+csv/nba/player_boxscores.csv,pct_dreb,float,pct dreb value
+csv/nba/player_boxscores.csv,pct_reb,float,pct reb value
+csv/nba/player_boxscores.csv,pct_ast,float,pct ast value
+csv/nba/player_boxscores.csv,pct_tov,float,pct tov value
+csv/nba/player_boxscores.csv,pct_stl,float,pct stl value
+csv/nba/player_boxscores.csv,pct_blk,float,pct blk value
+csv/nba/player_boxscores.csv,pct_blka,float,pct blka value
+csv/nba/player_boxscores.csv,pct_pf,float,pct pf value
+csv/nba/player_boxscores.csv,pct_pfd,float,pct pfd value
+csv/nba/player_boxscores.csv,pct_pts,float,pct pts value
+csv/nba/player_boxscores.csv,pct_fgm_rank,integer,pct fgm rank value
+csv/nba/player_boxscores.csv,pct_fga_rank,integer,pct fga rank value
+csv/nba/player_boxscores.csv,pct_fg3m_rank,integer,pct fg3m rank value
+csv/nba/player_boxscores.csv,pct_fg3a_rank,integer,pct fg3a rank value
+csv/nba/player_boxscores.csv,pct_ftm_rank,integer,pct ftm rank value
+csv/nba/player_boxscores.csv,pct_fta_rank,integer,pct fta rank value
+csv/nba/player_boxscores.csv,pct_oreb_rank,integer,pct oreb rank value
+csv/nba/player_boxscores.csv,pct_dreb_rank,integer,pct dreb rank value
+csv/nba/player_boxscores.csv,pct_reb_rank,integer,pct reb rank value
+csv/nba/player_boxscores.csv,pct_ast_rank,integer,pct ast rank value
+csv/nba/player_boxscores.csv,pct_tov_rank,integer,pct tov rank value
+csv/nba/player_boxscores.csv,pct_stl_rank,integer,pct stl rank value
+csv/nba/player_boxscores.csv,pct_blk_rank,integer,pct blk rank value
+csv/nba/player_boxscores.csv,pct_blka_rank,integer,pct blka rank value
+csv/nba/player_boxscores.csv,pct_pf_rank,integer,pct pf rank value
+csv/nba/player_boxscores.csv,pct_pfd_rank,integer,pct pfd rank value
+csv/nba/player_boxscores.csv,pct_pts_rank,integer,pct pts rank value
+csv/nba/player_boxscores.csv,pts_off_tov,integer,pts off tov value
+csv/nba/player_boxscores.csv,pts_2nd_chance,integer,pts 2nd chance value
+csv/nba/player_boxscores.csv,pts_fb,integer,pts fb value
+csv/nba/player_boxscores.csv,pts_paint,integer,pts paint value
+csv/nba/player_boxscores.csv,opp_pts_off_tov,integer,opp pts off tov value
+csv/nba/player_boxscores.csv,opp_pts_2nd_chance,integer,opp pts 2nd chance value
+csv/nba/player_boxscores.csv,opp_pts_fb,integer,opp pts fb value
+csv/nba/player_boxscores.csv,opp_pts_paint,integer,opp pts paint value
+csv/nba/player_boxscores.csv,pts_off_tov_rank,integer,pts off tov rank value
+csv/nba/player_boxscores.csv,pts_2nd_chance_rank,integer,pts 2nd chance rank value
+csv/nba/player_boxscores.csv,pts_fb_rank,integer,pts fb rank value
+csv/nba/player_boxscores.csv,pts_paint_rank,integer,pts paint rank value
+csv/nba/player_boxscores.csv,opp_pts_off_tov_rank,integer,opp pts off tov rank value
+csv/nba/player_boxscores.csv,opp_pts_2nd_chance_rank,integer,opp pts 2nd chance rank value
+csv/nba/player_boxscores.csv,opp_pts_fb_rank,integer,opp pts fb rank value
+csv/nba/player_boxscores.csv,opp_pts_paint_rank,integer,opp pts paint rank value
+csv/nba/Players.csv,personId,string,personId value
+csv/nba/Players.csv,firstName,string,firstName value
+csv/nba/Players.csv,lastName,string,lastName value
+csv/nba/Players.csv,birthDate,date,birthDate value
+csv/nba/Players.csv,school,string,school value
+csv/nba/Players.csv,country,string,country value
+csv/nba/Players.csv,heightInches,integer,heightInches value
+csv/nba/Players.csv,bodyWeightLbs,integer,bodyWeightLbs value
+csv/nba/Players.csv,jersey,integer,jersey value
+csv/nba/Players.csv,guard,integer,guard value
+csv/nba/Players.csv,forward,integer,forward value
+csv/nba/Players.csv,center,integer,center value
+csv/nba/Players.csv,dleagueFlag,integer,dleagueFlag value
+csv/nba/Players.csv,nbaFlag,integer,nbaFlag value
+csv/nba/Players.csv,gamesPlayedFlag,integer,gamesPlayedFlag value
+csv/nba/Players.csv,draftYear,integer,draftYear value
+csv/nba/Players.csv,draftRound,integer,draftRound value
+csv/nba/Players.csv,draftNumber,integer,draftNumber value
+csv/nba/Players.csv,fromYear,integer,fromYear value
+csv/nba/Players.csv,toYear,integer,toYear value
+csv/nba/PlayerStatistics.csv,firstName,string,firstName value
+csv/nba/PlayerStatistics.csv,lastName,string,lastName value
+csv/nba/PlayerStatistics.csv,personId,string,personId value
+csv/nba/PlayerStatistics.csv,gameId,string,Unique identifier for each game
+csv/nba/PlayerStatistics.csv,gameDateTimeEst,string,gameDateTimeEst value
+csv/nba/PlayerStatistics.csv,playerteamCity,string,playerteamCity value
+csv/nba/PlayerStatistics.csv,playerteamName,string,playerteamName value
+csv/nba/PlayerStatistics.csv,opponentteamCity,string,opponentteamCity value
+csv/nba/PlayerStatistics.csv,opponentteamName,string,opponentteamName value
+csv/nba/PlayerStatistics.csv,gameType,string,gameType value
+csv/nba/PlayerStatistics.csv,gameLabel,string,gameLabel value
+csv/nba/PlayerStatistics.csv,gameSubLabel,string,gameSubLabel value
+csv/nba/PlayerStatistics.csv,seriesGameNumber,integer,seriesGameNumber value
+csv/nba/PlayerStatistics.csv,win,integer,win value
+csv/nba/PlayerStatistics.csv,home,integer,home value
+csv/nba/PlayerStatistics.csv,numMinutes,float,numMinutes value
+csv/nba/PlayerStatistics.csv,points,integer,points value
+csv/nba/PlayerStatistics.csv,assists,integer,assists value
+csv/nba/PlayerStatistics.csv,blocks,integer,blocks value
+csv/nba/PlayerStatistics.csv,steals,integer,steals value
+csv/nba/PlayerStatistics.csv,fieldGoalsAttempted,integer,fieldGoalsAttempted value
+csv/nba/PlayerStatistics.csv,fieldGoalsMade,integer,fieldGoalsMade value
+csv/nba/PlayerStatistics.csv,fieldGoalsPercentage,float,fieldGoalsPercentage value
+csv/nba/PlayerStatistics.csv,threePointersAttempted,integer,threePointersAttempted value
+csv/nba/PlayerStatistics.csv,threePointersMade,integer,threePointersMade value
+csv/nba/PlayerStatistics.csv,threePointersPercentage,float,threePointersPercentage value
+csv/nba/PlayerStatistics.csv,freeThrowsAttempted,integer,freeThrowsAttempted value
+csv/nba/PlayerStatistics.csv,freeThrowsMade,integer,freeThrowsMade value
+csv/nba/PlayerStatistics.csv,freeThrowsPercentage,float,freeThrowsPercentage value
+csv/nba/PlayerStatistics.csv,reboundsDefensive,integer,reboundsDefensive value
+csv/nba/PlayerStatistics.csv,reboundsOffensive,integer,reboundsOffensive value
+csv/nba/PlayerStatistics.csv,reboundsTotal,integer,reboundsTotal value
+csv/nba/PlayerStatistics.csv,foulsPersonal,integer,foulsPersonal value
+csv/nba/PlayerStatistics.csv,turnovers,integer,turnovers value
+csv/nba/PlayerStatistics.csv,plusMinusPoints,integer,plusMinusPoints value
+csv/nba/PlayerStatistics.csv,playerteamId,string,playerteamId value
+csv/nba/PlayerStatistics.csv,opponentteamId,string,opponentteamId value
+csv/nba/PlayerStatistics.csv,comment,string,comment value
+csv/nba/PlayerStatistics.csv,startingPosition,string,startingPosition value
+csv/nba/PlayerStatistics.csv,gameDate,date,Date the game was played
+csv/nba/PlayerStatisticsExtended.csv,firstName,string,firstName value
+csv/nba/PlayerStatisticsExtended.csv,lastName,string,lastName value
+csv/nba/PlayerStatisticsExtended.csv,personId,string,personId value
+csv/nba/PlayerStatisticsExtended.csv,gameId,string,Unique identifier for each game
+csv/nba/PlayerStatisticsExtended.csv,gameDateTimeEst,string,gameDateTimeEst value
+csv/nba/PlayerStatisticsExtended.csv,gameType,string,gameType value
+csv/nba/PlayerStatisticsExtended.csv,gameLabel,string,gameLabel value
+csv/nba/PlayerStatisticsExtended.csv,gameSubLabel,string,gameSubLabel value
+csv/nba/PlayerStatisticsExtended.csv,seriesGameNumber,integer,seriesGameNumber value
+csv/nba/PlayerStatisticsExtended.csv,win,integer,win value
+csv/nba/PlayerStatisticsExtended.csv,home,integer,home value
+csv/nba/PlayerStatisticsExtended.csv,playerteamId,string,playerteamId value
+csv/nba/PlayerStatisticsExtended.csv,playerteamCity,string,playerteamCity value
+csv/nba/PlayerStatisticsExtended.csv,playerteamName,string,playerteamName value
+csv/nba/PlayerStatisticsExtended.csv,opponentteamId,string,opponentteamId value
+csv/nba/PlayerStatisticsExtended.csv,opponentteamCity,string,opponentteamCity value
+csv/nba/PlayerStatisticsExtended.csv,opponentteamName,string,opponentteamName value
+csv/nba/PlayerStatisticsExtended.csv,comment,string,comment value
+csv/nba/PlayerStatisticsExtended.csv,startingPosition,string,startingPosition value
+csv/nba/PlayerStatisticsExtended.csv,numMinutes,float,numMinutes value
+csv/nba/PlayerStatisticsExtended.csv,points,integer,points value
+csv/nba/PlayerStatisticsExtended.csv,assists,integer,assists value
+csv/nba/PlayerStatisticsExtended.csv,reboundsTotal,integer,reboundsTotal value
+csv/nba/PlayerStatisticsExtended.csv,reboundsOffensive,integer,reboundsOffensive value
+csv/nba/PlayerStatisticsExtended.csv,reboundsDefensive,integer,reboundsDefensive value
+csv/nba/PlayerStatisticsExtended.csv,fieldGoalsMade,integer,fieldGoalsMade value
+csv/nba/PlayerStatisticsExtended.csv,fieldGoalsAttempted,integer,fieldGoalsAttempted value
+csv/nba/PlayerStatisticsExtended.csv,fieldGoalsPercentage,float,fieldGoalsPercentage value
+csv/nba/PlayerStatisticsExtended.csv,threePointersMade,integer,threePointersMade value
+csv/nba/PlayerStatisticsExtended.csv,threePointersAttempted,integer,threePointersAttempted value
+csv/nba/PlayerStatisticsExtended.csv,threePointersPercentage,float,threePointersPercentage value
+csv/nba/PlayerStatisticsExtended.csv,freeThrowsMade,integer,freeThrowsMade value
+csv/nba/PlayerStatisticsExtended.csv,freeThrowsAttempted,integer,freeThrowsAttempted value
+csv/nba/PlayerStatisticsExtended.csv,freeThrowsPercentage,float,freeThrowsPercentage value
+csv/nba/PlayerStatisticsExtended.csv,steals,integer,steals value
+csv/nba/PlayerStatisticsExtended.csv,blocks,integer,blocks value
+csv/nba/PlayerStatisticsExtended.csv,blocksAgainst,integer,blocksAgainst value
+csv/nba/PlayerStatisticsExtended.csv,turnovers,integer,turnovers value
+csv/nba/PlayerStatisticsExtended.csv,foulsPersonal,integer,foulsPersonal value
+csv/nba/PlayerStatisticsExtended.csv,foulsAgainst,integer,foulsAgainst value
+csv/nba/PlayerStatisticsExtended.csv,plusMinusPoints,integer,plusMinusPoints value
+csv/nba/PlayerStatisticsExtended.csv,doubleDouble,integer,doubleDouble value
+csv/nba/PlayerStatisticsExtended.csv,tripleDouble,integer,tripleDouble value
+csv/nba/PlayerStatisticsExtended.csv,estimatedOffensiveRating,float,estimatedOffensiveRating value
+csv/nba/PlayerStatisticsExtended.csv,offensiveRating,float,offensiveRating value
+csv/nba/PlayerStatisticsExtended.csv,spWorkOffensiveRating,float,spWorkOffensiveRating value
+csv/nba/PlayerStatisticsExtended.csv,estimatedDefensiveRating,float,estimatedDefensiveRating value
+csv/nba/PlayerStatisticsExtended.csv,defensiveRating,float,defensiveRating value
+csv/nba/PlayerStatisticsExtended.csv,spWorkDefensiveRating,float,spWorkDefensiveRating value
+csv/nba/PlayerStatisticsExtended.csv,estimatedNetRating,float,estimatedNetRating value
+csv/nba/PlayerStatisticsExtended.csv,netRating,float,netRating value
+csv/nba/PlayerStatisticsExtended.csv,spWorkNetRating,float,spWorkNetRating value
+csv/nba/PlayerStatisticsExtended.csv,assistPercentage,float,assistPercentage value
+csv/nba/PlayerStatisticsExtended.csv,assistToTurnoverRatio,float,assistToTurnoverRatio value
+csv/nba/PlayerStatisticsExtended.csv,assistRatio,float,assistRatio value
+csv/nba/PlayerStatisticsExtended.csv,offensiveReboundPercentage,float,offensiveReboundPercentage value
+csv/nba/PlayerStatisticsExtended.csv,defensiveReboundPercentage,float,defensiveReboundPercentage value
+csv/nba/PlayerStatisticsExtended.csv,reboundPercentage,float,reboundPercentage value
+csv/nba/PlayerStatisticsExtended.csv,teamTurnoverPercentage,float,teamTurnoverPercentage value
+csv/nba/PlayerStatisticsExtended.csv,estimatedTurnoverPercentage,float,estimatedTurnoverPercentage value
+csv/nba/PlayerStatisticsExtended.csv,effectiveFieldGoalPercentage,float,effectiveFieldGoalPercentage value
+csv/nba/PlayerStatisticsExtended.csv,trueShootingPercentage,float,trueShootingPercentage value
+csv/nba/PlayerStatisticsExtended.csv,usagePercentage,float,usagePercentage value
+csv/nba/PlayerStatisticsExtended.csv,estimatedUsagePercentage,float,estimatedUsagePercentage value
+csv/nba/PlayerStatisticsExtended.csv,estimatedPace,float,estimatedPace value
+csv/nba/PlayerStatisticsExtended.csv,pace,float,pace value
+csv/nba/PlayerStatisticsExtended.csv,pacePer40,float,pacePer40 value
+csv/nba/PlayerStatisticsExtended.csv,spWorkPace,float,spWorkPace value
+csv/nba/PlayerStatisticsExtended.csv,playerImpactEstimate,float,playerImpactEstimate value
+csv/nba/PlayerStatisticsExtended.csv,possessions,integer,possessions value
+csv/nba/PlayerStatisticsExtended.csv,pointsOffTurnovers,integer,pointsOffTurnovers value
+csv/nba/PlayerStatisticsExtended.csv,pointsSecondChance,integer,pointsSecondChance value
+csv/nba/PlayerStatisticsExtended.csv,pointsFastBreak,integer,pointsFastBreak value
+csv/nba/PlayerStatisticsExtended.csv,pointsInPaint,integer,pointsInPaint value
+csv/nba/PlayerStatisticsExtended.csv,opponentPointsOffTurnovers,float,opponentPointsOffTurnovers value
+csv/nba/PlayerStatisticsExtended.csv,opponentPointsSecondChance,float,opponentPointsSecondChance value
+csv/nba/PlayerStatisticsExtended.csv,opponentPointsFastBreak,float,opponentPointsFastBreak value
+csv/nba/PlayerStatisticsExtended.csv,opponentPointsInPaint,float,opponentPointsInPaint value
+csv/nba/PlayerStatisticsExtended.csv,percentFieldGoalAttempts2Point,float,percentFieldGoalAttempts2Point value
+csv/nba/PlayerStatisticsExtended.csv,percentFieldGoalAttempts3Point,float,percentFieldGoalAttempts3Point value
+csv/nba/PlayerStatisticsExtended.csv,percentPoints2Point,float,percentPoints2Point value
+csv/nba/PlayerStatisticsExtended.csv,percentPoints2PointMidRange,float,percentPoints2PointMidRange value
+csv/nba/PlayerStatisticsExtended.csv,percentPoints3Point,float,percentPoints3Point value
+csv/nba/PlayerStatisticsExtended.csv,percentPointsFastBreak,float,percentPointsFastBreak value
+csv/nba/PlayerStatisticsExtended.csv,percentPointsFreeThrow,float,percentPointsFreeThrow value
+csv/nba/PlayerStatisticsExtended.csv,percentPointsOffTurnovers,float,percentPointsOffTurnovers value
+csv/nba/PlayerStatisticsExtended.csv,percentPointsInPaint,float,percentPointsInPaint value
+csv/nba/PlayerStatisticsExtended.csv,percentAssisted2PointMade,float,percentAssisted2PointMade value
+csv/nba/PlayerStatisticsExtended.csv,percentUnassisted2PointMade,float,percentUnassisted2PointMade value
+csv/nba/PlayerStatisticsExtended.csv,percentAssisted3PointMade,float,percentAssisted3PointMade value
+csv/nba/PlayerStatisticsExtended.csv,percentUnassisted3PointMade,float,percentUnassisted3PointMade value
+csv/nba/PlayerStatisticsExtended.csv,percentAssistedFieldGoalsMade,float,percentAssistedFieldGoalsMade value
+csv/nba/PlayerStatisticsExtended.csv,percentUnassistedFieldGoalsMade,float,percentUnassistedFieldGoalsMade value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamFieldGoalsMade,float,percentTeamFieldGoalsMade value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamFieldGoalsAttempted,float,percentTeamFieldGoalsAttempted value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamThreePointersMade,float,percentTeamThreePointersMade value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamThreePointersAttempted,float,percentTeamThreePointersAttempted value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamFreeThrowsMade,float,percentTeamFreeThrowsMade value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamFreeThrowsAttempted,float,percentTeamFreeThrowsAttempted value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamOffensiveRebounds,float,percentTeamOffensiveRebounds value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamDefensiveRebounds,float,percentTeamDefensiveRebounds value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamRebounds,float,percentTeamRebounds value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamAssists,float,percentTeamAssists value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamTurnovers,float,percentTeamTurnovers value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamSteals,float,percentTeamSteals value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamBlocks,float,percentTeamBlocks value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamBlocksAgainst,float,percentTeamBlocksAgainst value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamFoulsPersonal,float,percentTeamFoulsPersonal value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamFoulsDrawn,float,percentTeamFoulsDrawn value
+csv/nba/PlayerStatisticsExtended.csv,percentTeamPoints,float,percentTeamPoints value
+csv/nba/team_boxscores.csv,season_year,string,season year value
+csv/nba/team_boxscores.csv,team_id,string,Unique identifier for each team
+csv/nba/team_boxscores.csv,team_abbreviation,string,Team abbreviation
+csv/nba/team_boxscores.csv,team_name,string,Team name
+csv/nba/team_boxscores.csv,game_id,string,Unique identifier for each game
+csv/nba/team_boxscores.csv,game_date,date,Date the game was played
+csv/nba/team_boxscores.csv,matchup,string,Game matchup notation
+csv/nba/team_boxscores.csv,is_home,boolean,is home value
+csv/nba/team_boxscores.csv,wl,integer,Win/loss indicator
+csv/nba/team_boxscores.csv,min,integer,Minutes played
+csv/nba/team_boxscores.csv,fgm,integer,Field goals made
+csv/nba/team_boxscores.csv,fga,integer,Field goal attempts
+csv/nba/team_boxscores.csv,fg_pct,float,Field goal percentage
+csv/nba/team_boxscores.csv,fg3m,integer,fg3m value
+csv/nba/team_boxscores.csv,fg3a,integer,fg3a value
+csv/nba/team_boxscores.csv,fg3_pct,float,fg3 pct value
+csv/nba/team_boxscores.csv,ftm,integer,Free throws made
+csv/nba/team_boxscores.csv,fta,integer,Free throw attempts
+csv/nba/team_boxscores.csv,ft_pct,float,Free throw percentage
+csv/nba/team_boxscores.csv,oreb,integer,oreb value
+csv/nba/team_boxscores.csv,dreb,integer,dreb value
+csv/nba/team_boxscores.csv,reb,integer,Total rebounds
+csv/nba/team_boxscores.csv,ast,integer,Assists
+csv/nba/team_boxscores.csv,tov,integer,Turnovers
+csv/nba/team_boxscores.csv,stl,integer,Steals
+csv/nba/team_boxscores.csv,blk,integer,Blocks
+csv/nba/team_boxscores.csv,blka,integer,blka value
+csv/nba/team_boxscores.csv,pf,integer,Personal fouls
+csv/nba/team_boxscores.csv,pfd,integer,pfd value
+csv/nba/team_boxscores.csv,pts,integer,Points scored
+csv/nba/team_boxscores.csv,plus_minus,integer,Plus/minus differential
+csv/nba/team_boxscores.csv,gp_rank,integer,gp rank value
+csv/nba/team_boxscores.csv,w_rank,integer,w rank value
+csv/nba/team_boxscores.csv,l_rank,integer,l rank value
+csv/nba/team_boxscores.csv,w_pct_rank,integer,w pct rank value
+csv/nba/team_boxscores.csv,min_rank,integer,min rank value
+csv/nba/team_boxscores.csv,fgm_rank,integer,fgm rank value
+csv/nba/team_boxscores.csv,fga_rank,integer,fga rank value
+csv/nba/team_boxscores.csv,fg_pct_rank,integer,fg pct rank value
+csv/nba/team_boxscores.csv,fg3m_rank,integer,fg3m rank value
+csv/nba/team_boxscores.csv,fg3a_rank,integer,fg3a rank value
+csv/nba/team_boxscores.csv,fg3_pct_rank,integer,fg3 pct rank value
+csv/nba/team_boxscores.csv,ftm_rank,integer,ftm rank value
+csv/nba/team_boxscores.csv,fta_rank,integer,fta rank value
+csv/nba/team_boxscores.csv,ft_pct_rank,integer,ft pct rank value
+csv/nba/team_boxscores.csv,oreb_rank,integer,oreb rank value
+csv/nba/team_boxscores.csv,dreb_rank,integer,dreb rank value
+csv/nba/team_boxscores.csv,reb_rank,integer,reb rank value
+csv/nba/team_boxscores.csv,ast_rank,integer,ast rank value
+csv/nba/team_boxscores.csv,tov_rank,integer,tov rank value
+csv/nba/team_boxscores.csv,stl_rank,integer,stl rank value
+csv/nba/team_boxscores.csv,blk_rank,integer,blk rank value
+csv/nba/team_boxscores.csv,blka_rank,integer,blka rank value
+csv/nba/team_boxscores.csv,pf_rank,integer,pf rank value
+csv/nba/team_boxscores.csv,pfd_rank,integer,pfd rank value
+csv/nba/team_boxscores.csv,pts_rank,integer,pts rank value
+csv/nba/team_boxscores.csv,plus_minus_rank,integer,plus minus rank value
+csv/nba/team_boxscores.csv,available_flag,integer,available flag value
+csv/nba/team_boxscores.csv,e_off_rating,float,e off rating value
+csv/nba/team_boxscores.csv,off_rating,float,off rating value
+csv/nba/team_boxscores.csv,e_def_rating,float,e def rating value
+csv/nba/team_boxscores.csv,def_rating,float,def rating value
+csv/nba/team_boxscores.csv,e_net_rating,float,e net rating value
+csv/nba/team_boxscores.csv,net_rating,float,net rating value
+csv/nba/team_boxscores.csv,ast_pct,float,ast pct value
+csv/nba/team_boxscores.csv,ast_to,float,ast to value
+csv/nba/team_boxscores.csv,ast_ratio,float,ast ratio value
+csv/nba/team_boxscores.csv,oreb_pct,float,oreb pct value
+csv/nba/team_boxscores.csv,dreb_pct,float,dreb pct value
+csv/nba/team_boxscores.csv,reb_pct,float,reb pct value
+csv/nba/team_boxscores.csv,tm_tov_pct,float,tm tov pct value
+csv/nba/team_boxscores.csv,efg_pct,float,efg pct value
+csv/nba/team_boxscores.csv,ts_pct,float,ts pct value
+csv/nba/team_boxscores.csv,e_pace,float,e pace value
+csv/nba/team_boxscores.csv,pace,float,pace value
+csv/nba/team_boxscores.csv,pace_per40,float,pace per40 value
+csv/nba/team_boxscores.csv,poss,integer,poss value
+csv/nba/team_boxscores.csv,pie,float,pie value
+csv/nba/team_boxscores.csv,off_rating_rank,integer,off rating rank value
+csv/nba/team_boxscores.csv,def_rating_rank,integer,def rating rank value
+csv/nba/team_boxscores.csv,net_rating_rank,integer,net rating rank value
+csv/nba/team_boxscores.csv,ast_pct_rank,integer,ast pct rank value
+csv/nba/team_boxscores.csv,ast_to_rank,integer,ast to rank value
+csv/nba/team_boxscores.csv,ast_ratio_rank,integer,ast ratio rank value
+csv/nba/team_boxscores.csv,oreb_pct_rank,integer,oreb pct rank value
+csv/nba/team_boxscores.csv,dreb_pct_rank,integer,dreb pct rank value
+csv/nba/team_boxscores.csv,reb_pct_rank,integer,reb pct rank value
+csv/nba/team_boxscores.csv,tm_tov_pct_rank,integer,tm tov pct rank value
+csv/nba/team_boxscores.csv,efg_pct_rank,integer,efg pct rank value
+csv/nba/team_boxscores.csv,ts_pct_rank,integer,ts pct rank value
+csv/nba/team_boxscores.csv,pace_rank,integer,pace rank value
+csv/nba/team_boxscores.csv,pie_rank,integer,pie rank value
+csv/nba/team_boxscores.csv,fta_rate,float,fta rate value
+csv/nba/team_boxscores.csv,opp_efg_pct,float,opp efg pct value
+csv/nba/team_boxscores.csv,opp_fta_rate,float,opp fta rate value
+csv/nba/team_boxscores.csv,opp_tov_pct,float,opp tov pct value
+csv/nba/team_boxscores.csv,opp_oreb_pct,float,opp oreb pct value
+csv/nba/team_boxscores.csv,fta_rate_rank,integer,fta rate rank value
+csv/nba/team_boxscores.csv,opp_efg_pct_rank,integer,opp efg pct rank value
+csv/nba/team_boxscores.csv,opp_fta_rate_rank,integer,opp fta rate rank value
+csv/nba/team_boxscores.csv,opp_tov_pct_rank,integer,opp tov pct rank value
+csv/nba/team_boxscores.csv,opp_oreb_pct_rank,integer,opp oreb pct rank value
+csv/nba/team_boxscores.csv,pct_fga_2pt,float,pct fga 2pt value
+csv/nba/team_boxscores.csv,pct_fga_3pt,float,pct fga 3pt value
+csv/nba/team_boxscores.csv,pct_pts_2pt,float,pct pts 2pt value
+csv/nba/team_boxscores.csv,pct_pts_2pt_mr,float,pct pts 2pt mr value
+csv/nba/team_boxscores.csv,pct_pts_3pt,float,pct pts 3pt value
+csv/nba/team_boxscores.csv,pct_pts_fb,float,pct pts fb value
+csv/nba/team_boxscores.csv,pct_pts_ft,float,pct pts ft value
+csv/nba/team_boxscores.csv,pct_pts_off_tov,float,pct pts off tov value
+csv/nba/team_boxscores.csv,pct_pts_paint,float,pct pts paint value
+csv/nba/team_boxscores.csv,pct_ast_2pm,float,pct ast 2pm value
+csv/nba/team_boxscores.csv,pct_uast_2pm,float,pct uast 2pm value
+csv/nba/team_boxscores.csv,pct_ast_3pm,float,pct ast 3pm value
+csv/nba/team_boxscores.csv,pct_uast_3pm,float,pct uast 3pm value
+csv/nba/team_boxscores.csv,pct_ast_fgm,float,pct ast fgm value
+csv/nba/team_boxscores.csv,pct_uast_fgm,float,pct uast fgm value
+csv/nba/team_boxscores.csv,pct_fga_2pt_rank,integer,pct fga 2pt rank value
+csv/nba/team_boxscores.csv,pct_fga_3pt_rank,integer,pct fga 3pt rank value
+csv/nba/team_boxscores.csv,pct_pts_2pt_rank,integer,pct pts 2pt rank value
+csv/nba/team_boxscores.csv,pct_pts_2pt_mr_rank,integer,pct pts 2pt mr rank value
+csv/nba/team_boxscores.csv,pct_pts_3pt_rank,integer,pct pts 3pt rank value
+csv/nba/team_boxscores.csv,pct_pts_fb_rank,integer,pct pts fb rank value
+csv/nba/team_boxscores.csv,pct_pts_ft_rank,integer,pct pts ft rank value
+csv/nba/team_boxscores.csv,pct_pts_off_tov_rank,integer,pct pts off tov rank value
+csv/nba/team_boxscores.csv,pct_pts_paint_rank,integer,pct pts paint rank value
+csv/nba/team_boxscores.csv,pct_ast_2pm_rank,integer,pct ast 2pm rank value
+csv/nba/team_boxscores.csv,pct_uast_2pm_rank,integer,pct uast 2pm rank value
+csv/nba/team_boxscores.csv,pct_ast_3pm_rank,integer,pct ast 3pm rank value
+csv/nba/team_boxscores.csv,pct_uast_3pm_rank,integer,pct uast 3pm rank value
+csv/nba/team_boxscores.csv,pct_ast_fgm_rank,integer,pct ast fgm rank value
+csv/nba/team_boxscores.csv,pct_uast_fgm_rank,integer,pct uast fgm rank value
+csv/nba/team_boxscores.csv,pts_off_tov,integer,pts off tov value
+csv/nba/team_boxscores.csv,pts_2nd_chance,integer,pts 2nd chance value
+csv/nba/team_boxscores.csv,pts_fb,integer,pts fb value
+csv/nba/team_boxscores.csv,pts_paint,integer,pts paint value
+csv/nba/team_boxscores.csv,opp_pts_off_tov,integer,opp pts off tov value
+csv/nba/team_boxscores.csv,opp_pts_2nd_chance,integer,opp pts 2nd chance value
+csv/nba/team_boxscores.csv,opp_pts_fb,integer,opp pts fb value
+csv/nba/team_boxscores.csv,opp_pts_paint,integer,opp pts paint value
+csv/nba/team_boxscores.csv,pts_off_tov_rank,integer,pts off tov rank value
+csv/nba/team_boxscores.csv,pts_2nd_chance_rank,integer,pts 2nd chance rank value
+csv/nba/team_boxscores.csv,pts_fb_rank,integer,pts fb rank value
+csv/nba/team_boxscores.csv,pts_paint_rank,integer,pts paint rank value
+csv/nba/team_boxscores.csv,opp_pts_off_tov_rank,integer,opp pts off tov rank value
+csv/nba/team_boxscores.csv,opp_pts_2nd_chance_rank,integer,opp pts 2nd chance rank value
+csv/nba/team_boxscores.csv,opp_pts_fb_rank,integer,opp pts fb rank value
+csv/nba/team_boxscores.csv,opp_pts_paint_rank,integer,opp pts paint rank value
+csv/nba/team_boxscores.csv,q1_wl,integer,q1 wl value
+csv/nba/team_boxscores.csv,q1_pts,integer,q1 pts value
+csv/nba/team_boxscores.csv,q1_fgm,integer,q1 fgm value
+csv/nba/team_boxscores.csv,q1_fga,integer,q1 fga value
+csv/nba/team_boxscores.csv,q1_fg3m,integer,q1 fg3m value
+csv/nba/team_boxscores.csv,q1_fg3a,integer,q1 fg3a value
+csv/nba/team_boxscores.csv,q1_ftm,integer,q1 ftm value
+csv/nba/team_boxscores.csv,q1_fta,integer,q1 fta value
+csv/nba/team_boxscores.csv,q1_reb,integer,q1 reb value
+csv/nba/team_boxscores.csv,q1_ast,integer,q1 ast value
+csv/nba/team_boxscores.csv,q1_tov,integer,q1 tov value
+csv/nba/team_boxscores.csv,q1_stl,integer,q1 stl value
+csv/nba/team_boxscores.csv,q1_plus_minus,integer,q1 plus minus value
+csv/nba/team_boxscores.csv,q2_wl,integer,q2 wl value
+csv/nba/team_boxscores.csv,q2_pts,integer,q2 pts value
+csv/nba/team_boxscores.csv,q2_fgm,integer,q2 fgm value
+csv/nba/team_boxscores.csv,q2_fga,integer,q2 fga value
+csv/nba/team_boxscores.csv,q2_fg3m,integer,q2 fg3m value
+csv/nba/team_boxscores.csv,q2_fg3a,integer,q2 fg3a value
+csv/nba/team_boxscores.csv,q2_ftm,integer,q2 ftm value
+csv/nba/team_boxscores.csv,q2_fta,integer,q2 fta value
+csv/nba/team_boxscores.csv,q2_reb,integer,q2 reb value
+csv/nba/team_boxscores.csv,q2_ast,integer,q2 ast value
+csv/nba/team_boxscores.csv,q2_tov,integer,q2 tov value
+csv/nba/team_boxscores.csv,q2_stl,integer,q2 stl value
+csv/nba/team_boxscores.csv,q2_plus_minus,integer,q2 plus minus value
+csv/nba/team_boxscores.csv,q3_wl,integer,q3 wl value
+csv/nba/team_boxscores.csv,q3_pts,integer,q3 pts value
+csv/nba/team_boxscores.csv,q3_fgm,integer,q3 fgm value
+csv/nba/team_boxscores.csv,q3_fga,integer,q3 fga value
+csv/nba/team_boxscores.csv,q3_fg3m,integer,q3 fg3m value
+csv/nba/team_boxscores.csv,q3_fg3a,integer,q3 fg3a value
+csv/nba/team_boxscores.csv,q3_ftm,integer,q3 ftm value
+csv/nba/team_boxscores.csv,q3_fta,integer,q3 fta value
+csv/nba/team_boxscores.csv,q3_reb,integer,q3 reb value
+csv/nba/team_boxscores.csv,q3_ast,integer,q3 ast value
+csv/nba/team_boxscores.csv,q3_tov,integer,q3 tov value
+csv/nba/team_boxscores.csv,q3_stl,integer,q3 stl value
+csv/nba/team_boxscores.csv,q3_plus_minus,integer,q3 plus minus value
+csv/nba/team_boxscores.csv,q4_wl,integer,q4 wl value
+csv/nba/team_boxscores.csv,q4_pts,integer,q4 pts value
+csv/nba/team_boxscores.csv,q4_fgm,integer,q4 fgm value
+csv/nba/team_boxscores.csv,q4_fga,integer,q4 fga value
+csv/nba/team_boxscores.csv,q4_fg3m,integer,q4 fg3m value
+csv/nba/team_boxscores.csv,q4_fg3a,integer,q4 fg3a value
+csv/nba/team_boxscores.csv,q4_ftm,integer,q4 ftm value
+csv/nba/team_boxscores.csv,q4_fta,integer,q4 fta value
+csv/nba/team_boxscores.csv,q4_reb,integer,q4 reb value
+csv/nba/team_boxscores.csv,q4_ast,integer,q4 ast value
+csv/nba/team_boxscores.csv,q4_tov,integer,q4 tov value
+csv/nba/team_boxscores.csv,q4_stl,integer,q4 stl value
+csv/nba/team_boxscores.csv,q4_plus_minus,integer,q4 plus minus value
+csv/nba/TeamHistories.csv,teamId,string,Unique identifier for each team
+csv/nba/TeamHistories.csv,teamCity,string,teamCity value
+csv/nba/TeamHistories.csv,teamName,string,Team name
+csv/nba/TeamHistories.csv,teamAbbrev,string,teamAbbrev value
+csv/nba/TeamHistories.csv,seasonFounded,integer,seasonFounded value
+csv/nba/TeamHistories.csv,seasonActiveTill,integer,seasonActiveTill value
+csv/nba/TeamHistories.csv,league,string,league value
+csv/nba/teams_boxscores.csv,game_id,string,Unique identifier for each game
+csv/nba/teams_boxscores.csv,season,integer,Season identifier
+csv/nba/teams_boxscores.csv,game_date,date,Date the game was played
+csv/nba/teams_boxscores.csv,sub_season_id,string,sub season id value
+csv/nba/teams_boxscores.csv,is_playoff,boolean,is playoff value
+csv/nba/teams_boxscores.csv,is_overtime,boolean,is overtime value
+csv/nba/teams_boxscores.csv,min,integer,Minutes played
+csv/nba/teams_boxscores.csv,team_id,string,Unique identifier for each team
+csv/nba/teams_boxscores.csv,is_home_team,boolean,Whether the team played at home
+csv/nba/teams_boxscores.csv,team,string,Team name or abbreviation
+csv/nba/teams_boxscores.csv,match_up,string,Game matchup notation
+csv/nba/teams_boxscores.csv,pts,integer,Points scored
+csv/nba/teams_boxscores.csv,fgm,integer,Field goals made
+csv/nba/teams_boxscores.csv,fga,integer,Field goal attempts
+csv/nba/teams_boxscores.csv,fg_pct,float,Field goal percentage
+csv/nba/teams_boxscores.csv,3pm,integer,Three-point field goals made
+csv/nba/teams_boxscores.csv,3pa,integer,Three-point field goal attempts
+csv/nba/teams_boxscores.csv,3p_pct,float,Three-point field goal percentage
+csv/nba/teams_boxscores.csv,ftm,integer,Free throws made
+csv/nba/teams_boxscores.csv,fta,integer,Free throw attempts
+csv/nba/teams_boxscores.csv,ft_pct,float,Free throw percentage
+csv/nba/teams_boxscores.csv,oreb,integer,oreb value
+csv/nba/teams_boxscores.csv,dreb,integer,dreb value
+csv/nba/teams_boxscores.csv,reb,integer,Total rebounds
+csv/nba/teams_boxscores.csv,ast,integer,Assists
+csv/nba/teams_boxscores.csv,tov,integer,Turnovers
+csv/nba/teams_boxscores.csv,stl,integer,Steals
+csv/nba/teams_boxscores.csv,blk,integer,Blocks
+csv/nba/teams_boxscores.csv,pf,integer,Personal fouls
+csv/nba/teams_boxscores.csv,plus_minus,integer,Plus/minus differential
+csv/nba/teams_boxscores.csv,off_rtg,float,off rtg value
+csv/nba/teams_boxscores.csv,def_rtg,float,def rtg value
+csv/nba/teams_boxscores.csv,net_rtg,float,net rtg value
+csv/nba/teams_boxscores.csv,ast_pct,float,ast pct value
+csv/nba/teams_boxscores.csv,ast_turnover_ratio,float,ast turnover ratio value
+csv/nba/teams_boxscores.csv,ast_ratio,float,ast ratio value
+csv/nba/teams_boxscores.csv,oreb_pct,float,oreb pct value
+csv/nba/teams_boxscores.csv,dreb_pct,float,dreb pct value
+csv/nba/teams_boxscores.csv,reb_pct,float,reb pct value
+csv/nba/teams_boxscores.csv,tov_pct,float,tov pct value
+csv/nba/teams_boxscores.csv,efg_pct,float,efg pct value
+csv/nba/teams_boxscores.csv,ts_pct,float,ts pct value
+csv/nba/teams_boxscores.csv,pace,float,pace value
+csv/nba/teams_boxscores.csv,pie,float,pie value
+csv/nba/teams_boxscores.csv,fta_rate,float,fta rate value
+csv/nba/teams_boxscores.csv,opp_efg_pct,float,opp efg pct value
+csv/nba/teams_boxscores.csv,opp_fta_rate,float,opp fta rate value
+csv/nba/teams_boxscores.csv,opp_tov_pct,float,opp tov pct value
+csv/nba/teams_boxscores.csv,opp_oreb_pct,float,opp oreb pct value
+csv/nba/teams_boxscores.csv,pts_off_to,integer,pts off to value
+csv/nba/teams_boxscores.csv,2nd_pts,integer,2nd pts value
+csv/nba/teams_boxscores.csv,fbps,integer,fbps value
+csv/nba/teams_boxscores.csv,pitp,integer,pitp value
+csv/nba/teams_boxscores.csv,opp_pts_off_to,integer,opp pts off to value
+csv/nba/teams_boxscores.csv,opp_2nd_pts,integer,opp 2nd pts value
+csv/nba/teams_boxscores.csv,opp_fbps,integer,opp fbps value
+csv/nba/teams_boxscores.csv,opp_pitp,integer,opp pitp value
+csv/nba/teams_boxscores.csv,pct_fga_2pt,float,pct fga 2pt value
+csv/nba/teams_boxscores.csv,pct_fga_3pt,float,pct fga 3pt value
+csv/nba/teams_boxscores.csv,pct_pts_2pt,float,pct pts 2pt value
+csv/nba/teams_boxscores.csv,pct_pts_2pt_mr,float,pct pts 2pt mr value
+csv/nba/teams_boxscores.csv,pct_pts_3pt,float,pct pts 3pt value
+csv/nba/teams_boxscores.csv,pct_pts_fbps,float,pct pts fbps value
+csv/nba/teams_boxscores.csv,pct_pts_ft,float,pct pts ft value
+csv/nba/teams_boxscores.csv,pct_pts_off_to,float,pct pts off to value
+csv/nba/teams_boxscores.csv,pct_pts_pitp,float,pct pts pitp value
+csv/nba/teams_boxscores.csv,2fgm_pct_ast,float,2fgm pct ast value
+csv/nba/teams_boxscores.csv,2fgm_pct_uast,float,2fgm pct uast value
+csv/nba/teams_boxscores.csv,3fgm_pct_ast,float,3fgm pct ast value
+csv/nba/teams_boxscores.csv,3fgm_pct_uast,float,3fgm pct uast value
+csv/nba/teams_boxscores.csv,fgm_pct_ast,float,fgm pct ast value
+csv/nba/teams_boxscores.csv,fgm_pct_uast,float,fgm pct uast value
+csv/nba/teams_boxscores.csv,is_win,boolean,Whether the team won the game
+csv/nba/TeamStatistics.csv,gameId,string,Unique identifier for each game
+csv/nba/TeamStatistics.csv,gameDateTimeEst,string,gameDateTimeEst value
+csv/nba/TeamStatistics.csv,teamCity,string,teamCity value
+csv/nba/TeamStatistics.csv,teamName,string,Team name
+csv/nba/TeamStatistics.csv,teamId,string,Unique identifier for each team
+csv/nba/TeamStatistics.csv,opponentTeamCity,string,opponentTeamCity value
+csv/nba/TeamStatistics.csv,opponentTeamName,string,opponentTeamName value
+csv/nba/TeamStatistics.csv,opponentTeamId,string,opponentTeamId value
+csv/nba/TeamStatistics.csv,home,integer,home value
+csv/nba/TeamStatistics.csv,win,integer,win value
+csv/nba/TeamStatistics.csv,teamScore,integer,teamScore value
+csv/nba/TeamStatistics.csv,opponentScore,integer,opponentScore value
+csv/nba/TeamStatistics.csv,assists,integer,assists value
+csv/nba/TeamStatistics.csv,blocks,integer,blocks value
+csv/nba/TeamStatistics.csv,steals,integer,steals value
+csv/nba/TeamStatistics.csv,fieldGoalsAttempted,integer,fieldGoalsAttempted value
+csv/nba/TeamStatistics.csv,fieldGoalsMade,integer,fieldGoalsMade value
+csv/nba/TeamStatistics.csv,fieldGoalsPercentage,float,fieldGoalsPercentage value
+csv/nba/TeamStatistics.csv,threePointersAttempted,integer,threePointersAttempted value
+csv/nba/TeamStatistics.csv,threePointersMade,integer,threePointersMade value
+csv/nba/TeamStatistics.csv,threePointersPercentage,float,threePointersPercentage value
+csv/nba/TeamStatistics.csv,freeThrowsAttempted,integer,freeThrowsAttempted value
+csv/nba/TeamStatistics.csv,freeThrowsMade,integer,freeThrowsMade value
+csv/nba/TeamStatistics.csv,freeThrowsPercentage,float,freeThrowsPercentage value
+csv/nba/TeamStatistics.csv,reboundsDefensive,integer,reboundsDefensive value
+csv/nba/TeamStatistics.csv,reboundsOffensive,integer,reboundsOffensive value
+csv/nba/TeamStatistics.csv,reboundsTotal,integer,reboundsTotal value
+csv/nba/TeamStatistics.csv,foulsPersonal,integer,foulsPersonal value
+csv/nba/TeamStatistics.csv,turnovers,integer,turnovers value
+csv/nba/TeamStatistics.csv,plusMinusPoints,integer,plusMinusPoints value
+csv/nba/TeamStatistics.csv,numMinutes,float,numMinutes value
+csv/nba/TeamStatistics.csv,q1Points,integer,q1Points value
+csv/nba/TeamStatistics.csv,q2Points,integer,q2Points value
+csv/nba/TeamStatistics.csv,q3Points,integer,q3Points value
+csv/nba/TeamStatistics.csv,q4Points,integer,q4Points value
+csv/nba/TeamStatistics.csv,benchPoints,integer,benchPoints value
+csv/nba/TeamStatistics.csv,biggestLead,integer,biggestLead value
+csv/nba/TeamStatistics.csv,biggestScoringRun,integer,biggestScoringRun value
+csv/nba/TeamStatistics.csv,leadChanges,integer,leadChanges value
+csv/nba/TeamStatistics.csv,pointsFastBreak,integer,pointsFastBreak value
+csv/nba/TeamStatistics.csv,pointsFromTurnovers,integer,pointsFromTurnovers value
+csv/nba/TeamStatistics.csv,pointsInThePaint,integer,pointsInThePaint value
+csv/nba/TeamStatistics.csv,pointsSecondChance,integer,pointsSecondChance value
+csv/nba/TeamStatistics.csv,timesTied,integer,timesTied value
+csv/nba/TeamStatistics.csv,timeoutsRemaining,integer,timeoutsRemaining value
+csv/nba/TeamStatistics.csv,seasonWins,integer,seasonWins value
+csv/nba/TeamStatistics.csv,seasonLosses,integer,seasonLosses value
+csv/nba/TeamStatistics.csv,coachId,string,coachId value
+csv/nba/TeamStatistics.csv,gameType,string,gameType value
+csv/nba/TeamStatistics.csv,gameLabel,string,gameLabel value
+csv/nba/TeamStatistics.csv,gameSubLabel,string,gameSubLabel value
+csv/nba/TeamStatistics.csv,seriesGameNumber,integer,seriesGameNumber value
+csv/nba/TeamStatistics.csv,seed,integer,seed value
+csv/nba/TeamStatistics.csv,reboundsTeam,integer,reboundsTeam value
+csv/nba/TeamStatistics.csv,turnoversTeam,integer,turnoversTeam value
+csv/nba/TeamStatistics.csv,ot1Points,integer,ot1Points value
+csv/nba/TeamStatistics.csv,ot2Points,string,ot2Points value
+csv/nba/TeamStatistics.csv,otAllPoints,integer,otAllPoints value
+csv/nba/TeamStatistics.csv,gameDate,date,Date the game was played
+csv/nba/TeamStatisticsExtended.csv,gameId,string,Unique identifier for each game
+csv/nba/TeamStatisticsExtended.csv,gameDateTimeEst,string,gameDateTimeEst value
+csv/nba/TeamStatisticsExtended.csv,gameType,string,gameType value
+csv/nba/TeamStatisticsExtended.csv,gameLabel,string,gameLabel value
+csv/nba/TeamStatisticsExtended.csv,gameSubLabel,string,gameSubLabel value
+csv/nba/TeamStatisticsExtended.csv,seriesGameNumber,integer,seriesGameNumber value
+csv/nba/TeamStatisticsExtended.csv,teamId,string,Unique identifier for each team
+csv/nba/TeamStatisticsExtended.csv,teamCity,string,teamCity value
+csv/nba/TeamStatisticsExtended.csv,teamName,string,Team name
+csv/nba/TeamStatisticsExtended.csv,opponentTeamId,string,opponentTeamId value
+csv/nba/TeamStatisticsExtended.csv,opponentTeamCity,string,opponentTeamCity value
+csv/nba/TeamStatisticsExtended.csv,opponentTeamName,string,opponentTeamName value
+csv/nba/TeamStatisticsExtended.csv,home,integer,home value
+csv/nba/TeamStatisticsExtended.csv,win,integer,win value
+csv/nba/TeamStatisticsExtended.csv,teamScore,integer,teamScore value
+csv/nba/TeamStatisticsExtended.csv,opponentScore,integer,opponentScore value
+csv/nba/TeamStatisticsExtended.csv,seed,integer,seed value
+csv/nba/TeamStatisticsExtended.csv,numMinutes,float,numMinutes value
+csv/nba/TeamStatisticsExtended.csv,assists,integer,assists value
+csv/nba/TeamStatisticsExtended.csv,steals,integer,steals value
+csv/nba/TeamStatisticsExtended.csv,blocks,integer,blocks value
+csv/nba/TeamStatisticsExtended.csv,blocksAgainst,integer,blocksAgainst value
+csv/nba/TeamStatisticsExtended.csv,fieldGoalsMade,integer,fieldGoalsMade value
+csv/nba/TeamStatisticsExtended.csv,fieldGoalsAttempted,integer,fieldGoalsAttempted value
+csv/nba/TeamStatisticsExtended.csv,fieldGoalsPercentage,float,fieldGoalsPercentage value
+csv/nba/TeamStatisticsExtended.csv,threePointersMade,integer,threePointersMade value
+csv/nba/TeamStatisticsExtended.csv,threePointersAttempted,integer,threePointersAttempted value
+csv/nba/TeamStatisticsExtended.csv,threePointersPercentage,float,threePointersPercentage value
+csv/nba/TeamStatisticsExtended.csv,freeThrowsMade,integer,freeThrowsMade value
+csv/nba/TeamStatisticsExtended.csv,freeThrowsAttempted,integer,freeThrowsAttempted value
+csv/nba/TeamStatisticsExtended.csv,freeThrowsPercentage,float,freeThrowsPercentage value
+csv/nba/TeamStatisticsExtended.csv,reboundsOffensive,integer,reboundsOffensive value
+csv/nba/TeamStatisticsExtended.csv,reboundsDefensive,integer,reboundsDefensive value
+csv/nba/TeamStatisticsExtended.csv,reboundsTotal,integer,reboundsTotal value
+csv/nba/TeamStatisticsExtended.csv,reboundsTeam,integer,reboundsTeam value
+csv/nba/TeamStatisticsExtended.csv,foulsPersonal,integer,foulsPersonal value
+csv/nba/TeamStatisticsExtended.csv,personalFoulsDrawn,integer,personalFoulsDrawn value
+csv/nba/TeamStatisticsExtended.csv,turnovers,integer,turnovers value
+csv/nba/TeamStatisticsExtended.csv,turnoversTeam,integer,turnoversTeam value
+csv/nba/TeamStatisticsExtended.csv,plusMinusPoints,integer,plusMinusPoints value
+csv/nba/TeamStatisticsExtended.csv,q1Points,integer,q1Points value
+csv/nba/TeamStatisticsExtended.csv,q2Points,integer,q2Points value
+csv/nba/TeamStatisticsExtended.csv,q3Points,integer,q3Points value
+csv/nba/TeamStatisticsExtended.csv,q4Points,integer,q4Points value
+csv/nba/TeamStatisticsExtended.csv,ot1Points,integer,ot1Points value
+csv/nba/TeamStatisticsExtended.csv,ot2Points,string,ot2Points value
+csv/nba/TeamStatisticsExtended.csv,otAllPoints,integer,otAllPoints value
+csv/nba/TeamStatisticsExtended.csv,benchPoints,integer,benchPoints value
+csv/nba/TeamStatisticsExtended.csv,biggestLead,integer,biggestLead value
+csv/nba/TeamStatisticsExtended.csv,biggestScoringRun,integer,biggestScoringRun value
+csv/nba/TeamStatisticsExtended.csv,leadChanges,integer,leadChanges value
+csv/nba/TeamStatisticsExtended.csv,pointsFastBreak,integer,pointsFastBreak value
+csv/nba/TeamStatisticsExtended.csv,pointsFromTurnovers,integer,pointsFromTurnovers value
+csv/nba/TeamStatisticsExtended.csv,pointsInThePaint,integer,pointsInThePaint value
+csv/nba/TeamStatisticsExtended.csv,pointsSecondChance,integer,pointsSecondChance value
+csv/nba/TeamStatisticsExtended.csv,timesTied,integer,timesTied value
+csv/nba/TeamStatisticsExtended.csv,timeoutsRemaining,integer,timeoutsRemaining value
+csv/nba/TeamStatisticsExtended.csv,seasonWins,integer,seasonWins value
+csv/nba/TeamStatisticsExtended.csv,seasonLosses,integer,seasonLosses value
+csv/nba/TeamStatisticsExtended.csv,estimatedOffensiveRating,float,estimatedOffensiveRating value
+csv/nba/TeamStatisticsExtended.csv,offensiveRating,float,offensiveRating value
+csv/nba/TeamStatisticsExtended.csv,estimatedDefensiveRating,float,estimatedDefensiveRating value
+csv/nba/TeamStatisticsExtended.csv,defensiveRating,float,defensiveRating value
+csv/nba/TeamStatisticsExtended.csv,estimatedNetRating,float,estimatedNetRating value
+csv/nba/TeamStatisticsExtended.csv,netRating,float,netRating value
+csv/nba/TeamStatisticsExtended.csv,assistPercentage,float,assistPercentage value
+csv/nba/TeamStatisticsExtended.csv,assistToTurnoverRatio,float,assistToTurnoverRatio value
+csv/nba/TeamStatisticsExtended.csv,assistRatio,float,assistRatio value
+csv/nba/TeamStatisticsExtended.csv,offensiveReboundPercentage,float,offensiveReboundPercentage value
+csv/nba/TeamStatisticsExtended.csv,defensiveReboundPercentage,float,defensiveReboundPercentage value
+csv/nba/TeamStatisticsExtended.csv,reboundPercentage,float,reboundPercentage value
+csv/nba/TeamStatisticsExtended.csv,teamTurnoverPercentage,float,teamTurnoverPercentage value
+csv/nba/TeamStatisticsExtended.csv,effectiveFieldGoalPercentage,float,effectiveFieldGoalPercentage value
+csv/nba/TeamStatisticsExtended.csv,trueShootingPercentage,float,trueShootingPercentage value
+csv/nba/TeamStatisticsExtended.csv,estimatedPace,float,estimatedPace value
+csv/nba/TeamStatisticsExtended.csv,pace,float,pace value
+csv/nba/TeamStatisticsExtended.csv,pacePer40,float,pacePer40 value
+csv/nba/TeamStatisticsExtended.csv,possessions,integer,possessions value
+csv/nba/TeamStatisticsExtended.csv,playerImpactEstimate,float,playerImpactEstimate value
+csv/nba/TeamStatisticsExtended.csv,pointsOffTurnovers,float,pointsOffTurnovers value
+csv/nba/TeamStatisticsExtended.csv,opponentPointsOffTurnovers,float,opponentPointsOffTurnovers value
+csv/nba/TeamStatisticsExtended.csv,opponentPointsSecondChance,float,opponentPointsSecondChance value
+csv/nba/TeamStatisticsExtended.csv,opponentPointsFastBreak,float,opponentPointsFastBreak value
+csv/nba/TeamStatisticsExtended.csv,opponentPointsInPaint,float,opponentPointsInPaint value
+csv/nba/TeamStatisticsExtended.csv,percentFieldGoalAttempts2Point,float,percentFieldGoalAttempts2Point value
+csv/nba/TeamStatisticsExtended.csv,percentFieldGoalAttempts3Point,float,percentFieldGoalAttempts3Point value
+csv/nba/TeamStatisticsExtended.csv,percentPoints2Point,float,percentPoints2Point value
+csv/nba/TeamStatisticsExtended.csv,percentPoints2PointMidRange,float,percentPoints2PointMidRange value
+csv/nba/TeamStatisticsExtended.csv,percentPoints3Point,float,percentPoints3Point value
+csv/nba/TeamStatisticsExtended.csv,percentPointsFastBreak,float,percentPointsFastBreak value
+csv/nba/TeamStatisticsExtended.csv,percentPointsFreeThrow,float,percentPointsFreeThrow value
+csv/nba/TeamStatisticsExtended.csv,percentPointsOffTurnovers,float,percentPointsOffTurnovers value
+csv/nba/TeamStatisticsExtended.csv,percentPointsInPaint,float,percentPointsInPaint value
+csv/nba/TeamStatisticsExtended.csv,percentAssisted2PointMade,float,percentAssisted2PointMade value
+csv/nba/TeamStatisticsExtended.csv,percentUnassisted2PointMade,float,percentUnassisted2PointMade value
+csv/nba/TeamStatisticsExtended.csv,percentAssisted3PointMade,float,percentAssisted3PointMade value
+csv/nba/TeamStatisticsExtended.csv,percentUnassisted3PointMade,float,percentUnassisted3PointMade value
+csv/nba/TeamStatisticsExtended.csv,percentAssistedFieldGoalsMade,float,percentAssistedFieldGoalsMade value
+csv/nba/TeamStatisticsExtended.csv,percentUnassistedFieldGoalsMade,float,percentUnassistedFieldGoalsMade value
+csv/nba/TeamStatisticsExtended.csv,freeThrowAttemptRate,float,freeThrowAttemptRate value
+csv/nba/TeamStatisticsExtended.csv,opponentEffectiveFieldGoalPercentage,float,opponentEffectiveFieldGoalPercentage value
+csv/nba/TeamStatisticsExtended.csv,opponentFreeThrowAttemptRate,float,opponentFreeThrowAttemptRate value
+csv/nba/TeamStatisticsExtended.csv,opponentTurnoverPercentage,float,opponentTurnoverPercentage value
+csv/nba/TeamStatisticsExtended.csv,opponentOffensiveReboundPercentage,float,opponentOffensiveReboundPercentage value
