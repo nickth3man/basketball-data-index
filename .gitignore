@@ -1,0 +1,8 @@
+csv/
+parquet/
+notebooks/
+.claude/
+sql/
+projects/test-db/nba.duckdb
+*.tmp
+*.wal
