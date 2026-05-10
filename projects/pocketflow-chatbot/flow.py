@@ -1,3 +1,4 @@
+import logging
 from typing import Any
 
 from pocketflow import Flow
@@ -20,10 +21,19 @@ from nodes import (
     TableSelectorNode,
 )
 
+_logger = logging.getLogger("nba_chatbot")
+
 
 class ErrorRecoveryFlow(Flow):
     def post(self, shared: dict[str, Any], prep_res: Any, exec_res: Any) -> str:
-        return str(shared.get("recovery_action", "give_up"))
+        action = str(shared.get("recovery_action", "give_up"))
+        _logger.info("[ErrorRecoveryFlow] post: action=%s", action)
+        shared.setdefault("step_logs", []).append({
+            "node": "ErrorRecoveryFlow",
+            "status": "complete",
+            "summary": f"sub-flow action={action}",
+        })
+        return action
 
 
 def create_chat_flow() -> Flow:

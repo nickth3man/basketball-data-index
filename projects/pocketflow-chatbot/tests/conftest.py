@@ -97,6 +97,7 @@ def shared() -> dict[str, Any]:
         "result_analysis": "",
         "response": "",
         "response_sql": "",
+        "step_logs": [],
     }
 
 

@@ -7,6 +7,7 @@ from utils.format_results_table import format_results_table
 from utils.format_schema import format_schema
 from utils.get_full_schema import get_full_schema
 from utils.get_schema_subset import get_schema_subset
+from utils.logging_setup import get_logger, setup_logging
 from utils.optimize_sql import optimize_sql
 from utils.validate_sql_safety import validate_sql_safety
 
@@ -19,7 +20,9 @@ __all__ = [
     "format_results_table",
     "format_schema",
     "get_full_schema",
+    "get_logger",
     "get_schema_subset",
     "optimize_sql",
+    "setup_logging",
     "validate_sql_safety",
 ]

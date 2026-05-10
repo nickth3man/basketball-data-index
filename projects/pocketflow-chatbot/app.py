@@ -8,6 +8,9 @@ from dotenv import load_dotenv
 
 from flow import chat_flow
 from utils.get_full_schema import get_full_schema
+from utils.logging_setup import setup_logging
+
+setup_logging()
 
 load_dotenv()
 
@@ -64,9 +67,43 @@ def get_shared() -> dict[str, Any]:
     return _shared
 
 
-def respond(message: str, history: list[dict]) -> str:
+_STEP_TRACE_CSS = """
+<style>
+.step-trace { font-size: 13px; line-height: 1.6; margin-bottom: 8px; }
+.step-trace .step { display: flex; gap: 6px; padding: 2px 0; }
+.step-trace .step-icon { width: 18px; text-align: center; flex-shrink: 0; }
+.step-trace .step-name { font-weight: 600; flex-shrink: 0; min-width: 110px; }
+.step-trace .step-summary { color: #555; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.step-trace .step.complete .step-icon { color: #22c55e; }
+.step-trace .step.error .step-icon { color: #ef4444; }
+</style>
+"""
+
+
+def _format_step_trace_html(step_logs: list[dict[str, Any]]) -> str:
+    if not step_logs:
+        return ""
+    lines: list[str] = [_STEP_TRACE_CSS, '<div class="step-trace">']
+    for i, entry in enumerate(step_logs, 1):
+        status = entry.get("status", "complete")
+        icon = "✅" if status == "complete" else "❌"
+        node = entry.get("node", "?")
+        summary = entry.get("summary", "")
+        lines.append(
+            f'<div class="step {status}">'
+            f'<span class="step-icon">{icon}</span>'
+            f'<span class="step-name">[{i}] {node}</span>'
+            f'<span class="step-summary">{summary}</span>'
+            f"</div>"
+        )
+    lines.append("</div>")
+    return "\n".join(lines)
+
+
+def respond(message: str) -> None:
     shared = get_shared()
     shared["user_message"] = message
+    shared["step_logs"] = []
     shared["chat_history"].append({
         "role": "user",
         "content": message,
@@ -74,7 +111,6 @@ def respond(message: str, history: list[dict]) -> str:
         "error": False,
     })
     chat_flow.run(shared)
-    return shared.get("response", "Sorry, I couldn't generate a response.")
 
 
 def reset_conversation() -> None:
@@ -89,22 +125,33 @@ with gr.Blocks(title="NBA Basketball Chatbot") as demo:
         "in plain English."
     )
 
-    chatbot = gr.Chatbot(label="Conversation", height=500)
+    step_trace = gr.HTML(label="Step Trace", visible=True)
+    chatbot = gr.Chatbot(label="Conversation", height=460)
     msg = gr.Textbox(
         label="Your question",
         placeholder="e.g. Who scored the most points per game in the 2023-24 season?",
     )
     clear = gr.ClearButton([msg, chatbot])
 
-    def handle_submit(message: str, history: list[dict]) -> tuple[str, list[dict]]:
-        response = respond(message, history)
+    def handle_submit(message: str, history: list[dict]) -> tuple[str, list[dict], str]:
+        respond(message)
         history.append({"role": "user", "content": message})
-        history.append({"role": "assistant", "content": response})
-        return "", history
+        history.append({
+            "role": "assistant",
+            "content": get_shared().get(
+                "response", "Sorry, I couldn't generate a response."
+            ),
+        })
+        step_html = _format_step_trace_html(get_shared().get("step_logs", []))
+        return "", history, step_html
 
-    msg.submit(handle_submit, [msg, chatbot], [msg, chatbot])
+    msg.submit(handle_submit, [msg, chatbot], [msg, chatbot, step_trace])
 
-    clear.click(reset_conversation, outputs=[], queue=False)
+    def _on_clear() -> str:
+        reset_conversation()
+        return ""
+
+    clear.click(_on_clear, outputs=[step_trace], queue=False)
 
 
 if __name__ == "__main__":
