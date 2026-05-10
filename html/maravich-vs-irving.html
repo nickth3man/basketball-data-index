@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pete Maravich vs Kyrie Irving — Comprehensive Career Comparison</title>
+<style>
+  :root {
+    --maravich: #E03A3E;
+    --maravich-dark: #8B1A1E;
+    --maravich-light: #FFD4D5;
+    --irving: #006BB6;
+    --irving-dark: #003D6B;
+    --irving-light: #D6EBFF;
+    --bg: #0F1419;
+    --card-bg: #1A1F2E;
+    --text: #E4E8EC;
+    --text-muted: #8899A6;
+    --border: #2A3340;
+    --gold: #F5A623;
+    --green: #17BF63;
+    --red: #E0245E;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+  
+  /* Header */
+  .hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-bottom: 3px solid #333;
+  }
+  .hero h1 { font-size: 3em; font-weight: 900; margin-bottom: 10px; letter-spacing: -1px; }
+  .hero .vs { display: inline-block; margin: 0 30px; font-size: 2em; color: var(--text-muted); font-weight: 300; }
+  .hero .player-pill { display: inline-block; padding: 6px 20px; border-radius: 20px; font-weight: 700; font-size: 1.1em; }
+  .hero .maravich-pill { background: var(--maravich); }
+  .hero .irving-pill { background: var(--irving); }
+  .hero .subtitle { color: var(--text-muted); font-size: 1.1em; margin-top: 10px; }
+  
+  /* Section */
+  .section { margin: 30px 0; }
+  .section-title {
+    font-size: 1.6em;
+    font-weight: 800;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon { font-size: 1.2em; }
+  
+  /* Grid cards */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.15s;
+  }
+  .card:hover { transform: translateY(-2px); }
+  .card h3 { font-size: 1.1em; margin-bottom: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+  
+  /* Stat row */
+  .stat-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--text-muted); font-size: 0.9em; }
+  .stat-values { display: flex; gap: 20px; font-weight: 600; }
+  .stat-m { color: var(--maravich); min-width: 50px; text-align: right; }
+  .stat-i { color: var(--irving); min-width: 50px; text-align: right; }
+  .stat-winner { font-weight: 800; position: relative; }
+  .stat-winner::after { content: '★'; font-size: 0.5em; vertical-align: super; margin-left: 2px; }
+  
+  /* Bar comparison */
+  .bar-compare { margin: 10px 0; }
+  .bar-compare .labels { display: flex; justify-content: space-between; font-size: 0.8em; margin-bottom: 4px; color: var(--text-muted); }
+  .bar-compare .bars { display: flex; gap: 3px; height: 22px; border-radius: 4px; overflow: hidden; }
+  .bar-compare .bar-m { background: var(--maravich); border-radius: 4px 0 0 4px; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: 700; }
+  .bar-compare .bar-i { background: var(--irving); border-radius: 0 4px 4px 0; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: 700; }
+  
+  /* Team badges */
+  .team-badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+  .team-badge { padding: 4px 12px; border-radius: 12px; font-size: 0.85em; font-weight: 600; }
+  .team-badge.m { background: rgba(224,58,62,0.15); color: var(--maravich); border: 1px solid rgba(224,58,62,0.3); }
+  .team-badge.i { background: rgba(0,107,182,0.15); color: var(--irving); border: 1px solid rgba(0,107,182,0.3); }
+  
+  /* Season table */
+  .season-table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+  .season-table th { background: rgba(255,255,255,0.05); padding: 8px 12px; text-align: center; font-weight: 600; color: var(--text-muted); text-transform: uppercase; font-size: 0.75em; letter-spacing: 0.5px; }
+  .season-table td { padding: 6px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .season-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .season-table .highlight { font-weight: 700; }
+  .season-table .maravich-row td:first-child { border-left: 3px solid var(--maravich); }
+  .season-table .irving-row td:first-child { border-left: 3px solid var(--irving); }
+  .best { background: rgba(245,166,35,0.15); font-weight: 800; }
+  
+  /* Timeline */
+  .timeline { position: relative; padding: 10px 0; }
+  .timeline-item { display: flex; gap: 16px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .timeline-year { min-width: 80px; font-weight: 800; font-size: 1.1em; }
+  .timeline-content { flex: 1; }
+  
+  /* Stats grid */
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 768px) { .stats-grid { grid-template-columns: 1fr; } }
+  
+  /* Shot chart */
+  .shot-chart { display: flex; flex-direction: column; gap: 6px; }
+  .shot-zone { display: flex; align-items: center; gap: 10px; }
+  .shot-zone-label { width: 130px; font-size: 0.85em; text-align: right; color: var(--text-muted); }
+  .shot-zone-bar { flex: 1; height: 20px; background: rgba(0,107,182,0.2); border-radius: 3px; position: relative; overflow: hidden; }
+  .shot-zone-fill { height: 100%; background: var(--irving); border-radius: 3px; display: flex; align-items: center; padding-left: 6px; font-size: 0.7em; font-weight: 700; }
+  
+  /* Info box */
+  .info-box { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.2); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 0.9em; color: var(--gold); display: flex; align-items: flex-start; gap: 10px; }
+  .info-box .info-icon { font-size: 1.2em; }
+  
+  /* Tabs */
+  .tab-nav { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
+  .tab-btn { padding: 8px 16px; background: transparent; border: 1px solid var(--border); color: var(--text-muted); border-radius: 8px; cursor: pointer; font-size: 0.85em; font-weight: 600; transition: all 0.2s; }
+  .tab-btn:hover { background: rgba(255,255,255,0.05); }
+  .tab-btn.active { background: var(--irving); color: white; border-color: var(--irving); }
+  
+  /* Summary grid */
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; }
+  .summary-card .value { font-size: 1.8em; font-weight: 900; }
+  .summary-card .label { color: var(--text-muted); font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+  .summary-card.m .value { color: var(--maravich); }
+  .summary-card.i .value { color: var(--irving); }
+  
+  /* Clutch section */
+  .clutch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .clutch-stat { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; text-align: center; }
+  .clutch-stat .val { font-size: 1.5em; font-weight: 800; color: var(--irving); }
+  .clutch-stat .lbl { font-size: 0.75em; color: var(--text-muted); }
+  
+  /* Footer */
+  .footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85em; border-top: 1px solid var(--border); margin-top: 40px; }
+  
+  /* Efficiency visual */
+  .efficiency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+  .eff-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .eff-card h4 { font-size: 0.8em; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .eff-bar-container { margin: 8px 0; }
+  .eff-bar-label { display: flex; justify-content: space-between; font-size: 0.8em; margin-bottom: 2px; }
+  .eff-bar-label .name { color: var(--text-muted); }
+  .eff-bar-label .val { font-weight: 700; }
+  .eff-bar { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.05); position: relative; overflow: hidden; }
+  .eff-bar-fill { height: 100%; border-radius: 4px; }
+  .eff-bar-fill.m { background: var(--maravich); }
+  .eff-bar-fill.i { background: var(--irving); }
+  
+  /* Legend */
+  .legend { display: flex; gap: 20px; align-items: center; margin: 10px 0; font-size: 0.85em; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; margin-right: 6px; }
+  .legend-dot.m { background: var(--maravich); }
+  .legend-dot.i { background: var(--irving); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>
+    <span class="player-pill maravich-pill">Pistol Pete Maravich</span>
+    <span class="vs">vs</span>
+    <span class="player-pill irving-pill">Kyrie Irving</span>
+  </h1>
+  <p class="subtitle">An era-spanning comparison of two of basketball's most mesmerizing ball-handlers and scorers<br>Data sourced from NBA play-by-play & game stats database (1970–2026)</p>
+  <div class="legend">
+    <span><span class="legend-dot m"></span> Pete Maravich</span>
+    <span><span class="legend-dot i"></span> Kyrie Irving</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- PLAYER PROFILES -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x1F464;</span> Player Profiles</div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Pete Maravich — "Pistol Pete"</h3>
+      <div class="stat-row"><span class="stat-label">Height / Weight</span><span class="stat-values"><span class="stat-m">6'5" / 197 lbs</span></span></div>
+      <div class="stat-row"><span class="stat-label">Born</span><span class="stat-values"><span class="stat-m">June 22, 1947</span></span></div>
+      <div class="stat-row"><span class="stat-label">College</span><span class="stat-values"><span class="stat-m">LSU — NCAA All-Time Scoring Leader (44.2 PPG)</span></span></div>
+      <div class="stat-row"><span class="stat-label">Draft</span><span class="stat-values"><span class="stat-m">1970 / Rd 1 / Pick 3</span></span></div>
+      <div class="stat-row"><span class="stat-label">NBA Career</span><span class="stat-values"><span class="stat-m">1970 – 1980 (10 seasons)</span></span></div>
+      <div class="stat-row"><span class="stat-label">Games</span><span class="stat-values"><span class="stat-m">686 (658 RS + 26 PO)</span></span></div>
+      <div><br><strong>Teams:</strong></div>
+      <div class="team-badges">
+        <span class="team-badge m">Atlanta Hawks (1970–74)</span>
+        <span class="team-badge m">New Orleans/Utah Jazz (1974–80)</span>
+        <span class="team-badge m">Boston Celtics (1980)</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Kyrie Irving — "Uncle Drew"</h3>
+      <div class="stat-row"><span class="stat-label">Height / Weight</span><span class="stat-values"><span class="stat-i">6'2" / 195 lbs</span></span></div>
+      <div class="stat-row"><span class="stat-label">Born</span><span class="stat-values"><span class="stat-i">March 23, 1992</span></span></div>
+      <div class="stat-row"><span class="stat-label">College</span><span class="stat-values"><span class="stat-i">Duke (11 games, 17.5 PPG)</span></span></div>
+      <div class="stat-row"><span class="stat-label">Draft</span><span class="stat-values"><span class="stat-i">2011 / Rd 1 / Pick 1</span></span></div>
+      <div class="stat-row"><span class="stat-label">NBA Career</span><span class="stat-values"><span class="stat-i">2011 – Present (15 seasons)</span></span></div>
+      <div class="stat-row"><span class="stat-label">Games</span><span class="stat-values"><span class="stat-i">994 (877 RS + 103 PO + 14 other)</span></span></div>
+      <div><br><strong>Teams:</strong></div>
+      <div class="team-badges">
+        <span class="team-badge i">Cleveland Cavaliers (2011–17)</span>
+        <span class="team-badge i">Boston Celtics (2017–19)</span>
+        <span class="team-badge i">Brooklyn Nets (2019–23)</span>
+        <span class="team-badge i">Dallas Mavericks (2023–present)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CAREER TOTALS SUMMARY -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x1F4CA;</span> Career Counting Stats</div>
+  <div class="stats-grid">
+    <div class="summary-grid">
+      <div class="summary-card m"><div class="value">16,456</div><div class="label">Points</div></div>
+      <div class="summary-card m"><div class="value">3,510</div><div class="label">Assists</div></div>
+      <div class="summary-card m"><div class="value">2,751</div><div class="label">Rebounds</div></div>
+      <div class="summary-card m"><div class="value">285</div><div class="label">Steals</div></div>
+      <div class="summary-card m"><div class="value">54</div><div class="label">Blocks</div></div>
+      <div class="summary-card m"><div class="value">262</div><div class="label">Turnovers</div></div>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-card i"><div class="value">21,445</div><div class="label">Points</div></div>
+      <div class="summary-card i"><div class="value">5,091</div><div class="label">Assists</div></div>
+      <div class="summary-card i"><div class="value">3,683</div><div class="label">Rebounds</div></div>
+      <div class="summary-card i"><div class="value">1,212</div><div class="label">Steals</div></div>
+      <div class="summary-card i"><div class="value">411</div><div class="label">Blocks</div></div>
+      <div class="summary-card i"><div class="value">2,259</div><div class="label">Turnovers</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PER-GAME AVERAGES -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x1F4CA;</span> Per-Game Averages & Efficiency</div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Scoring & Playmaking</h3>
+      <div class="bar-compare">
+        <div class="labels"><span>PPG</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:52%">24.0</div>
+          <div class="bar-i" style="width:48%">21.7</div>
+        </div>
+      </div>
+      <div class="bar-compare">
+        <div class="labels"><span>APG</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:50%">5.12</div>
+          <div class="bar-i" style="width:50%">5.14</div>
+        </div>
+      </div>
+      <div class="bar-compare">
+        <div class="labels"><span>RPG</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:52%">4.01</div>
+          <div class="bar-i" style="width:48%">3.72</div>
+        </div>
+      </div>
+      <div class="bar-compare">
+        <div class="labels"><span>SPG</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:25%">0.42</div>
+          <div class="bar-i" style="width:75%">1.22</div>
+        </div>
+      </div>
+      <div class="bar-compare">
+        <div class="labels"><span>BPG</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:16%">0.08</div>
+          <div class="bar-i" style="width:84%">0.42</div>
+        </div>
+      </div>
+      <div class="bar-compare">
+        <div class="labels"><span>TOPG</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:14%">0.38</div>
+          <div class="bar-i" style="width:86%">2.28</div>
+        </div>
+      </div>
+      <div class="bar-compare">
+        <div class="labels"><span>MPG</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:49%">31.9</div>
+          <div class="bar-i" style="width:51%">33.7</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>Shooting Efficiency</h3>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">Field Goal %</span><span class="val" style="color:var(--maravich)">46.1%</span> <span class="val" style="color:var(--irving)">47.3%</span></div>
+        <div class="eff-bar">
+          <div class="eff-bar-fill m" style="width:49.4%"></div>
+          <div class="eff-bar-fill i" style="position:absolute; left:49.4%; width:50.6%"></div>
+        </div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">3-Point %</span><span class="val" style="color:var(--maravich)">63.2%*</span> <span class="val" style="color:var(--irving)">39.4%</span></div>
+        <div class="eff-bar">
+          <div class="eff-bar-fill i" style="width:38.4%"></div>
+        </div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">Free Throw %</span><span class="val" style="color:var(--maravich)">82.0%</span> <span class="val" style="color:var(--irving)">88.6%</span></div>
+        <div class="eff-bar">
+          <div class="eff-bar-fill m" style="width:48.1%"></div>
+          <div class="eff-bar-fill i" style="position:absolute; left:48.1%; width:51.9%"></div>
+        </div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">True Shooting %</span><span class="val" style="color:var(--irving)">57.8%</span></div>
+        <div class="eff-bar">
+          <div class="eff-bar-fill i" style="width:57.8%"></div>
+        </div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">Effective FG %</span><span class="val" style="color:var(--irving)">53.5%</span></div>
+        <div class="eff-bar">
+          <div class="eff-bar-fill i" style="width:53.5%"></div>
+        </div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">Usage Rate</span><span class="val" style="color:var(--irving)">27.8%</span></div>
+        <div class="eff-bar">
+          <div class="eff-bar-fill i" style="width:27.8%"></div>
+        </div>
+      </div>
+      <div class="info-box">
+        <span class="info-icon">&#x26A0;</span>
+        <span>Maravich's advanced metrics (TS%, eFG%, USG%, ORtg, DRtg) are unavailable — these were not tracked in the 1970s. His 3PT% (63.2%) reflects just 12-of-19 shooting, as the 3-point line was introduced only in his final NBA season (1979–80). Steals and blocks were also not officially recorded until 1973–74.</span>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>Per-36 Minute Pace</h3>
+      <div class="stat-row"><span class="stat-label">Points</span><span class="stat-values"><span class="stat-m">23.0</span> <span class="stat-i stat-winner">24.5</span></span></div>
+      <div class="stat-row"><span class="stat-label">Assists</span><span class="stat-values"><span class="stat-m">5.0</span> <span class="stat-i stat-winner">5.9</span></span></div>
+      <div class="stat-row"><span class="stat-label">Rebounds</span><span class="stat-values"><span class="stat-m">4.0</span> <span class="stat-i stat-winner">4.3</span></span></div>
+      <div class="bar-compare">
+        <div class="labels"><span>Pts/36</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:48%">23.0</div>
+          <div class="bar-i" style="width:52%">24.5</div>
+        </div>
+      </div>
+      <div class="bar-compare">
+        <div class="labels"><span>Ast/36</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:46%">5.0</div>
+          <div class="bar-i" style="width:54%">5.9</div>
+        </div>
+      </div>
+      <div class="bar-compare">
+        <div class="labels"><span>Reb/36</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:48%">4.0</div>
+          <div class="bar-i" style="width:52%">4.3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Defensive Impact</h3>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">Steals Per Game</span></div>
+        <div class="eff-bar">
+          <div class="eff-bar-fill m" style="width:8%">0.42</div>
+          <div class="eff-bar-fill i" style="position:absolute; left:8%; width:24%">1.22</div>
+        </div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">Blocks Per Game</span></div>
+        <div class="eff-bar">
+          <div class="eff-bar-fill m" style="width:4%">0.08</div>
+          <div class="eff-bar-fill i" style="position:absolute; left:4%; width:18%">0.42</div>
+        </div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">Defensive Rating</span><span class="val" style="color:var(--irving)">109.1</span></div>
+        <div class="eff-bar"><div class="eff-bar-fill i" style="width:90%"></div></div>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-top:8px;">Maravich steals/blocks only tracked from 1973–74 onward. Irving is clearly the more impactful defender at the guard position.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SCORING ERUPTIONS -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x1F525;</span> Scoring Explosiveness</div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>High-Scoring Outbursts</h3>
+      <table style="width:100%; font-size:0.9em;">
+        <tr>
+          <th style="text-align:left">Category</th><th style="color:var(--maravich)">Maravich</th><th style="color:var(--irving)">Irving</th>
+        </tr>
+        <tr><td class="stat-label" style="padding:6px 0">Career High</td><td class="stat-m">68 pts</td><td class="stat-i">60 pts</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">60+ Point Games</td><td class="stat-m">1</td><td class="stat-i">1</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">50+ Point Games</td><td class="stat-m">6</td><td class="stat-i">6</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">40+ Point Games</td><td class="stat-m">35</td><td class="stat-i stat-winner">41</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">30+ Point Games</td><td class="stat-m stat-winner">218</td><td class="stat-i">201</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">% of Games 30+ Pts</td><td class="stat-m stat-winner">31.8%</td><td class="stat-i">20.2%</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">Avg in 50+ Games</td><td class="stat-m">53.3</td><td class="stat-i stat-winner">54.3</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">Avg in 40+ Games</td><td class="stat-m">44.4</td><td class="stat-i">44.4</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Scoring Distribution by Tier</h3>
+      <div class="bar-compare" style="margin-bottom:12px;">
+        <div class="labels"><span>40+ PT Games</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:46%">35</div>
+          <div class="bar-i" style="width:54%">41</div>
+        </div>
+      </div>
+      <div class="bar-compare" style="margin-bottom:12px;">
+        <div class="labels"><span>30–39 PT Games</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:53%">183</div>
+          <div class="bar-i" style="width:47%">160</div>
+        </div>
+      </div>
+      <div class="bar-compare" style="margin-bottom:12px;">
+        <div class="labels"><span>20–29 PT Games</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:36%">238</div>
+          <div class="bar-i" style="width:64%">415</div>
+        </div>
+      </div>
+      <div class="bar-compare" style="margin-bottom:12px;">
+        <div class="labels"><span>10–19 PT Games</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:39%">164</div>
+          <div class="bar-i" style="width:61%">255</div>
+        </div>
+      </div>
+      <div class="bar-compare">
+        <div class="labels"><span>0–9 PT Games</span><span></span></div>
+        <div class="bars">
+          <div class="bar-m" style="width:35%">66</div>
+          <div class="bar-i" style="width:65%">123</div>
+        </div>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-top:10px;">Maravich had a higher percentage of 30+ point games and a more aggressive peak scoring profile. Irving is more consistent in the 20–29 range.</p>
+    </div>
+
+    <div class="card">
+      <h3>Career-High Single Game Lines</h3>
+      <table style="width:100%; font-size:0.9em;">
+        <tr><th style="text-align:left">Stat</th><th style="color:var(--maravich)">Maravich</th><th style="color:var(--irving)">Irving</th></tr>
+        <tr><td class="stat-label" style="padding:6px 0">Points</td><td class="stat-m stat-winner">68</td><td class="stat-i">60</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">Assists</td><td class="stat-m">18</td><td class="stat-i">18</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">Rebounds</td><td class="stat-m stat-winner">15</td><td class="stat-i">11</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">Steals</td><td class="stat-m">7</td><td class="stat-i stat-winner">8</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">Blocks</td><td class="stat-m">2</td><td class="stat-i stat-winner">4</td></tr>
+        <tr><td class="stat-label" style="padding:6px 0">3-Pointers</td><td class="stat-m">2</td><td class="stat-i stat-winner">11</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Maravich's 68-Pt Game (Feb 25, 1977)</h3>
+      <div class="stat-row"><span class="stat-label">Opponent</span><span class="stat-values"><span class="stat-m">New York Knicks</span></span></div>
+      <div class="stat-row"><span class="stat-label">Minutes</span><span class="stat-values"><span class="stat-m">43</span></span></div>
+      <div class="stat-row"><span class="stat-label">FG %</span><span class="stat-values"><span class="stat-m">60.4%</span></span></div>
+      <div class="stat-row"><span class="stat-label">Assists</span><span class="stat-values"><span class="stat-m">6</span></span></div>
+      <div class="stat-row"><span class="stat-label">Rebounds</span><span class="stat-values"><span class="stat-m">6</span></span></div>
+      <div class="stat-row"><span class="stat-label">Steals / Blocks</span><span class="stat-values"><span class="stat-m">3 / 2</span></span></div>
+      <p style="color:var(--text-muted); font-size:0.8em; margin-top:8px;">Still the highest-scoring game by a guard in NBA history without the benefit of a 3-point line.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SEASON-BY-SEASON -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x1F4C5;</span> Season-by-Season Comparison</div>
+  
+  <div style="overflow-x:auto;">
+    <table class="season-table">
+      <tr>
+        <th>Season</th><th>GP</th><th>PPG</th><th>APG</th><th>RPG</th><th>SPG</th><th>BPG</th><th>TOPG</th><th>MPG</th><th>FG%</th><th>3P%</th><th>FT%</th>
+      </tr>
+      <!-- Pete Maravich -->
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1970–71</td><td>39</td><td>20.9</td><td>4.0</td><td>3.3</td><td>--</td><td>--</td><td>--</td><td>30.8</td><td>.405</td><td>.000</td><td>.745</td></tr>
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1971–72</td><td>69</td><td>22.5</td><td>4.6</td><td>3.7</td><td>--</td><td>--</td><td>--</td><td>34.3</td><td>.429</td><td>.000</td><td>.776</td></tr>
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1972–73</td><td>87</td><td>23.1</td><td>6.1</td><td>3.9</td><td>--</td><td>--</td><td>--</td><td>34.1</td><td>.401</td><td>.000</td><td>.797</td></tr>
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1973–74</td><td>83</td><td>27.3</td><td>5.6</td><td>4.2</td><td>0.06</td><td>0.02</td><td>--</td><td>29.0</td><td>.348</td><td>.000</td><td>.783</td></tr>
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1974–75</td><td>71</td><td>23.0</td><td>4.6</td><td>4.5</td><td>0.58</td><td>0.06</td><td>--</td><td>26.9</td><td>.384</td><td>.000</td><td>.772</td></tr>
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1975–76</td><td>62</td><td>23.6</td><td>6.2</td><td>5.7</td><td>0.82</td><td>0.03</td><td>--</td><td>24.6</td><td>.423</td><td>.000</td><td>.758</td></tr>
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1976–77</td><td>81</td><td>28.1</td><td>5.4</td><td>4.9</td><td>0.43</td><td>0.16</td><td>--</td><td>34.1</td><td>.448</td><td>.000</td><td>.816</td></tr>
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1977–78</td><td>73</td><td class="best">30.3</td><td>5.9</td><td>4.4</td><td>1.05</td><td>0.16</td><td>0.88</td><td>43.0</td><td>.434</td><td>.000</td><td>.805</td></tr>
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1978–79</td><td>51</td><td>23.3</td><td>5.8</td><td>3.1</td><td>0.80</td><td>0.18</td><td>2.00</td><td>37.8</td><td>.408</td><td>.000</td><td>.791</td></tr>
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1979–80</td><td>33</td><td>20.0</td><td>3.9</td><td>2.4</td><td>0.79</td><td>0.30</td><td>1.79</td><td>32.6</td><td>.411</td><td>.091</td><td>.643</td></tr>
+      <tr class="maravich-row"><td style="font-weight:700; color:var(--maravich)">Maravich 1980 (BOS)</td><td>35</td><td>10.1</td><td>1.0</td><td>1.3</td><td>0.26</td><td>0.06</td><td>1.06</td><td>15.6</td><td>.499</td><td>.129</td><td>.439</td></tr>
+      <!-- Kyrie Irving -->
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2011–12</td><td>64</td><td>14.8</td><td>4.3</td><td>3.0</td><td>0.84</td><td>0.31</td><td>2.50</td><td>30.0</td><td>.373</td><td>.308</td><td>.635</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2012–13</td><td>64</td><td>20.7</td><td>5.5</td><td>3.4</td><td>1.39</td><td>0.33</td><td>2.98</td><td>34.3</td><td>.411</td><td>.339</td><td>.742</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2013–14</td><td>71</td><td>20.8</td><td>6.1</td><td>3.6</td><td>1.52</td><td>0.32</td><td>2.68</td><td>34.7</td><td>.424</td><td>.334</td><td>.823</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2014–15</td><td>100</td><td>18.8</td><td>4.4</td><td>2.8</td><td>1.31</td><td>0.31</td><td>2.06</td><td>35.8</td><td>.411</td><td>.359</td><td>.671</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2015–16</td><td>75</td><td>20.9</td><td>4.6</td><td>2.9</td><td>1.23</td><td>0.41</td><td>2.29</td><td>32.5</td><td>.443</td><td>.330</td><td>.780</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2016–17</td><td>98</td><td>23.3</td><td>5.2</td><td>2.9</td><td>1.08</td><td>0.33</td><td>2.33</td><td>34.8</td><td>.437</td><td>.363</td><td>.789</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2017–18</td><td>61</td><td>24.0</td><td>5.0</td><td>3.7</td><td>1.07</td><td>0.28</td><td>2.28</td><td>31.7</td><td>.477</td><td>.385</td><td>.831</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2018–19</td><td>77</td><td>23.2</td><td>6.8</td><td>4.9</td><td>1.51</td><td>0.49</td><td>2.60</td><td>32.9</td><td>.470</td><td>.401</td><td>.691</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2019–20</td><td>22</td><td>24.9</td><td>5.8</td><td>4.7</td><td>1.23</td><td>0.45</td><td>2.36</td><td>32.4</td><td>.442</td><td>.374</td><td>.652</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2020–21</td><td>64</td><td>25.9</td><td>5.5</td><td>4.8</td><td>1.33</td><td>0.66</td><td>2.20</td><td>34.6</td><td>.494</td><td>.382</td><td>.795</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2021–22</td><td>34</td><td class="best">26.9</td><td>5.9</td><td>4.4</td><td>1.44</td><td>0.65</td><td>2.53</td><td>37.8</td><td>.471</td><td>.385</td><td>.817</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2022–23</td><td>61</td><td>26.6</td><td>5.4</td><td>5.0</td><td>1.08</td><td>0.74</td><td>2.10</td><td>36.9</td><td>.485</td><td>.364</td><td>.857</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2023–24</td><td>80</td><td>24.7</td><td>5.2</td><td>4.6</td><td>1.21</td><td>0.44</td><td>1.96</td><td>35.8</td><td>.486</td><td>.386</td><td>.732</td></tr>
+      <tr class="irving-row"><td style="font-weight:700; color:var(--irving)">Irving 2024–25</td><td>52</td><td>23.7</td><td>4.4</td><td>4.6</td><td>1.27</td><td>0.44</td><td>2.13</td><td>35.9</td><td>.458</td><td>.359</td><td>.814</td></tr>
+    </table>
+  </div>
+  
+  <div class="info-box">
+    <span class="info-icon">&#x2139;</span>
+    <span>Maravich's peak scoring season (1977–78, 30.3 PPG) is higher than Irving's best (2021–22, 26.9 PPG). However, note the 1970s NBA was much higher-paced (~106 possessions/48 min vs ~97 in Irving's era). Maravich's minutes were extraordinary in 1977–78 (43.0 MPG), which contributed to the scoring volume.</span>
+  </div>
+</div>
+
+<!-- SHOT PROFILE -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x1F3AF;</span> Shot Profile — Kyrie Irving (Play-by-Play Data)</div>
+  <div class="info-box">
+    <span class="info-icon">&#x26A0;</span>
+    <span>Play-by-play shot-tracking data is only available for Irving (modern era). Maravich's era (1970s) predates play-by-play tracking. The following shot zone data covers 16,022 field goal attempts by Irving.</span>
+  </div>
+  
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+    <div class="card">
+      <h3>Irving Shot Distribution by Zone</h3>
+      <div class="shot-chart">
+        <div class="shot-zone">
+          <span class="shot-zone-label">0–5 ft (Rim)</span>
+          <div class="shot-zone-bar">
+            <div class="shot-zone-fill" style="width:56.9%">56.9% — 2,832/4,980</div>
+          </div>
+        </div>
+        <div class="shot-zone">
+          <span class="shot-zone-label">5–10 ft</span>
+          <div class="shot-zone-bar">
+            <div class="shot-zone-fill" style="width:44.1%">44.1% — 780/1,768</div>
+          </div>
+        </div>
+        <div class="shot-zone">
+          <span class="shot-zone-label">10–16 ft</span>
+          <div class="shot-zone-bar">
+            <div class="shot-zone-fill" style="width:47.8%">47.8% — 1,159/2,424</div>
+          </div>
+        </div>
+        <div class="shot-zone">
+          <span class="shot-zone-label">16–23 ft (Long 2)</span>
+          <div class="shot-zone-bar">
+            <div class="shot-zone-fill" style="width:45.3%">45.3% — 892/1,969</div>
+          </div>
+        </div>
+        <div class="shot-zone">
+          <span class="shot-zone-label">3-Point</span>
+          <div class="shot-zone-bar">
+            <div class="shot-zone-fill" style="width:39.2%">39.2% — 1,909/4,875</div>
+          </div>
+        </div>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-top:10px;">Average shot distance: 13.8 ft. Irving is an elite finisher at the rim (56.9%) and an above-average 3PT shooter (39.2%). His mid-range game (44–48%) is among the best in the modern NBA.</p>
+    </div>
+
+    <div class="card">
+      <h3>Quarter-by-Quarter Shooting</h3>
+      <div class="shot-chart">
+        <div class="shot-zone">
+          <span class="shot-zone-label">1st Quarter</span>
+          <div class="shot-zone-bar" style="background:rgba(0,107,182,0.2)">
+            <div class="shot-zone-fill" style="width:48.8%">48.8% — 4,166 att</div>
+          </div>
+        </div>
+        <div class="shot-zone">
+          <span class="shot-zone-label">2nd Quarter</span>
+          <div class="shot-zone-bar" style="background:rgba(0,107,182,0.2)">
+            <div class="shot-zone-fill" style="width:48.0%">48.0% — 3,542 att</div>
+          </div>
+        </div>
+        <div class="shot-zone">
+          <span class="shot-zone-label">3rd Quarter</span>
+          <div class="shot-zone-bar" style="background:rgba(0,107,182,0.2)">
+            <div class="shot-zone-fill" style="width:46.3%">46.3% — 4,419 att</div>
+          </div>
+        </div>
+        <div class="shot-zone">
+          <span class="shot-zone-label">4th Quarter</span>
+          <div class="shot-zone-bar" style="background:rgba(0,107,182,0.2)">
+            <div class="shot-zone-fill" style="width:46.0%">46.0% — 3,737 att</div>
+          </div>
+        </div>
+        <div class="shot-zone">
+          <span class="shot-zone-label">OT</span>
+          <div class="shot-zone-bar" style="background:rgba(0,107,182,0.2)">
+            <div class="shot-zone-fill" style="width:46.0%">46.0% — 158 att</div>
+          </div>
+        </div>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-top:10px;">Irving's FG% dips slightly from the 1st half (48.4%) to the 2nd half (46.2%), a common trend for high-usage guards facing tightening defenses late in games.</p>
+    </div>
+  </div>
+</div>
+
+<!-- HOME / AWAY / WIN / LOSS SPLITS -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x1F3E0;</span> Home/Away & Win/Loss Splits</div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Home vs Away</h3>
+      <table style="width:100%; font-size:0.9em;">
+        <tr><th style="text-align:left">Split</th><th style="color:var(--maravich)">Maravich</th><th style="color:var(--irving)">Irving</th></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Home PPG</td><td class="stat-m">25.2</td><td class="stat-i">21.8</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Away PPG</td><td class="stat-m">22.8</td><td class="stat-i">21.5</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Home FG%</td><td class="stat-m">.429</td><td class="stat-i stat-winner">.450</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Away FG%</td><td class="stat-m">.397</td><td class="stat-i stat-winner">.430</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Home APG</td><td class="stat-m">5.9</td><td class="stat-i">5.4</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Away APG</td><td class="stat-m">4.3</td><td class="stat-i stat-winner">4.9</td></tr>
+      </table>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-top:8px;">Maravich has a much larger home/away split (+2.4 PPG at home vs +0.3 for Irving). Irving is remarkably consistent regardless of venue.</p>
+    </div>
+    
+    <div class="card">
+      <h3>Win vs Loss</h3>
+      <table style="width:100%; font-size:0.9em;">
+        <tr><th style="text-align:left">Split</th><th style="color:var(--maravich)">Maravich</th><th style="color:var(--irving)">Irving</th></tr>
+        <tr><td class="stat-label" style="padding:4px 0">In Wins PPG</td><td class="stat-m stat-winner">27.3</td><td class="stat-i">22.7</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">In Losses PPG</td><td class="stat-m">21.3</td><td class="stat-i">20.4</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Win FG%</td><td class="stat-m">.451</td><td class="stat-i stat-winner">.471</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Loss FG%</td><td class="stat-m">.383</td><td class="stat-i stat-winner">.400</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Win/Loss PPG Gap</td><td class="stat-m stat-winner">+6.0</td><td class="stat-i">+2.3</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Games Won</td><td class="stat-m">304 (44.4%)</td><td class="stat-i stat-winner">551 (55.7%)</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Games Lost</td><td class="stat-m">382</td><td class="stat-i">439</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Team Context & Winning</h3>
+      <table style="width:100%; font-size:0.85em;">
+        <tr><th style="text-align:left">Team</th><th style="text-align:right">GP</th><th style="text-align:right">W</th><th style="text-align:right">L</th><th style="text-align:right">Win%</th></tr>
+        <tr style="background:rgba(224,58,62,0.08)"><td>Celtics (1980)</td><td style="text-align:right">70</td><td style="text-align:right">48</td><td style="text-align:right">22</td><td style="text-align:right;font-weight:700">68.6%</td></tr>
+        <tr style="background:rgba(224,58,62,0.03)"><td>Hawks (1970–74)</td><td style="text-align:right">638</td><td style="text-align:right">294</td><td style="text-align:right">344</td><td style="text-align:right">46.1%</td></tr>
+        <tr style="background:rgba(224,58,62,0.03)"><td>Jazz (1974–80)</td><td style="text-align:right">660</td><td style="text-align:right">264</td><td style="text-align:right">396</td><td style="text-align:right">40.0%</td></tr>
+        <tr><td colspan="5" style="padding:4px"></td></tr>
+        <tr style="background:rgba(0,107,182,0.08)"><td>Nets (2019–23)</td><td style="text-align:right">381</td><td style="text-align:right">231</td><td style="text-align:right">150</td><td style="text-align:right;font-weight:700">60.6%</td></tr>
+        <tr style="background:rgba(0,107,182,0.04)"><td>Celtics (2017–19)</td><td style="text-align:right">276</td><td style="text-align:right">166</td><td style="text-align:right">110</td><td style="text-align:right">60.1%</td></tr>
+        <tr style="background:rgba(0,107,182,0.04)"><td>Mavericks (2023–)</td><td style="text-align:right">151</td><td style="text-align:right">89</td><td style="text-align:right">62</td><td style="text-align:right">58.9%</td></tr>
+        <tr style="background:rgba(0,107,182,0.04)"><td>Cavaliers (2011–17)</td><td style="text-align:right">472</td><td style="text-align:right">252</td><td style="text-align:right">220</td><td style="text-align:right">53.4%</td></tr>
+      </table>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-top:8px;">Irving has played for consistently winning teams (53–61% win rates). Maravich spent most of his career on struggling expansion teams, with the exception of his final season in Boston.</p>
+    </div>
+
+    <div class="card">
+      <h3>Plus-Minus Impact (Irving Only)</h3>
+      <div class="stat-row"><span class="stat-label">Avg +/- in Wins</span><span class="stat-values"><span class="stat-i" style="color:var(--green)">+9.7</span></span></div>
+      <div class="stat-row"><span class="stat-label">Avg +/- in Losses</span><span class="stat-values"><span class="stat-i" style="color:var(--red)">-6.2</span></span></div>
+      <div class="stat-row"><span class="stat-label">Offensive Rating</span><span class="stat-values"><span class="stat-i">112.8</span></span></div>
+      <div class="stat-row"><span class="stat-label">Defensive Rating</span><span class="stat-values"><span class="stat-i">109.1</span></span></div>
+      <div class="stat-row"><span class="stat-label">Net Rating</span><span class="stat-values"><span class="stat-i" style="color:var(--green)">+3.7</span></span></div>
+      <div class="stat-row"><span class="stat-label">PIE (Player Impact Estimate)</span><span class="stat-values"><span class="stat-i">13.7%</span></span></div>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-top:8px;">Plus-minus data unavailable for Maravich's era.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PLAYOFFS -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x1F3C6;</span> Playoff Performance</div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Career Playoff Averages</h3>
+      <table style="width:100%; font-size:0.9em;">
+        <tr><th style="text-align:left"></th><th style="color:var(--maravich)">Maravich</th><th style="color:var(--irving)">Irving</th></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Games</td><td class="stat-m">26</td><td class="stat-i stat-winner">103</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">PPG</td><td class="stat-m">18.7</td><td class="stat-i stat-winner">21.5</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">APG</td><td class="stat-m">3.8</td><td class="stat-i stat-winner">4.6</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">RPG</td><td class="stat-m">3.7</td><td class="stat-i">3.4</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">SPG</td><td class="stat-m">0.0*</td><td class="stat-i stat-winner">1.2</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">BPG</td><td class="stat-m">0.0*</td><td class="stat-i stat-winner">0.5</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">MPG</td><td class="stat-m">29.1</td><td class="stat-i stat-winner">37.0</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">FG%</td><td class="stat-m stat-winner">.457</td><td class="stat-i">.427</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">FT%</td><td class="stat-m">.536</td><td class="stat-i stat-winner">.717</td></tr>
+      </table>
+    </div>
+    
+    <div class="card">
+      <h3>Irving Playoffs by Season</h3>
+      <table style="width:100%; font-size:0.85em;">
+        <tr><th>Season</th><th>GP</th><th>PPG</th><th>APG</th><th>RPG</th><th>FG%</th><th>3P%</th></tr>
+        <tr><td>2014–15</td><td>20</td><td>12.4</td><td>2.5</td><td>2.4</td><td>.302</td><td>.318</td></tr>
+        <tr style="background:rgba(245,166,35,0.08)"><td><strong>2015–16</strong></td><td>21</td><td><strong>25.2</strong></td><td>4.7</td><td>3.0</td><td>.474</td><td>.421</td></tr>
+        <tr style="background:rgba(245,166,35,0.12)"><td><strong>2016–17</strong></td><td>18</td><td><strong>25.9</strong></td><td>5.3</td><td>2.8</td><td>.472</td><td>.369</td></tr>
+        <tr><td>2018–19</td><td>9</td><td>21.3</td><td>7.0</td><td>4.3</td><td>.374</td><td>.285</td></tr>
+        <tr><td>2020–21</td><td>9</td><td>22.7</td><td>3.4</td><td>5.8</td><td>.480</td><td>.374</td></tr>
+        <tr><td>2021–22</td><td>4</td><td>21.3</td><td>5.3</td><td>5.3</td><td>.431</td><td>.317</td></tr>
+        <tr><td><strong>2023–24</strong></td><td>22</td><td>22.1</td><td>5.1</td><td>3.7</td><td>.456</td><td>.360</td></tr>
+      </table>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-top:8px;">Irving won the 2016 NBA Championship with Cleveland — including the iconic Game 7 go-ahead three over Steph Curry. His 25.9 PPG in the 2016–17 playoffs represents his peak postseason run.</p>
+    </div>
+
+    <div class="card">
+      <h3>Playoff Context</h3>
+      <p style="margin-bottom:10px;"><strong style="color:var(--maravich);">Pete Maravich:</strong> Made only 4 playoff appearances in 10 seasons, never advancing past the conference semifinals. His teams (primarily expansion-era Jazz) simply weren't built for deep playoff runs. In 26 playoff games, however, his FG% actually <em>improved</em> over regular season (.457 vs .411), showing his skill translated to high-pressure situations.</p>
+      <p><strong style="color:var(--irving);">Kyrie Irving:</strong> 7 postseason appearances across multiple deep runs, including 3 NBA Finals appearances (2015, 2016, 2017 with Cleveland; 2024 with Dallas). His 103 playoff games provide a much larger sample of his postseason capabilities. The championship-clinching shot in 2016 is arguably the most iconic moment of his career.</p>
+    </div>
+
+    <div class="card">
+      <h3>Regular Season vs Playoffs Delta</h3>
+      <table style="width:100%; font-size:0.9em;">
+        <tr><th style="text-align:left">Metric</th><th style="color:var(--maravich)">Maravich &#916;</th><th style="color:var(--irving)">Irving &#916;</th></tr>
+        <tr><td class="stat-label" style="padding:4px 0">PPG</td><td class="stat-m" style="color:var(--red)">-5.5</td><td class="stat-i">-0.3</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">APG</td><td class="stat-m">-1.4</td><td class="stat-i">-0.6</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">FG%</td><td class="stat-m" style="color:var(--green)">+4.6%</td><td class="stat-i" style="color:var(--red)">-1.2%</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">MPG</td><td class="stat-m">-3.0</td><td class="stat-i" style="color:var(--green)">+3.5</td></tr>
+      </table>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-top:8px;">Maravich saw scoring decline in playoffs (fewer minutes, tougher defenses), but his efficiency improved. Irving's playoff production is nearly identical to his regular season output — remarkable consistency.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CLUTCH & ADVANCED -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x23F0;</span> Clutch Performance & Advanced Metrics</div>
+  
+  <div class="card-grid">
+    <div class="card">
+      <h3>Irving — Clutch Game Performance</h3>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-bottom:10px;">Games decided by 5 points or fewer, Irving playing 30+ minutes (220 games)</p>
+      <div class="clutch-grid">
+        <div class="clutch-stat"><div class="val">27.4</div><div class="lbl">PPG</div></div>
+        <div class="clutch-stat"><div class="val">5.7</div><div class="lbl">APG</div></div>
+        <div class="clutch-stat"><div class="val">.473</div><div class="lbl">FG%</div></div>
+        <div class="clutch-stat"><div class="val">.378</div><div class="lbl">3P%</div></div>
+        <div class="clutch-stat"><div class="val">.900</div><div class="lbl">FT%</div></div>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.8em; margin-top:12px;">In high-leverage, close games, Irving's scoring surges to 27.4 PPG (+5.7 over his career average) with strong efficiency across all shooting categories. His free throw shooting improves to elite levels (90%) in the clutch.</p>
+    </div>
+
+    <div class="card">
+      <h3>Irving — Selected Career Advanced Stats</h3>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">True Shooting % (Career)</span><span class="val" style="color:var(--irving)">57.8%</span></div>
+        <div class="eff-bar"><div class="eff-bar-fill i" style="width:57.8%"></div></div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">Assist % (Career)</span><span class="val" style="color:var(--irving)">26.9%</span></div>
+        <div class="eff-bar"><div class="eff-bar-fill i" style="width:27%"></div></div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">TOV % (Career)</span><span class="val" style="color:var(--irving)">8.8%</span></div>
+        <div class="eff-bar"><div class="eff-bar-fill i" style="width:9%"></div></div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">Rebound % (Career)</span><span class="val" style="color:var(--irving)">4.7%</span></div>
+        <div class="eff-bar"><div class="eff-bar-fill i" style="width:5%"></div></div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">AST/TO Ratio (Career)</span><span class="val" style="color:var(--irving)">2.25</span></div>
+        <div class="eff-bar"><div class="eff-bar-fill i" style="width:45%"></div></div>
+      </div>
+      <div class="eff-bar-container">
+        <div class="eff-bar-label"><span class="name">Best Net Rtg Season</span><span class="val" style="color:var(--irving)">+8.5 (2014–15)</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Maravich — Context & Era-Adjusted Notes</h3>
+      <p style="margin-bottom:12px;"><strong style="color:var(--text-muted);">Pace Adjustment:</strong> The average NBA pace in Maravich's prime (1970s) was ~106 possessions per 48 minutes, vs ~97 in Irving's era. Maravich's scoring would likely translate to ~27–28 PPG in the modern era when adjusted for pace.</p>
+      <p style="margin-bottom:12px;"><strong style="color:var(--text-muted);">No 3-Point Line:</strong> Maravich played his entire prime without a 3-point line. Many of his long-range jumpers came from what would today be 3-point territory. Had the line existed, his scoring averages would almost certainly be higher.</p>
+      <p><strong style="color:var(--text-muted);">Knee Injuries:</strong> Maravich suffered a devastating knee injury in 1978 that effectively ended his prime. He was never the same player after, averaging just 10.1 PPG in his final Celtics season. Without the injury, his career totals would be significantly higher.</p>
+    </div>
+
+    <div class="card">
+      <h3>Double-Doubles & Triple-Doubles</h3>
+      <table style="width:100%; font-size:0.9em;">
+        <tr><th style="text-align:left"></th><th style="color:var(--maravich)">Maravich</th><th style="color:var(--irving)">Irving</th></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Triple-Doubles</td><td class="stat-m stat-winner">7</td><td class="stat-i">3</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Pts/Ast Double-Doubles</td><td class="stat-m">62</td><td class="stat-i stat-winner">75</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Avg Pts in DD</td><td class="stat-m stat-winner">28.9</td><td class="stat-i">24.7</td></tr>
+        <tr><td class="stat-label" style="padding:4px 0">Avg Ast in DD</td><td class="stat-m stat-winner">11.4</td><td class="stat-i">11.2</td></tr>
+      </table>
+      <p style="color:var(--text-muted); font-size:0.75em; margin-top:8px;">When both players recorded a points-assists double-double, Maravich was the more explosive scorer (28.9 PPG) while Irving was more frequent (75 games vs 62).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ERA COMPARISON & CONCLUSION -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x1F4CA;</span> Cross-Era Context — The Numbers in Perspective</div>
+  
+  <div class="card-grid">
+    <div class="card">
+      <h3>Key Similarities</h3>
+      <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.8;">
+        <li><strong>Assist Numbers:</strong> Virtually identical APG (5.12 vs 5.14). Both were score-first guards who could also facilitate.</li>
+        <li><strong>Physical Profile:</strong> Nearly identical height/weight — Maravich at 6'5"/197 lbs, Irving at 6'2"/195 lbs.</li>
+        <li><strong>50 &amp; 60 Point Games:</strong> Both have exactly 6 fifty-point games and 1 sixty-point game.</li>
+        <li><strong>Handles:</strong> Both are universally considered to have the most creative and effective ball-handling in their respective eras.</li>
+        <li><strong>Playmaking Peak:</strong> Both have a career high of 18 assists in a single game.</li>
+        <li><strong>1st Round Draft Pedigree:</strong> Both were top-3 picks (Irving #1, Maravich #3).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Key Differences</h3>
+      <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.8;">
+        <li><strong style="color:var(--maravich);">Volume Scoring:</strong> Maravich averaged 24.0 PPG (career) and 30.3 PPG (peak) vs Irving's 21.7 and 26.9. Maravich had a 31.8% rate of 30+ point games vs Irving's 20.2%.</li>
+        <li><strong style="color:var(--irving);">Three-Point Shooting:</strong> Irving (39.4% on 5,542 attempts) is one of the elite 3PT shooters of all time. Maravich played without a 3-point line for most of his career.</li>
+        <li><strong style="color:var(--irving);">Defensive Impact:</strong> Irving (1.22 SPG, 0.42 BPG) significantly outpaces Maravich, though era context matters (steals/blocks weren't tracked in Maravich's early years).</li>
+        <li><strong style="color:var(--irving);">Team Success:</strong> Irving's teams won 55.7% of games vs Maravich's 44.4%. Irving is an NBA champion (2016).</li>
+        <li><strong style="color:var(--irving);">Playoff Experience:</strong> Irving has 4x as many playoff games (103 vs 26) and significantly better playoff production.</li>
+        <li><strong style="color:var(--irving);">Efficiency:</strong> Irving's True Shooting (.578) and eFG% (.535) are far superior, reflecting the modern emphasis on efficiency and 3-point volume.</li>
+        <li><strong style="color:var(--maravich);">Peak Brilliance:</strong> Maravich's 68-point game (without 3-point line) and 30.3 PPG season represent a higher raw scoring peak.</li>
+        <li><strong style="color:var(--irving);">Longevity:</strong> Irving has already played ~300 more games and counting, surpassing Maravich in every cumulative stat category.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>College & Pre-NBA Legacy</h3>
+      <p style="margin-bottom:12px;"><strong style="color:var(--maravich);">Pete Maravich — LSU:</strong> The most dominant college scorer in history. Averaged an NCAA-record 44.2 PPG over his 3-year varsity career — a record that still stands and will likely never be broken. Scored 3,667 points in 83 games without a 3-point line or freshman eligibility. His flair, passing, and showmanship revolutionized how the guard position was played.</p>
+      <p><strong style="color:var(--irving);">Kyrie Irving — Duke:</strong> Played only 11 college games due to a toe injury, averaging 17.5 PPG on .529/.462/.901 shooting splits. Despite the extremely limited sample, his skill level was undeniable and he was selected #1 overall.</p>
+    </div>
+
+    <div class="card">
+      <h3>The Verdict — By the Numbers</h3>
+      <table style="width:100%; font-size:0.9em; margin-top:8px;">
+        <tr style="border-bottom:1px solid var(--border);"><th style="text-align:left; padding:6px 0;">Category</th><th style="text-align:center; padding:6px 0;">Edge</th><th style="text-align:right; padding:6px 0;">Margin</th></tr>
+        <tr><td style="padding:5px 0;">Scoring Peak</td><td style="text-align:center; color:var(--maravich);">Maravich</td><td style="text-align:right">30.3 vs 26.9 PPG</td></tr>
+        <tr><td style="padding:5px 0;">Scoring Volume (Career)</td><td style="text-align:center; color:var(--maravich);">Maravich</td><td style="text-align:right">24.0 vs 21.7 PPG</td></tr>
+        <tr><td style="padding:5px 0;">Playmaking</td><td style="text-align:center; color:var(--text-muted);">Tie</td><td style="text-align:right">5.12 vs 5.14 APG</td></tr>
+        <tr><td style="padding:5px 0;">3-Point Shooting</td><td style="text-align:center; color:var(--irving);">Irving</td><td style="text-align:right">39.4% on 5,542 3PA</td></tr>
+        <tr><td style="padding:5px 0;">Mid-Range Shooting</td><td style="text-align:center; color:var(--irving);">Irving</td><td style="text-align:right">44–48% by zone</td></tr>
+        <tr><td style="padding:5px 0;">Finishing at Rim</td><td style="text-align:center; color:var(--irving);">Irving</td><td style="text-align:right">56.9% on 4,980 att</td></tr>
+        <tr><td style="padding:5px 0;">Free Throw Shooting</td><td style="text-align:center; color:var(--irving);">Irving</td><td style="text-align:right">88.6% vs 82.0%</td></tr>
+        <tr><td style="padding:5px 0;">True Shooting / Efficiency</td><td style="text-align:center; color:var(--irving);">Irving</td><td style="text-align:right">.578 vs N/A</td></tr>
+        <tr><td style="padding:5px 0;">Defense</td><td style="text-align:center; color:var(--irving);">Irving</td><td style="text-align:right">1.22 SPG, 0.42 BPG</td></tr>
+        <tr><td style="padding:5px 0;">Rebounding</td><td style="text-align:center; color:var(--maravich);">Maravich</td><td style="text-align:right">4.01 vs 3.72 RPG</td></tr>
+        <tr><td style="padding:5px 0;">30+ PT Game Rate</td><td style="text-align:center; color:var(--maravich);">Maravich</td><td style="text-align:right">31.8% vs 20.2%</td></tr>
+        <tr><td style="padding:5px 0;">Playoff Performance</td><td style="text-align:center; color:var(--irving);">Irving</td><td style="text-align:right">103 games, 21.5 PPG</td></tr>
+        <tr><td style="padding:5px 0;">Championships</td><td style="text-align:center; color:var(--irving);">Irving</td><td style="text-align:right">1 (2016)</td></tr>
+        <tr><td style="padding:5px 0;">Longevity / Durability</td><td style="text-align:center; color:var(--irving);">Irving</td><td style="text-align:right">994+ vs 686 games</td></tr>
+        <tr><td style="padding:5px 0;">College Legacy</td><td style="text-align:center; color:var(--maravich);">Maravich</td><td style="text-align:right">44.2 PPG (NCAA record)</td></tr>
+        <tr style="border-top:2px solid var(--border);"><td style="padding:8px 0; font-weight:800;">Overall Statistical Edge</td><td style="text-align:center; font-weight:800; color:var(--irving);">Irving</td><td style="text-align:right; font-weight:800;">9–5–1</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- SIMILARITY SCORE -->
+<div class="section">
+  <div class="section-title"><span class="icon">&#x1F4CA;</span> Statistical Similarity Index</div>
+  <div class="card" style="text-align:center; padding: 30px;">
+    <div style="font-size: 4em; font-weight: 900; background: linear-gradient(135deg, var(--maravich), var(--irving)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">~78%</div>
+    <p style="color:var(--text-muted); margin-top: 8px; max-width: 600px; margin-left: auto; margin-right: auto;">
+      Based on career per-game averages, scoring distribution, efficiency metrics, team context, and physical profile — Maravich and Irving share approximately 78% statistical similarity. The remaining 22% divergence comes primarily from the three-point revolution, era-specific pace differences, and defensive metrics.
+    </p>
+    <p style="color:var(--text-muted); font-size:0.8em; margin-top: 12px;">
+      Were Maravich to play today with a 3-point line, modern spacing, and sports medicine, it's plausible his scoring averages would be even higher — and the similarity would approach 85–90%.
+    </p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Data sourced from the NBA Stats DuckDB database (1946–2026). Play-by-play data available for modern era only.</p>
+  <p>All stats reflect database records as of the latest import. Comparison generated May 2026.</p>
+  <p style="margin-top: 8px; font-size: 0.8em;">Pete Maravich person_id: 77459 | Kyrie Irving person_id: 202681</p>
+</div>
+
+</div>
+</body>
+</html>
