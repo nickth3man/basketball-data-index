@@ -1,5 +1,7 @@
 """Integration tests for the full flow with mocked LLM and DB."""
 
+from pytest_check import check
+
 from flow import create_chat_flow
 
 
@@ -55,11 +57,13 @@ class TestFlowIntegration:
         flow = create_chat_flow()
         flow.run(shared)
 
-        assert shared["intent"] == "query_db"
-        assert shared["generated_sql"].strip().startswith("SELECT")
-        assert shared["response"] != ""
-        assert "LeBron" in shared["result_analysis"] or "LeBron" in shared["response"]
-        assert len(shared["chat_history"]) >= 2
+        check.equal(shared["intent"], "query_db")
+        check.is_true(shared["generated_sql"].strip().startswith("SELECT"))
+        check.not_equal(shared["response"], "")
+        check.is_true(
+            "LeBron" in shared["result_analysis"] or "LeBron" in shared["response"]
+        )
+        check.greater_equal(len(shared["chat_history"]), 2)
 
     def test_query_db_path_error_retry_give_up(self, shared, mocker):
         """query_db path: error triggers recovery, retries, then gives up."""
@@ -139,8 +143,8 @@ class TestFlowIntegration:
         flow = create_chat_flow()
         flow.run(shared)
 
-        assert shared["response"] != ""
-        assert shared["debug_attempts"] >= 1
+        check.not_equal(shared["response"], "")
+        check.greater_equal(shared["debug_attempts"], 1)
 
     def test_chat_path(self, shared, mocker):
         """chat path: routes to ChatResponder, no DB query."""
@@ -169,9 +173,9 @@ class TestFlowIntegration:
         flow = create_chat_flow()
         flow.run(shared)
 
-        assert shared["intent"] == "chat"
-        assert "shot clock" in shared["response"].lower()
-        assert len(shared["chat_history"]) >= 2
+        check.equal(shared["intent"], "chat")
+        check.is_in("shot clock", shared["response"].lower())
+        check.greater_equal(len(shared["chat_history"]), 2)
 
     def test_clarify_path(self, shared, mocker):
         """clarify path: routes to ChatResponder asking for more info."""
@@ -205,9 +209,9 @@ class TestFlowIntegration:
         flow = create_chat_flow()
         flow.run(shared)
 
-        assert shared["intent"] == "clarify"
-        assert "LeBron" in shared["response"]
-        assert len(shared["chat_history"]) >= 2
+        check.equal(shared["intent"], "clarify")
+        check.is_in("LeBron", shared["response"])
+        check.greater_equal(len(shared["chat_history"]), 2)
 
     def test_error_recovery_subflow_structure(self):
         """Verify ErrorRecoveryFlow has correct internal node wiring."""

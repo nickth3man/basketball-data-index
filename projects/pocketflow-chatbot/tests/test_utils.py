@@ -1,5 +1,11 @@
 """Unit tests for utility functions."""
 
+import time
+from datetime import datetime
+
+import pytest
+from pytest_check import check
+
 from utils.call_llm_structured import (
     _extract_yaml_block,
     _fix_yaml_quoting,
@@ -16,13 +22,13 @@ from utils.validate_sql_safety import validate_sql_safety
 class TestValidateSqlSafety:
     def test_select_is_safe(self):
         safe, reason = validate_sql_safety("SELECT * FROM dim_player")
-        assert safe
-        assert reason == "SQL is safe"
+        check.is_true(safe)
+        check.equal(reason, "SQL is safe")
 
     def test_drop_is_unsafe(self):
         safe, reason = validate_sql_safety("DROP TABLE dim_player")
-        assert not safe
-        assert "SELECT" in reason
+        check.is_false(safe)
+        check.is_in("SELECT", reason)
 
     def test_insert_is_unsafe(self):
         safe, _reason = validate_sql_safety("INSERT INTO dim_player VALUES (1)")
@@ -36,16 +42,16 @@ class TestValidateSqlSafety:
         safe, reason = validate_sql_safety(
             "SELECT * FROM t UNION SELECT * FROM(SELECT * FROM t) AS sub WHERE EXISTS(SELECT 1 FROM t WHERE false) -- DROP TABLE t"
         )
-        assert not safe
-        assert "DROP" in reason
+        check.is_false(safe)
+        check.is_in("DROP", reason)
 
     def test_select_with_multiple_dangerous_keywords(self):
         safe, reason = validate_sql_safety(
             "SELECT 1; CREATE TABLE t (x INT); DROP TABLE t"
         )
-        assert not safe
-        assert "CREATE" in reason
-        assert "DROP" in reason
+        check.is_false(safe)
+        check.is_in("CREATE", reason)
+        check.is_in("DROP", reason)
 
 
 class TestClassifyError:
@@ -90,9 +96,9 @@ class TestFormatResultsTable:
         table = format_results_table(
             ["Name", "Points"], [["Curry", 30], ["LeBron", 25]]
         )
-        assert "| Name | Points |" in table
-        assert "| Curry | 30 |" in table
-        assert "| LeBron | 25 |" in table
+        check.is_in("| Name | Points |", table)
+        check.is_in("| Curry | 30 |", table)
+        check.is_in("| LeBron | 25 |", table)
 
     def test_empty_columns(self):
         assert format_results_table([], []) == ""
@@ -123,16 +129,16 @@ class TestFormatResponseMarkdown:
             sql="SELECT * FROM dim_player",
             elapsed_ms=42.5,
         )
-        assert "Found 12 players." in result
-        assert "View SQL (42ms)" in result
-        assert "SELECT * FROM dim_player" in result
+        check.is_in("Found 12 players.", result)
+        check.is_in("View SQL (42ms)", result)
+        check.is_in("SELECT * FROM dim_player", result)
 
     def test_no_sql(self):
         result = format_response_markdown(
             narrative="Hello.", table_md="", sql=None, elapsed_ms=None
         )
-        assert "Hello." in result
-        assert "View SQL" not in result
+        check.is_in("Hello.", result)
+        check.is_not_in("View SQL", result)
 
 
 class TestYamlInternals:
@@ -152,14 +158,14 @@ class TestYamlInternals:
         result = _extract_yaml_block(
             "Here is the answer:\n```yaml\nkey: value\nfoo: bar\n```\nSome footer text."
         )
-        assert result is not None
-        assert "key: value" in result
-        assert "foo: bar" in result
+        check.is_not_none(result)
+        check.is_in("key: value", result)
+        check.is_in("foo: bar", result)
 
     def test_extract_yaml_block_plain_fence(self):
         result = _extract_yaml_block("Some text\n```\na: 1\nb: 2\n```")
-        assert result is not None
-        assert "a: 1" in result
+        check.is_not_none(result)
+        check.is_in("a: 1", result)
 
     def test_rebuild_yaml_with_required_fields(self):
         text = "thinking: This is a complex: analysis with colons\nsql: SELECT 1\n"
@@ -167,10 +173,23 @@ class TestYamlInternals:
         import yaml
 
         parsed = yaml.safe_load(result)
-        assert isinstance(parsed, dict)
-        assert "thinking" in parsed
-        assert "sql" in parsed
+        check.is_instance(parsed, dict)
+        check.is_in("thinking", parsed)
+        check.is_in("sql", parsed)
 
     def test_rebuild_yaml_no_matching_fields(self):
         result = _rebuild_yaml("just some random text", ["required_field"])
         assert result == "just some random text"
+
+
+class TestFreezeTimeDemo:
+    @pytest.mark.freeze_time("2025-06-01")
+    def test_datetime_is_frozen(self):
+        assert datetime.now().isoformat().startswith("2025-06-01")
+
+    @pytest.mark.freeze_time("2025-06-01")
+    def test_time_is_frozen(self, freezer):
+        t1 = time.time()
+        freezer.move_to("2025-06-15")
+        t2 = time.time()
+        assert t2 > t1
