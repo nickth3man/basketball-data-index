@@ -1,0 +1,145 @@
+[project]
+name = "db-viz"
+version = "0.1.0"
+description = "NBA DuckDB Streamlit dashboard exposing all 15 tables"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "duckdb>=1.5,<2",
+    "streamlit>=1.40,<2",
+    "plotly>=5.20,<7",
+    "matplotlib>=3.8,<4",
+    "sportypy>=1.0,<2",
+    "pandas>=2.2,<3",
+    "numpy>=1.26,<3",
+    "streamlit-aggrid>=1.0",
+    "streamlit-folium>=0.21",
+    "folium>=0.17",
+    "pyarrow>=15",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.9",
+    "ty>=0.0.18",
+    "pyright>=1.1",
+]
+
+# ── uv ──────────────────────────────────────────────────────────────────────
+[tool.uv]
+package = false
+
+# ── Ruff (linter + formatter) ───────────────────────────────────────────────
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # Pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "C4",  # flake8-comprehensions
+    "RUF", # Ruff-specific rules
+]
+ignore = [
+    "E501",   # line too long (formatter handles this)
+    "E712",   # `== True` is intentional for boolean dataframe filters
+    "B008",   # function calls in argument defaults (Streamlit pattern)
+    "SIM108", # ternary vs if/else — allow either for readability
+    "RUF001", # ambiguous unicode (en-dash, × etc. used for UI display)
+    "RUF002", # same for docstrings
+    "RUF003", # same for comments
+]
+
+[tool.ruff.lint.per-file-ignores]
+"pages/*.py" = [
+    "E402",  # imports after sys.path manipulation N/A but Streamlit pages set st.title early
+]
+"tests/*.py" = [
+    "E402",  # tests insert sys.path before imports
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["lib"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# ── ty (Astral type checker, alpha) ─────────────────────────────────────────
+[tool.ty.environment]
+python-version = "3.12"
+
+[tool.ty.rules]
+# ty is alpha — start permissive; tighten as it stabilises.
+unresolved-import = "warn"
+possibly-unresolved-reference = "warn"
+# ty cannot synthesize the namedtuple class returned by pandas.DataFrame.itertuples();
+# every `r.colname` access on those rows is flagged. Disable until ty supports this.
+unresolved-attribute = "ignore"
+
+# ── Pyright (type checker) ──────────────────────────────────────────────────
+[tool.pyright]
+include = ["app.py", "lib", "pages", "tests"]
+exclude = ["**/__pycache__", "**/.venv"]
+pythonVersion = "3.12"
+typeCheckingMode = "basic"
+reportMissingImports = "warning"
+reportMissingTypeStubs = false
+reportUnknownMemberType = false
+reportUnknownArgumentType = false
+reportUnknownVariableType = false
+reportGeneralTypeIssues = "warning"
+reportOptionalMemberAccess = "warning"
+# pandas DataFrame.itertuples() returns a synthesized namedtuple class that
+# pyright cannot infer; every `r.colname` access is a false positive.
+reportAttributeAccessIssue = "none"
+# plotly stubs declare `text_auto: bool` but the runtime accepts format strings
+# like ".1f"; suppress that single false positive class-wide.
+reportArgumentType = "warning"
+
+# ── pytest ──────────────────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning:streamlit.*",
+    "ignore::DeprecationWarning:google.*",
+    "ignore::UserWarning:streamlit.*",
+]
+
+# ── Coverage ────────────────────────────────────────────────────────────────
+[tool.coverage.run]
+# Use the project root as source; scripts in pages/ are not importable as
+# modules so we filter by path. Coverage tracks anything imported under cwd.
+source = ["."]
+branch = true
+relative_files = true
+omit = [
+    "tests/*",
+    ".venv/*",
+    "**/__init__.py",
+    "**/conftest.py",
+]
+
+[tool.coverage.report]
+precision = 1
+show_missing = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
