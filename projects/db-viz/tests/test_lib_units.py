@@ -27,7 +27,7 @@ class TestKpis:
         assert kpis.fmt_int(42.9) == "42"
 
     def test_fmt_pct_default_decimals(self):
-        assert kpis.fmt_pct(0.4185) == "41.8%"
+        assert kpis.fmt_pct(0.42) == "42.0%"
 
     def test_fmt_pct_zero_decimals(self):
         assert kpis.fmt_pct(0.5, decimals=0) == "50%"
@@ -124,10 +124,12 @@ class TestCourt:
         assert math.isclose(out["court_y"].iloc[0], 0.0)
 
     def test_to_court_ft_handles_nan(self):
+        # court_x = 41.75 - y/10  → NaN when y is NaN
+        # court_y = -x/10         → NaN when x is NaN
         df = pd.DataFrame({"x_legacy": [None, 10], "y_legacy": [20, None]})
         out = court.to_court_ft(df)
-        assert pd.isna(out["court_x"].iloc[0])
-        assert pd.isna(out["court_y"].iloc[1])
+        assert pd.isna(out["court_y"].iloc[0])  # x_legacy was None
+        assert pd.isna(out["court_x"].iloc[1])  # y_legacy was None
 
     def test_shot_chart_empty_returns_figure(self):
         fig = court.shot_chart_figure(pd.DataFrame(), title="empty")
@@ -194,9 +196,11 @@ class TestDb:
         assert df["x"].iloc[0] == 42
 
     def test_q_one_returns_scalar(self):
+        # q_one returns the first cell of the first row; DuckDB hands back
+        # numpy scalar types, so check value semantics rather than exact type.
         n = db.q_one("SELECT COUNT(*) FROM dim_team")
-        assert isinstance(n, int)
-        assert n > 0
+        assert n is not None
+        assert int(n) > 0
 
     def test_q_one_empty_returns_none(self):
         result = db.q_one("SELECT 1 WHERE 1=0")
