@@ -1,0 +1,76 @@
+[project]
+name = "pocketflow-chatbot"
+version = "0.1.0"
+description = "NBA Basketball Chatbot with PocketFlow, DuckDB, and Gradio"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pocketflow>=0.0.1",
+    "duckdb>=1.0",
+    "gradio>=5.0",
+    "openai>=1.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.2.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.9",
+    "ty>=0.0.18",
+    "pyright>=1.1",
+    "pytest-mock>=3.15.1",
+    "pytest-cov>=7.1.0",
+]
+
+# ── uv ──────────────────────────────────────────────────────────────────────
+[tool.uv]
+package = false
+
+# ── Ruff (linter + formatter) ───────────────────────────────────────────────
+[tool.ruff]
+exclude = ["docs/"]
+line-length = 88
+target-version = "py312"
+preview = true
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # Pyflakes
+    "I",   # isort (import sorting)
+    "UP",  # pyupgrade (modernize syntax)
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "C4",  # flake8-comprehensions
+    "RUF", # Ruff-specific rules
+]
+ignore = [
+    "E501", # line too long (formatter handles this)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["utils"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+
+# ── ty (type checker) ───────────────────────────────────────────────────────
+[tool.ty.rules]
+all = "warn"
+
+[tool.ty.analysis]
+respect-type-ignore-comments = true
+
+[tool.ty.environment]
+python-version = "3.12"
+
+# ── Pyright (type checker) ──────────────────────────────────────────────────
+[tool.pyright]
+typeCheckingMode = "standard"
+pythonVersion = "3.12"
+reportMissingImports = "error"
+reportMissingTypeStubs = false
+reportUnusedVariable = "warning"
