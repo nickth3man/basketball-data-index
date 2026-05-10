@@ -100,3 +100,6 @@ coverage/
 
 # Version markers (auto-generated)
 [0-9]*\.[0-9]*
+
+# pymon auto-reload marker
+.pymon
