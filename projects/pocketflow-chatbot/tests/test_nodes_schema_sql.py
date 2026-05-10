@@ -11,7 +11,11 @@ from nodes import (
 class TestTableSelectorNode:
     def test_prep_reads_shared(self, shared):
         shared["clean_message"] = "points per game"
-        shared["entities"] = {"players": [], "teams": ["Warriors"], "seasons": ["2023-24"]}
+        shared["entities"] = {
+            "players": [],
+            "teams": ["Warriors"],
+            "seasons": ["2023-24"],
+        }
         shared["history_context"] = ""
         node = TableSelectorNode()
         result = node.prep(shared)
@@ -20,7 +24,10 @@ class TestTableSelectorNode:
         assert "fact_player_game_stats" in result["table_listing"]
 
     def test_exec_calls_llm_structured(self, shared, mock_call_llm_structured):
-        mock_call_llm_structured.return_value = {"tables": ["fact_player_game_stats", "dim_player"], "reason": "needed"}
+        mock_call_llm_structured.return_value = {
+            "tables": ["fact_player_game_stats", "dim_player"],
+            "reason": "needed",
+        }
         node = TableSelectorNode()
         prep_res = {
             "clean_message": "points",
@@ -38,7 +45,10 @@ class TestTableSelectorNode:
 
     def test_post_writes_selected_tables_and_schema(self, shared):
         node = TableSelectorNode()
-        exec_res = {"tables": ["dim_player", "fact_player_game_stats"], "reason": "stats"}
+        exec_res = {
+            "tables": ["dim_player", "fact_player_game_stats"],
+            "reason": "stats",
+        }
         prep_res = {"schema_by_table": shared["schema_by_table"]}
         node.post(shared, prep_res, exec_res)
         assert shared["selected_tables"] == ["dim_player", "fact_player_game_stats"]
@@ -78,7 +88,16 @@ class TestQueryPlannerNode:
 
     def test_post_writes_plan(self, shared):
         node = QueryPlannerNode()
-        node.post(shared, None, {"plan": "join and aggregate", "tables_used": [], "filters": [], "aggregations": []})
+        node.post(
+            shared,
+            None,
+            {
+                "plan": "join and aggregate",
+                "tables_used": [],
+                "filters": [],
+                "aggregations": [],
+            },
+        )
         assert shared["query_plan"] == "join and aggregate"
 
 
@@ -100,7 +119,10 @@ class TestSQLGeneratorNode:
         assert result["execution_error"] is None
 
     def test_exec_calls_llm_structured(self, mock_call_llm_structured):
-        mock_call_llm_structured.return_value = {"thinking": "simple select", "sql": "SELECT 1"}
+        mock_call_llm_structured.return_value = {
+            "thinking": "simple select",
+            "sql": "SELECT 1",
+        }
         node = SQLGeneratorNode()
         prep_res = {
             "clean_message": "test",
@@ -119,7 +141,10 @@ class TestSQLGeneratorNode:
         assert "SELECT 1" in result
 
     def test_exec_raises_on_non_select(self, mock_call_llm_structured):
-        mock_call_llm_structured.return_value = {"thinking": "oops", "sql": "DROP TABLE dim_player"}
+        mock_call_llm_structured.return_value = {
+            "thinking": "oops",
+            "sql": "DROP TABLE dim_player",
+        }
         node = SQLGeneratorNode()
         prep_res = {
             "clean_message": "test",
@@ -135,6 +160,7 @@ class TestSQLGeneratorNode:
             "schema_recheck": None,
         }
         import pytest
+
         with pytest.raises(ValueError, match="must start with SELECT"):
             node.exec(prep_res)
 
@@ -181,7 +207,12 @@ class TestSQLExecutorNode:
 
     def test_exec_calls_execute_query(self, shared, mock_execute_query_success):
         node = SQLExecutorNode()
-        prep_res = {"db_path": ":memory:", "sql": "SELECT 1", "max_rows": 200, "timeout": 30}
+        prep_res = {
+            "db_path": ":memory:",
+            "sql": "SELECT 1",
+            "max_rows": 200,
+            "timeout": 30,
+        }
         result = node.exec(prep_res)
         assert result["success"] is True
         mock_execute_query_success.assert_called_once_with(
@@ -190,7 +221,13 @@ class TestSQLExecutorNode:
 
     def test_post_success_branch(self, shared):
         node = SQLExecutorNode()
-        exec_res = {"success": True, "columns": ["x"], "rows": [[1]], "elapsed_ms": 5.0, "error": None}
+        exec_res = {
+            "success": True,
+            "columns": ["x"],
+            "rows": [[1]],
+            "elapsed_ms": 5.0,
+            "error": None,
+        }
         shared["generated_sql"] = "SELECT 1"
         result = node.post(shared, None, exec_res)
         assert shared["sql_result"] == exec_res
@@ -199,7 +236,13 @@ class TestSQLExecutorNode:
 
     def test_post_error_branch(self, shared):
         node = SQLExecutorNode()
-        exec_res = {"success": False, "columns": [], "rows": [], "elapsed_ms": 5.0, "error": "syntax error"}
+        exec_res = {
+            "success": False,
+            "columns": [],
+            "rows": [],
+            "elapsed_ms": 5.0,
+            "error": "syntax error",
+        }
         result = node.post(shared, None, exec_res)
         assert shared["execution_error"] == "syntax error"
         assert result == "error"

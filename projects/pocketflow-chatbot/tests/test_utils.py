@@ -1,5 +1,10 @@
 """Unit tests for utility functions."""
 
+from utils.call_llm_structured import (
+    _extract_yaml_block,
+    _fix_yaml_quoting,
+    _rebuild_yaml,
+)
 from utils.classify_error import classify_error
 from utils.format_response_markdown import format_response_markdown
 from utils.format_results_table import format_results_table
@@ -20,12 +25,27 @@ class TestValidateSqlSafety:
         assert "SELECT" in reason
 
     def test_insert_is_unsafe(self):
-        safe, reason = validate_sql_safety("INSERT INTO dim_player VALUES (1)")
+        safe, _reason = validate_sql_safety("INSERT INTO dim_player VALUES (1)")
         assert not safe
 
     def test_empty_is_unsafe(self):
-        safe, reason = validate_sql_safety("")
+        safe, _reason = validate_sql_safety("")
         assert not safe
+
+    def test_select_with_dangerous_keyword_is_unsafe(self):
+        safe, reason = validate_sql_safety(
+            "SELECT * FROM t UNION SELECT * FROM(SELECT * FROM t) AS sub WHERE EXISTS(SELECT 1 FROM t WHERE false) -- DROP TABLE t"
+        )
+        assert not safe
+        assert "DROP" in reason
+
+    def test_select_with_multiple_dangerous_keywords(self):
+        safe, reason = validate_sql_safety(
+            "SELECT 1; CREATE TABLE t (x INT); DROP TABLE t"
+        )
+        assert not safe
+        assert "CREATE" in reason
+        assert "DROP" in reason
 
 
 class TestClassifyError:
@@ -82,14 +102,15 @@ class TestFormatResultsTable:
         table = format_results_table(["X"], rows, max_display=50)
         assert "Showing 50 of 60 rows." in table
 
+    def test_with_none_values(self):
+        table = format_results_table(["A", "B"], [[None, "x"], ["y", None]])
+        assert "|  | x |" in table or "| '' | x |" in table
+        assert "| y |  |" in table or "| y | '' |" in table
+
 
 class TestFormatSchema:
     def test_basic_format(self):
-        schema = {
-            "dim_player": {
-                "columns": [{"name": "person_id", "type": "BIGINT"}]
-            }
-        }
+        schema = {"dim_player": {"columns": [{"name": "person_id", "type": "BIGINT"}]}}
         result = format_schema(schema)
         assert "TABLE dim_player (person_id BIGINT)" in result
 
@@ -112,3 +133,44 @@ class TestFormatResponseMarkdown:
         )
         assert "Hello." in result
         assert "View SQL" not in result
+
+
+class TestYamlInternals:
+    def test_fix_yaml_quoting_colon_in_value(self):
+        fixed = _fix_yaml_quoting("reason: need to: fix this")
+        assert '"need to: fix this"' in fixed
+
+    def test_fix_yaml_quoting_already_quoted(self):
+        fixed = _fix_yaml_quoting('reason: "already quoted"')
+        assert fixed == 'reason: "already quoted"'
+
+    def test_fix_yaml_quoting_hash_in_value(self):
+        fixed = _fix_yaml_quoting("sql: SELECT 1 # comment")
+        assert '"SELECT 1 # comment"' in fixed
+
+    def test_extract_yaml_block_with_fences_and_extra_text(self):
+        result = _extract_yaml_block(
+            "Here is the answer:\n```yaml\nkey: value\nfoo: bar\n```\nSome footer text."
+        )
+        assert result is not None
+        assert "key: value" in result
+        assert "foo: bar" in result
+
+    def test_extract_yaml_block_plain_fence(self):
+        result = _extract_yaml_block("Some text\n```\na: 1\nb: 2\n```")
+        assert result is not None
+        assert "a: 1" in result
+
+    def test_rebuild_yaml_with_required_fields(self):
+        text = "thinking: This is a complex: analysis with colons\nsql: SELECT 1\n"
+        result = _rebuild_yaml(text, ["thinking", "sql"])
+        import yaml
+
+        parsed = yaml.safe_load(result)
+        assert isinstance(parsed, dict)
+        assert "thinking" in parsed
+        assert "sql" in parsed
+
+    def test_rebuild_yaml_no_matching_fields(self):
+        result = _rebuild_yaml("just some random text", ["required_field"])
+        assert result == "just some random text"

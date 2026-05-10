@@ -42,7 +42,12 @@ class TestErrorAnalyzerNode:
 
     def test_post_writes_error_type_and_analysis(self, shared):
         node = ErrorAnalyzerNode()
-        exec_res = {"error_type": "missing_column", "root_cause": "bad col", "affected_entities": [], "suggested_fix_direction": ""}
+        exec_res = {
+            "error_type": "missing_column",
+            "root_cause": "bad col",
+            "affected_entities": [],
+            "suggested_fix_direction": "",
+        }
         prep_res = {"error_type": "missing_column"}
         node.post(shared, prep_res, exec_res)
         assert shared["error_type"] == "missing_column"
@@ -58,7 +63,10 @@ class TestSchemaRecheckNode:
 
     def test_exec_returns_formatted_subset(self, shared):
         node = SchemaRecheckNode()
-        prep_res = {"affected_entities": ["dim_player"], "schema_by_table": shared["schema_by_table"]}
+        prep_res = {
+            "affected_entities": ["dim_player"],
+            "schema_by_table": shared["schema_by_table"],
+        }
         result = node.exec(prep_res)
         assert "TABLE dim_player" in result
         assert "person_id" in result
@@ -88,17 +96,42 @@ class TestSQLFixerNode:
         assert result["error_type"] == "missing_column"
 
     def test_exec_returns_fixed_sql(self, mock_call_llm_structured):
-        mock_call_llm_structured.return_value = {"thinking": "fixed column", "sql": "SELECT person_id FROM dim_player"}
+        mock_call_llm_structured.return_value = {
+            "thinking": "fixed column",
+            "sql": "SELECT person_id FROM dim_player",
+        }
         node = SQLFixerNode()
-        prep_res = {"clean_message": "t", "generated_sql": "SELECT bad", "error_type": "mc", "error_analysis": {}, "schema_recheck": "TABLE", "query_plan": "join", "api_key": "k", "model": "m"}
+        prep_res = {
+            "clean_message": "t",
+            "generated_sql": "SELECT bad",
+            "error_type": "mc",
+            "error_analysis": {},
+            "schema_recheck": "TABLE",
+            "query_plan": "join",
+            "api_key": "k",
+            "model": "m",
+        }
         result = node.exec(prep_res)
         assert "SELECT person_id" in result
 
     def test_exec_raises_on_non_select(self, mock_call_llm_structured):
-        mock_call_llm_structured.return_value = {"thinking": "oops", "sql": "DELETE FROM dim_player"}
+        mock_call_llm_structured.return_value = {
+            "thinking": "oops",
+            "sql": "DELETE FROM dim_player",
+        }
         node = SQLFixerNode()
         import pytest
-        prep_res = {"clean_message": "t", "generated_sql": "SELECT bad", "error_type": "mc", "error_analysis": {}, "schema_recheck": "TABLE", "query_plan": "join", "api_key": "k", "model": "m"}
+
+        prep_res = {
+            "clean_message": "t",
+            "generated_sql": "SELECT bad",
+            "error_type": "mc",
+            "error_analysis": {},
+            "schema_recheck": "TABLE",
+            "query_plan": "join",
+            "api_key": "k",
+            "model": "m",
+        }
         with pytest.raises(ValueError, match="Fixed SQL must start with SELECT"):
             node.exec(prep_res)
 
@@ -111,12 +144,12 @@ class TestSQLFixerNode:
 class TestFixValidatorNode:
     def test_exec_validates_safe_sql(self):
         node = FixValidatorNode()
-        is_safe, reason = node.exec("SELECT * FROM dim_player")
+        is_safe, _reason = node.exec("SELECT * FROM dim_player")
         assert is_safe is True
 
     def test_exec_validates_unsafe_sql(self):
         node = FixValidatorNode()
-        is_safe, reason = node.exec("DROP TABLE dim_player")
+        is_safe, _reason = node.exec("DROP TABLE dim_player")
         assert is_safe is False
 
     def test_post_overwrites_generated_sql_when_safe(self, shared):
@@ -144,22 +177,38 @@ class TestRecoveryDecisionNode:
 
     def test_exec_returns_retry_when_below_max(self):
         node = RecoveryDecisionNode()
-        result = node.exec({"debug_attempts": 1, "max_debug_attempts": 3, "error_type": "syntax_error"})
+        result = node.exec({
+            "debug_attempts": 1,
+            "max_debug_attempts": 3,
+            "error_type": "syntax_error",
+        })
         assert result == "retry"
 
     def test_exec_returns_retry_on_second_attempt(self):
         node = RecoveryDecisionNode()
-        result = node.exec({"debug_attempts": 2, "max_debug_attempts": 3, "error_type": "syntax_error"})
+        result = node.exec({
+            "debug_attempts": 2,
+            "max_debug_attempts": 3,
+            "error_type": "syntax_error",
+        })
         assert result == "retry"
 
     def test_exec_returns_give_up_when_at_max(self):
         node = RecoveryDecisionNode()
-        result = node.exec({"debug_attempts": 3, "max_debug_attempts": 3, "error_type": "syntax_error"})
+        result = node.exec({
+            "debug_attempts": 3,
+            "max_debug_attempts": 3,
+            "error_type": "syntax_error",
+        })
         assert result == "give_up"
 
     def test_exec_returns_give_up_on_permission_error(self):
         node = RecoveryDecisionNode()
-        result = node.exec({"debug_attempts": 1, "max_debug_attempts": 3, "error_type": "permission"})
+        result = node.exec({
+            "debug_attempts": 1,
+            "max_debug_attempts": 3,
+            "error_type": "permission",
+        })
         assert result == "give_up"
 
     def test_post_writes_recovery_action(self, shared):

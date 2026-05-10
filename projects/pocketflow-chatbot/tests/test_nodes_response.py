@@ -5,7 +5,12 @@ from nodes import ChatResponderNode, ResponseBuilderNode, ResultAnalyzerNode
 
 class TestResultAnalyzerNode:
     def test_prep_detects_has_results_true(self, shared):
-        shared["sql_result"] = {"success": True, "columns": ["x"], "rows": [[1]], "elapsed_ms": 5.0}
+        shared["sql_result"] = {
+            "success": True,
+            "columns": ["x"],
+            "rows": [[1]],
+            "elapsed_ms": 5.0,
+        }
         node = ResultAnalyzerNode()
         result = node.prep(shared)
         assert result["has_results"]
@@ -17,7 +22,12 @@ class TestResultAnalyzerNode:
         assert not result["has_results"]
 
     def test_prep_detects_has_results_empty_rows(self, shared):
-        shared["sql_result"] = {"success": True, "columns": ["x"], "rows": [], "elapsed_ms": 5.0}
+        shared["sql_result"] = {
+            "success": True,
+            "columns": ["x"],
+            "rows": [],
+            "elapsed_ms": 5.0,
+        }
         node = ResultAnalyzerNode()
         result = node.prep(shared)
         assert not result["has_results"]
@@ -26,7 +36,11 @@ class TestResultAnalyzerNode:
         node = ResultAnalyzerNode()
         prep_res = {
             "clean_message": "top scorers",
-            "sql_result": {"columns": ["name", "pts"], "rows": [["Curry", 30]], "elapsed_ms": 5.0},
+            "sql_result": {
+                "columns": ["name", "pts"],
+                "rows": [["Curry", 30]],
+                "elapsed_ms": 5.0,
+            },
             "has_results": True,
             "history_context": "",
             "api_key": "k",
@@ -68,7 +82,12 @@ class TestResultAnalyzerNode:
 class TestResponseBuilderNode:
     def test_prep_reads_all_fields(self, shared):
         shared["result_analysis"] = "analysis"
-        shared["sql_result"] = {"success": True, "columns": ["x"], "rows": [[1]], "elapsed_ms": 5.0}
+        shared["sql_result"] = {
+            "success": True,
+            "columns": ["x"],
+            "rows": [[1]],
+            "elapsed_ms": 5.0,
+        }
         shared["response_sql"] = "SELECT 1"
         node = ResponseBuilderNode()
         result = node.prep(shared)
@@ -79,7 +98,12 @@ class TestResponseBuilderNode:
         node = ResponseBuilderNode()
         prep_res = {
             "result_analysis": "Found 2 players.",
-            "sql_result": {"success": True, "columns": ["Name"], "rows": [["Curry"], ["LeBron"]], "elapsed_ms": 5.0},
+            "sql_result": {
+                "success": True,
+                "columns": ["Name"],
+                "rows": [["Curry"], ["LeBron"]],
+                "elapsed_ms": 5.0,
+            },
             "response_sql": "SELECT * FROM players",
             "debug_attempts": 0,
             "max_debug_attempts": 3,
@@ -104,7 +128,13 @@ class TestResponseBuilderNode:
 
     def test_post_appends_to_chat_history(self, shared):
         node = ResponseBuilderNode()
-        prep_res = {"result_analysis": "analysis", "sql_result": None, "response_sql": None, "debug_attempts": 0, "max_debug_attempts": 3}
+        prep_res = {
+            "result_analysis": "analysis",
+            "sql_result": None,
+            "response_sql": None,
+            "debug_attempts": 0,
+            "max_debug_attempts": 3,
+        }
         shared["response"] = ""
         node.post(shared, prep_res, "response text")
         assert shared["response"] == "response text"
@@ -123,14 +153,26 @@ class TestChatResponderNode:
 
     def test_exec_calls_llm_for_chat(self, shared, mock_call_llm):
         node = ChatResponderNode()
-        prep_res = {"clean_message": "hello", "intent": "chat", "history_context": "", "api_key": "k", "model": "m"}
+        prep_res = {
+            "clean_message": "hello",
+            "intent": "chat",
+            "history_context": "",
+            "api_key": "k",
+            "model": "m",
+        }
         result = node.exec(prep_res)
         assert isinstance(result, str)
         mock_call_llm.assert_called_once()
 
     def test_exec_calls_llm_for_clarify(self, shared, mock_call_llm):
         node = ChatResponderNode()
-        prep_res = {"clean_message": "tell me about LeBron", "intent": "clarify", "history_context": "", "api_key": "k", "model": "m"}
+        prep_res = {
+            "clean_message": "tell me about LeBron",
+            "intent": "clarify",
+            "history_context": "",
+            "api_key": "k",
+            "model": "m",
+        }
         result = node.exec(prep_res)
         assert isinstance(result, str)
         mock_call_llm.assert_called_once()

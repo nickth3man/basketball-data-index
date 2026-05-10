@@ -21,7 +21,12 @@ class TestMessagePreprocessorNode:
     def test_exec_calls_llm_structured(self, shared, mock_call_llm_structured):
         shared["user_message"] = "Tell me about LeBron"
         node = MessagePreprocessorNode()
-        result = node.exec({"user_message": "Tell me about LeBron", "api_key": "k", "model": "m", "system_prompt": ""})
+        result = node.exec({
+            "user_message": "Tell me about LeBron",
+            "api_key": "k",
+            "model": "m",
+            "system_prompt": "",
+        })
         assert "clean_message" in result
         assert "entities" in result
         mock_call_llm_structured.assert_called_once()
@@ -29,7 +34,10 @@ class TestMessagePreprocessorNode:
     def test_post_writes_shared(self, shared):
         shared["user_message"] = "test"
         node = MessagePreprocessorNode()
-        exec_res = {"clean_message": "test query", "entities": {"players": ["LeBron"], "teams": [], "seasons": []}}
+        exec_res = {
+            "clean_message": "test query",
+            "entities": {"players": ["LeBron"], "teams": [], "seasons": []},
+        }
         node.post(shared, None, exec_res)
         assert shared["clean_message"] == "test query"
         assert shared["entities"] == {"players": ["LeBron"], "teams": [], "seasons": []}
@@ -41,7 +49,9 @@ class TestMessagePreprocessorNode:
 
 class TestHistoryContextBuilderNode:
     def test_prep_reads_last_6(self, shared):
-        shared["chat_history"] = [{"role": "user", "content": f"msg{i}", "sql": None} for i in range(10)]
+        shared["chat_history"] = [
+            {"role": "user", "content": f"msg{i}", "sql": None} for i in range(10)
+        ]
         node = HistoryContextBuilderNode()
         result = node.prep(shared)
         assert len(result) == 6
@@ -56,7 +66,11 @@ class TestHistoryContextBuilderNode:
         node = HistoryContextBuilderNode()
         history = [
             {"role": "user", "content": "Who scored the most?", "sql": None},
-            {"role": "assistant", "content": "Here are the results", "sql": "SELECT * FROM dim_player"},
+            {
+                "role": "assistant",
+                "content": "Here are the results",
+                "sql": "SELECT * FROM dim_player",
+            },
         ]
         result = node.exec(history)
         assert "[user:" in result
@@ -80,9 +94,18 @@ class TestIntentClassifierNode:
         assert result["clean_message"] == "test"
 
     def test_exec_calls_llm_structured(self, shared, mock_call_llm_structured):
-        mock_call_llm_structured.return_value = {"intent": "query_db", "reason": "needs stats"}
+        mock_call_llm_structured.return_value = {
+            "intent": "query_db",
+            "reason": "needs stats",
+        }
         node = IntentClassifierNode()
-        prep_res = {"clean_message": "test", "history_context": "", "api_key": "k", "model": "m", "system_prompt": ""}
+        prep_res = {
+            "clean_message": "test",
+            "history_context": "",
+            "api_key": "k",
+            "model": "m",
+            "system_prompt": "",
+        }
         result = node.exec(prep_res)
         assert result["intent"] == "query_db"
         mock_call_llm_structured.assert_called_once()
