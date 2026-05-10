@@ -40,9 +40,12 @@ def _fix_yaml_quoting(text: str) -> str:
         m = re.match(r"^(\s*[a-zA-Z_][a-zA-Z0-9_]*:\s*)(.*)", line)
         if m:
             prefix, value = m.group(1), m.group(2)
-            if value and not value.startswith(('"', "'", "[", "{", "|", ">", "-")):
-                if ":" in value or "#" in value:
-                    value = f'"{value}"'
+            if (
+                value
+                and not value.startswith(('"', "'", "[", "{", "|", ">", "-"))
+                and (":" in value or "#" in value)
+            ):
+                value = f'"{value}"'
             fixed.append(prefix + value)
         else:
             fixed.append(line)
@@ -67,8 +70,7 @@ def call_llm_structured(
     system_prompt: str = "",
 ) -> dict:
     yaml_system_prompt = (
-        system_prompt
-        + "\n\nYou must respond with valid YAML only. "
+        system_prompt + "\n\nYou must respond with valid YAML only. "
         "Do NOT include markdown code fences. "
         "Do NOT include any other text before or after the YAML. "
         "Your entire response must be parseable as YAML. "
@@ -107,8 +109,7 @@ def call_llm_structured(
         return parsed
 
     raise ValueError(
-        "Could not parse LLM response as YAML. "
-        f"Response excerpt: {response[:300]}"
+        f"Could not parse LLM response as YAML. Response excerpt: {response[:300]}"
     )
 
 
@@ -133,14 +134,10 @@ def _rebuild_yaml(text: str, required_fields: list[str]) -> str:
     if current_key:
         extracted[current_key] = "\n".join(current_value).strip()
 
-    if any(
-        field in extracted for field in required_fields
-    ):
+    if any(field in extracted for field in required_fields):
         yaml_lines: list[str] = []
         for key, value in extracted.items():
-            if (
-                ":" in value or "#" in value or len(value) > 80
-            ):
+            if ":" in value or "#" in value or len(value) > 80:
                 escaped = value.replace("\\", "\\\\").replace('"', '\\"')
                 yaml_lines.append(f'{key}: "{escaped}"')
             else:
@@ -153,6 +150,4 @@ def _rebuild_yaml(text: str, required_fields: list[str]) -> str:
 def _validate_required_fields(parsed: dict, required_fields: list[str]) -> None:
     for field in required_fields:
         if field not in parsed:
-            raise ValueError(
-                f"Required field '{field}' missing from LLM response"
-            )
+            raise ValueError(f"Required field '{field}' missing from LLM response")

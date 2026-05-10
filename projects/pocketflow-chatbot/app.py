@@ -60,10 +60,7 @@ def reset_conversation() -> None:
     shared.update(build_shared())
 
 
-with gr.Blocks(
-    title="NBA Basketball Chatbot",
-    theme=gr.themes.Soft(),  # pyright: ignore[reportPrivateImportUsage]
-) as demo:
+with gr.Blocks(title="NBA Basketball Chatbot") as demo:
     gr.Markdown(
         "# NBA Basketball Chatbot\n"
         "Ask questions about NBA players, teams, games, and statistics "
@@ -90,4 +87,6 @@ with gr.Blocks(
 
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(
+        theme=gr.themes.Soft(),  # pyright: ignore[reportPrivateImportUsage]
+    )
