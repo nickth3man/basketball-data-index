@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -9,22 +10,36 @@ from utils.get_full_schema import get_full_schema
 
 load_dotenv()
 
-DEFAULT_DB_PATH = str(
-    Path(__file__).resolve().parent.parent.parent / "test-db" / "nba.duckdb"
-)
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+_DEFAULT_DB_PATH = str(_PROJECT_ROOT / "test-db" / "nba.duckdb")
 
 
 def build_shared() -> dict[str, Any]:
     api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
-        raise RuntimeError("OPENROUTER_API_KEY environment variable is required")
+        print("ERROR: OPENROUTER_API_KEY is not set.", file=sys.stderr)
+        print(
+            "Create a .env file with: OPENROUTER_API_KEY=sk-or-v1-...", file=sys.stderr
+        )
+        raise SystemExit(1)
 
     model = os.environ.get("OPENROUTER_MODEL")
     if not model:
-        raise RuntimeError("OPENROUTER_MODEL environment variable is required")
+        print("ERROR: OPENROUTER_MODEL is not set.", file=sys.stderr)
+        print(
+            "Create a .env file with: OPENROUTER_MODEL=openai/gpt-4o", file=sys.stderr
+        )
+        raise SystemExit(1)
 
-    db_path = os.environ.get("DUCKDB_PATH", DEFAULT_DB_PATH)
+    db_path = os.environ.get("DUCKDB_PATH", _DEFAULT_DB_PATH)
     db_query_timeout = int(os.environ.get("DB_QUERY_TIMEOUT", "30"))
+
+    if not os.path.isfile(db_path):
+        print(f"ERROR: Database not found at: {db_path}", file=sys.stderr)
+        print(
+            "Set DUCKDB_PATH in .env to point to your nba.duckdb file.", file=sys.stderr
+        )
+        raise SystemExit(1)
 
     schema_by_table = get_full_schema(db_path)
 
