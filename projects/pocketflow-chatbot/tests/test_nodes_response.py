@@ -8,19 +8,19 @@ class TestResultAnalyzerNode:
         shared["sql_result"] = {"success": True, "columns": ["x"], "rows": [[1]], "elapsed_ms": 5.0}
         node = ResultAnalyzerNode()
         result = node.prep(shared)
-        assert result["has_results"] is True
+        assert result["has_results"]
 
     def test_prep_detects_has_results_false(self, shared):
         shared["sql_result"] = None
         node = ResultAnalyzerNode()
         result = node.prep(shared)
-        assert result["has_results"] is False
+        assert not result["has_results"]
 
     def test_prep_detects_has_results_empty_rows(self, shared):
         shared["sql_result"] = {"success": True, "columns": ["x"], "rows": [], "elapsed_ms": 5.0}
         node = ResultAnalyzerNode()
         result = node.prep(shared)
-        assert result["has_results"] is False
+        assert not result["has_results"]
 
     def test_exec_with_results_calls_llm(self, shared, mock_call_llm):
         node = ResultAnalyzerNode()
