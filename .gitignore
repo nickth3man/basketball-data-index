@@ -11,6 +11,10 @@ projects/test-db/nba.duckdb
 __pycache__/
 *.pyc
 
+# Coverage data
+.coverage
+.coverage.*
+
 # OpenCode agent artifacts (logs, PIDs, skills)
 .opencode/
 
