@@ -6,3 +6,13 @@ sql/
 projects/test-db/nba.duckdb
 *.tmp
 *.wal
+
+# Python __pycache__
+__pycache__/
+*.pyc
+
+# OpenCode agent artifacts (logs, PIDs, skills)
+.opencode/
+
+# Virtual environments
+.venv/
